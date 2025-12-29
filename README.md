@@ -47,9 +47,9 @@ python blueprint2gcode.py input.png output.gcode \
 | `--feed-rate` | 1000 | Drawing speed (mm/min) |
 | `--travel-rate` | 3000 | Travel speed when pen is up (mm/min) |
 | `--margin` | 1.0 | Margin around A4 page (mm) |
-| `--join-tolerance` | 0.5 | Max distance to join line endpoints (mm) |
-| `--min-line-length` | 0.5 | Minimum line length to include (mm) |
-| `--simplify-epsilon` | 0.0003 | Line simplification factor (lower = more detail) |
+| `--join-tolerance` | 0.05 | Max distance to join line endpoints (mm) |
+| `--min-line-length` | 0.05 | Minimum line length to include (mm) |
+| `--simplify-epsilon` | 0.000005 | Line simplification factor (lower = more detail) |
 
 ## G-code Output
 
@@ -73,10 +73,10 @@ The generated G-code uses:
 2. Apply Otsu's thresholding for binary conversion
 3. Skeletonize to get thin, single-pixel lines
 4. Extract contours and simplify to polylines with adaptive simplification:
-   - Tiny features (<30px perimeter): 20x less simplification for maximum detail
-   - Small features (<100px): 7x less simplification for fine text
-   - Medium features (<300px): 2.5x less simplification
-   - Large features: Normal simplification for efficiency
+   - Tiny features (<30px perimeter): 500x less simplification for maximum detail
+   - Small features (<100px): 100x less simplification for fine text
+   - Medium features (<300px): 33x less simplification
+   - Large features: 10x less simplification for efficiency
 
 ### Path Optimization
 
@@ -91,6 +91,59 @@ Uses greedy nearest-neighbor algorithm:
 Iteratively joins line segments when endpoints are within tolerance distance, reducing total pen lifts and improving efficiency.
 
 ## Examples
+
+### Basic Conversion
+
+Convert a blueprint with default extreme detail settings:
+```bash
+python blueprint2gcode.py floor_plan.jpg output.gcode
+```
+
+### Detail Level Presets
+
+The tool now defaults to **extreme detail** for maximum fidelity. You can adjust detail levels using these presets:
+
+#### Extreme Detail (Default - Best for Scanned/Photographic Blueprints)
+Maximum fidelity, captures finest curves and smallest features (0.05mm minimum).
+```bash
+# This is the default - no parameters needed
+python blueprint2gcode.py input.jpg output.gcode
+
+# Or explicitly:
+python blueprint2gcode.py input.jpg output.gcode \
+    --simplify-epsilon 0.000005 \
+    --join-tolerance 0.05 \
+    --min-line-length 0.05
+```
+
+#### High Detail (Best for Hand-Drawn Blueprints)
+Excellent detail preservation with good performance balance.
+```bash
+python blueprint2gcode.py input.jpg output.gcode \
+    --simplify-epsilon 0.0001 \
+    --join-tolerance 0.15 \
+    --min-line-length 0.3
+```
+
+#### Standard Detail (Best for Clean Vector-Style Images)
+Optimized for programmatically generated or very clean line art.
+```bash
+python blueprint2gcode.py input.jpg output.gcode \
+    --simplify-epsilon 0.0003 \
+    --join-tolerance 0.2 \
+    --min-line-length 0.5
+```
+
+#### Fast/Draft Mode (Best for Quick Previews)
+Lower detail, faster processing, smaller G-code files.
+```bash
+python blueprint2gcode.py input.jpg output.gcode \
+    --simplify-epsilon 0.001 \
+    --join-tolerance 0.5 \
+    --min-line-length 1.0
+```
+
+### Other Common Adjustments
 
 Convert a blueprint with tighter margins:
 ```bash
@@ -108,20 +161,24 @@ python blueprint2gcode.py diagram.jpg output.gcode --z-up 5.0 --z-down -0.5
 ```
 
 ## Troubleshooting
-uses aggressive adaptive simplification that preserves detail in tiny features. For even more detail:
-- Use higher resolution input images (recommended)
-- Decrease `--simplify-epsilon` (e.g., `--simplify-epsilon 0.0001`)
-- Decrease `--min-line-length` (e.g., `--min-line-length 0.2`)
-- Increase `--simplify-epsilon` (e.g., `--simplify-epsilon 0.0003`)
-- Increasing image contrast before conversion
 
-**Lines not detected**: Try a higher resolution input image or adjust `--simplify-epsilon`
+**Missing small text or fine details**: The default extreme detail settings should capture most features. For scanned documents with very fine text, ensure high input resolution (300+ DPI recommended).
 
-**Too many small segments**: Increase `--min-line-length` or `--simplify-epsilon`
+**Output too large/slow to plot**: Switch to Standard or Fast mode using the presets above, or increase `--simplify-epsilon` and `--min-line-length`.
 
-**Lines not joining**: Increase `--join-tolerance`
+**Lines not detected**: Try a higher resolution input image or decrease `--simplify-epsilon` further.
 
-**Output too detailed/slow**: Increase `--simplify-epsilon` slightly
+**Too many small segments**: Use Standard or Fast mode presets, or increase `--min-line-length`.
+
+**Lines not joining**: Increase `--join-tolerance` (e.g., `--join-tolerance 0.2` or `0.5`).
+
+**Lines joining that shouldn't**: Decrease `--join-tolerance` (already at 0.05mm for extreme detail).
+
+**Better input image quality tips**:
+- Scan blueprints at 300 DPI or higher
+- Ensure high contrast between lines and background
+- Clean up noise/artifacts in image editor before conversion
+- For photographs, use edge detection or convert to line art first
 
 ## License
 
