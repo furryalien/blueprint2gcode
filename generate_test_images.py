@@ -288,6 +288,201 @@ def create_test_image_6_text_labels():
     print("Created test6_text_labels.png")
 
 
+def create_test_image_7_geodesic_dome():
+    """Geodesic dome blueprint - complex structure with many triangular faces"""
+    img = Image.new('RGB', (1200, 1000), color='white')
+    draw = ImageDraw.Draw(img)
+    
+    # Try to use fonts for labels
+    try:
+        from PIL import ImageFont
+        font_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
+        font_tiny = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 12)
+    except:
+        font_small = None
+        font_tiny = None
+    
+    # Title block
+    draw.rectangle([50, 50, 1150, 120], outline='black', width=3)
+    draw.line([50, 85, 1150, 85], fill='black', width=2)
+    draw.text((70, 60), "GEODESIC DOME - 3V ICOSAHEDRON", fill='black', font=font_small)
+    draw.text((70, 95), "SCALE: 1:50  |  RADIUS: 5.0m  |  STRUT TYPES: A, B, C", fill='black', font=font_tiny)
+    
+    # Generate 3V geodesic dome vertices
+    # Using simplified icosahedron-based geodesic dome
+    cx, cy = 600, 550  # Center of dome
+    radius = 380
+    
+    # Define icosahedron vertices (top hemisphere + base)
+    phi = (1 + math.sqrt(5)) / 2  # Golden ratio
+    
+    # Create vertices for a 3-frequency geodesic dome
+    vertices_3d = []
+    
+    # Method: Create vertices on a sphere using icosahedron subdivision
+    # Start with icosahedron vertices
+    ico_verts = [
+        (0, 1, phi), (0, -1, phi), (0, 1, -phi), (0, -1, -phi),
+        (1, phi, 0), (-1, phi, 0), (1, -phi, 0), (-1, -phi, 0),
+        (phi, 0, 1), (-phi, 0, 1), (phi, 0, -1), (-phi, 0, -1)
+    ]
+    
+    # Normalize to unit sphere
+    ico_verts = [(x/math.sqrt(x*x+y*y+z*z), y/math.sqrt(x*x+y*y+z*z), z/math.sqrt(x*x+y*y+z*z)) 
+                 for x, y, z in ico_verts]
+    
+    # Create icosahedron faces (only upper hemisphere)
+    faces = [
+        (0, 4, 1), (0, 1, 9), (1, 8, 9), (1, 4, 8), (4, 0, 5),
+        (4, 5, 10), (4, 10, 8), (8, 10, 6), (8, 6, 9), (9, 6, 11),
+        (9, 11, 5), (9, 5, 0), (5, 11, 2), (5, 2, 10), (10, 2, 3),
+        (10, 3, 6), (6, 3, 7), (6, 7, 11), (11, 7, 2), (2, 7, 3)
+    ]
+    
+    # Subdivide each face into smaller triangles (frequency 3)
+    def midpoint(p1, p2):
+        """Calculate midpoint on sphere surface"""
+        mx, my, mz = (p1[0]+p2[0])/2, (p1[1]+p2[1])/2, (p1[2]+p2[2])/2
+        length = math.sqrt(mx*mx + my*my + mz*mz)
+        return (mx/length, my/length, mz/length)
+    
+    # Collect all unique vertices
+    all_verts = set()
+    subdivided_faces = []
+    
+    for face in faces:
+        v1, v2, v3 = ico_verts[face[0]], ico_verts[face[1]], ico_verts[face[2]]
+        
+        # Skip if mostly below horizon (negative z)
+        if v1[2] < -0.2 and v2[2] < -0.2 and v3[2] < -0.2:
+            continue
+        
+        # Simple subdivision - create 3 vertices on edges
+        m12 = midpoint(v1, v2)
+        m23 = midpoint(v2, v3)
+        m31 = midpoint(v3, v1)
+        
+        # Create 4 sub-triangles
+        sub_faces = [
+            (v1, m12, m31),
+            (m12, v2, m23),
+            (m31, m23, v3),
+            (m12, m23, m31)
+        ]
+        
+        for sf in sub_faces:
+            # Further subdivide once more for frequency 3
+            sm1, sm2, sm3 = sf[0], sf[1], sf[2]
+            sm12 = midpoint(sm1, sm2)
+            sm23 = midpoint(sm2, sm3)
+            sm31 = midpoint(sm3, sm1)
+            
+            final_faces = [
+                (sm1, sm12, sm31),
+                (sm12, sm2, sm23),
+                (sm31, sm23, sm3),
+                (sm12, sm23, sm31)
+            ]
+            
+            for ff in final_faces:
+                subdivided_faces.append(ff)
+                all_verts.add(ff[0])
+                all_verts.add(ff[1])
+                all_verts.add(ff[2])
+    
+    # Project 3D vertices to 2D (orthographic projection)
+    def project_vertex(v):
+        x, y, z = v
+        # Rotate for better view
+        angle = math.pi / 6
+        rx = x * math.cos(angle) - y * math.sin(angle)
+        ry = x * math.sin(angle) + y * math.cos(angle)
+        
+        # Project to 2D
+        scale = radius
+        px = cx + rx * scale
+        py = cy - z * scale - ry * scale * 0.3
+        return (px, py)
+    
+    # Draw all edges (struts)
+    drawn_edges = set()
+    strut_counts = {'A': 0, 'B': 0, 'C': 0}
+    
+    for face in subdivided_faces:
+        v1, v2, v3 = face
+        edges = [(v1, v2), (v2, v3), (v3, v1)]
+        
+        for edge in edges:
+            # Normalize edge (sort to avoid duplicates)
+            normalized_edge = tuple(sorted([edge[0], edge[1]]))
+            
+            if normalized_edge not in drawn_edges:
+                drawn_edges.add(normalized_edge)
+                p1 = project_vertex(edge[0])
+                p2 = project_vertex(edge[1])
+                
+                # Calculate edge length type (3 different lengths in geodesic dome)
+                length = math.sqrt(sum((a-b)**2 for a, b in zip(edge[0], edge[1])))
+                if length < 0.35:
+                    color = 'black'
+                    width = 2
+                    strut_type = 'A'
+                elif length < 0.38:
+                    color = 'black'
+                    width = 2
+                    strut_type = 'B'
+                else:
+                    color = 'black'
+                    width = 2
+                    strut_type = 'C'
+                
+                strut_counts[strut_type] += 1
+                draw.line([p1[0], p1[1], p2[0], p2[1]], fill=color, width=width)
+    
+    # Draw base circle
+    base_y = cy + radius * 0.4
+    draw.ellipse([cx-radius*0.95, base_y-30, cx+radius*0.95, base_y+30], outline='black', width=3)
+    
+    # Draw vertices (hubs)
+    for v in list(all_verts)[:20]:  # Draw some key vertices
+        if v[2] > -0.1:  # Only visible ones
+            p = project_vertex(v)
+            draw.ellipse([p[0]-3, p[1]-3, p[0]+3, p[1]+3], fill='black')
+    
+    # Dimension line for radius
+    dim_y = cy - radius - 50
+    draw.line([cx, dim_y, cx + radius*0.8, dim_y], fill='black', width=1)
+    draw.line([cx, dim_y-10, cx, dim_y+10], fill='black', width=1)
+    draw.line([cx + radius*0.8, dim_y-10, cx + radius*0.8, dim_y+10], fill='black', width=1)
+    # Arrows
+    draw.polygon([cx+10, dim_y, cx, dim_y-5, cx, dim_y+5], fill='black')
+    draw.polygon([cx + radius*0.8-10, dim_y, cx + radius*0.8, dim_y-5, cx + radius*0.8, dim_y+5], fill='black')
+    draw.text((cx + radius*0.3, dim_y - 25), "R = 5.0m", fill='black', font=font_small)
+    
+    # Legend for strut types
+    legend_x, legend_y = 900, 200
+    draw.rectangle([legend_x-10, legend_y-10, legend_x+220, legend_y+110], outline='black', width=2)
+    draw.text((legend_x, legend_y), "STRUT SCHEDULE:", fill='black', font=font_small)
+    draw.line([legend_x, legend_y+25, legend_x+50, legend_y+25], fill='black', width=2)
+    draw.text((legend_x+60, legend_y+20), f"TYPE A: {strut_counts['A']} pcs (1.23m)", fill='black', font=font_tiny)
+    draw.line([legend_x, legend_y+50, legend_x+50, legend_y+50], fill='black', width=2)
+    draw.text((legend_x+60, legend_y+45), f"TYPE B: {strut_counts['B']} pcs (1.28m)", fill='black', font=font_tiny)
+    draw.line([legend_x, legend_y+75, legend_x+50, legend_y+75], fill='black', width=2)
+    draw.text((legend_x+60, legend_y+70), f"TYPE C: {strut_counts['C']} pcs (1.31m)", fill='black', font=font_tiny)
+    
+    # Notes
+    notes_y = 850
+    draw.line([50, notes_y, 1150, notes_y], fill='black', width=2)
+    draw.text((60, notes_y+10), "NOTES:", fill='black', font=font_small)
+    draw.text((60, notes_y+35), "1. ALL STRUTS ARE ALUMINUM TUBE Ø60mm x 3mm WALL", fill='black', font=font_tiny)
+    draw.text((60, notes_y+55), "2. HUB CONNECTORS: 6-WAY GALVANIZED STEEL", fill='black', font=font_tiny)
+    draw.text((60, notes_y+75), "3. COVERING: UV-RESISTANT POLYCARBONATE PANELS", fill='black', font=font_tiny)
+    draw.text((60, notes_y+95), "4. FOUNDATION: CONCRETE PIERS AT BASE VERTICES", fill='black', font=font_tiny)
+    
+    img.save('test_images/test7_geodesic_dome.png')
+    print("Created test7_geodesic_dome.png")
+
+
 def main():
     import os
     os.makedirs('test_images', exist_ok=True)
@@ -299,6 +494,7 @@ def main():
     create_test_image_4_mechanical()
     create_test_image_5_circuit()
     create_test_image_6_text_labels()
+    create_test_image_7_geodesic_dome()
     print("\nAll test images created in 'test_images/' directory")
 
 
