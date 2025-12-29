@@ -82,17 +82,17 @@ class Blueprint2GCode:
                 
                 # Adaptive simplification: use less simplification for smaller contours
                 # For very small contours (likely small text), use minimal simplification
-                if perimeter < 30:  # Tiny features (fine text details)
-                    epsilon = self.simplify_epsilon * 0.002 * perimeter  # 500x less simplification
+                if perimeter < 30:  # Tiny features (fine text details, punctuation, arrows)
+                    epsilon = self.simplify_epsilon * 0.001 * perimeter  # 1000x less simplification
                 elif perimeter < 100:  # Small features (small text)
-                    epsilon = self.simplify_epsilon * 0.01 * perimeter  # 100x less simplification
+                    epsilon = self.simplify_epsilon * 0.005 * perimeter  # 200x less simplification
                 elif perimeter < 300:  # Medium features
-                    epsilon = self.simplify_epsilon * 0.03 * perimeter  # 33x less simplification
+                    epsilon = self.simplify_epsilon * 0.02 * perimeter  # 50x less simplification
                 else:
                     epsilon = self.simplify_epsilon * 0.1 * perimeter  # 10x less simplification
                 
-                # Ensure minimum epsilon to avoid too many points, but keep it very small
-                epsilon = max(epsilon, 0.005)
+                # Ensure minimum epsilon to avoid too many points, but keep it very small for detail
+                epsilon = max(epsilon, 0.001)
                 
                 simplified = cv2.approxPolyDP(contour, epsilon, False)
                 
@@ -455,11 +455,11 @@ def main():
                         help='Margin around page (mm)')
     
     # Line processing
-    parser.add_argument('--join-tolerance', type=float, default=0.05,
+    parser.add_argument('--join-tolerance', type=float, default=0.02,
                         help='Maximum distance to join line endpoints (mm)')
-    parser.add_argument('--min-line-length', type=float, default=0.05,
+    parser.add_argument('--min-line-length', type=float, default=0.01,
                         help='Minimum line length to include (mm)')
-    parser.add_argument('--simplify-epsilon', type=float, default=0.000005,
+    parser.add_argument('--simplify-epsilon', type=float, default=0.000001,
                         help='Line simplification factor (lower = more detail)')
     
     args = parser.parse_args()
