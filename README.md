@@ -30,12 +30,17 @@ python blueprint2gcode.py input.jpg output.gcode
 ### With custom options:
 
 ```bash
+# Specify paper size and orientation
+python blueprint2gcode.py input.png output.gcode --paper-size A6 --orientation portrait
+
+# Adjust pen positions, speeds, and detail level
 python blueprint2gcode.py input.png output.gcode \
     --z-up 5.0 \
     --z-down 0.0 \
     --feed-rate 1500 \
     --margin 5.0 \
-    --join-tolerance 1.0
+    --join-tolerance 1.0 \
+    --simplify-epsilon 0.000001
 ```
 
 ## Command-Line Options
@@ -47,6 +52,7 @@ python blueprint2gcode.py input.png output.gcode \
 | `--feed-rate` | 1000 | Drawing speed (mm/min) |
 | `--travel-rate` | 3000 | Travel speed when pen is up (mm/min) |
 | `--paper-size` | A4 | Output paper size (A3, A4, A5, A6) |
+| `--orientation` | auto | Output orientation (auto, portrait, landscape) |
 | `--margin` | 1.0 | Margin around page (mm) |
 | `--join-tolerance` | 0.05 | Max distance to join line endpoints (mm) |
 | `--min-line-length` | 0.05 | Minimum line length to include (mm) |
@@ -60,6 +66,14 @@ python blueprint2gcode.py input.png output.gcode \
 | A4 | 210 × 297 | Standard documents (default) |
 | A5 | 148 × 210 | Compact drawings, notebooks |
 | A6 | 105 × 148 | Small sketches, postcards |
+
+### Orientation Options
+
+| Option | Behavior |
+|--------|----------|
+| `auto` | Automatically selects portrait or landscape based on image aspect ratio (default) |
+| `portrait` | Forces portrait orientation, rotating image 90° if needed |
+| `landscape` | Forces landscape orientation, rotating image 90° if needed |
 
 ## G-code Output
 

@@ -27,6 +27,7 @@ class Blueprint2GCode:
         self.min_line_length = args.min_line_length
         self.simplify_epsilon = args.simplify_epsilon
         self.paper_size = args.paper_size
+        self.orientation = args.orientation
         
         # Paper dimensions in mm (width x height)
         self.paper_sizes = {
@@ -113,19 +114,49 @@ class Blueprint2GCode:
         usable_width = self.paper_width - 2 * self.margin
         usable_height = self.paper_height - 2 * self.margin
         
-        # Determine orientation based on aspect ratio
+        # Determine if we need to rotate based on orientation preference
         img_aspect = img_width / img_height
         portrait_aspect = usable_width / usable_height
         landscape_aspect = usable_height / usable_width
         
-        # Choose orientation that better matches image
-        if abs(img_aspect - portrait_aspect) < abs(img_aspect - landscape_aspect):
-            # Portrait
+        # Determine desired orientation
+        if self.orientation == 'auto':
+            # Choose orientation that better matches image
+            if abs(img_aspect - portrait_aspect) < abs(img_aspect - landscape_aspect):
+                use_portrait = True
+            else:
+                use_portrait = False
+        elif self.orientation == 'portrait':
+            use_portrait = True
+        else:  # landscape
+            use_portrait = False
+        
+        # Check if we need to rotate the image (swap dimensions)
+        img_is_portrait = img_width < img_height
+        need_rotation = (use_portrait and not img_is_portrait) or (not use_portrait and img_is_portrait)
+        
+        if need_rotation:
+            print(f"Rotating image 90° to match {self.orientation} orientation")
+            # Rotate lines by 90 degrees and swap dimensions
+            rotated_lines = []
+            for line in lines:
+                rotated_line = []
+                for x, y in line:
+                    # Rotate 90° clockwise: (x, y) -> (y, width - x)
+                    new_x = y
+                    new_y = img_width - x
+                    rotated_line.append([new_x, new_y])
+                rotated_lines.append(rotated_line)
+            lines = rotated_lines
+            # Swap dimensions
+            img_width, img_height = img_height, img_width
+        
+        # Set target dimensions based on orientation
+        if use_portrait:
             target_width = usable_width
             target_height = usable_height
             print(f"Using portrait orientation ({self.paper_size})")
         else:
-            # Landscape
             target_width = usable_height
             target_height = usable_width
             print(f"Using landscape orientation ({self.paper_size})")
@@ -417,6 +448,9 @@ def main():
     parser.add_argument('--paper-size', type=str, default='A4',
                         choices=['A3', 'A4', 'A5', 'A6'],
                         help='Output paper size')
+    parser.add_argument('--orientation', type=str, default='auto',
+                        choices=['auto', 'portrait', 'landscape'],
+                        help='Output orientation (auto, portrait, or landscape)')
     parser.add_argument('--margin', type=float, default=1.0,
                         help='Margin around page (mm)')
     
