@@ -483,6 +483,199 @@ def create_test_image_7_geodesic_dome():
     print("Created test7_geodesic_dome.png")
 
 
+def create_test_image_8_interlocking_gears():
+    """Blueprint of interlocking gears of various sizes"""
+    img = Image.new('RGB', (1400, 1000), color='white')
+    draw = ImageDraw.Draw(img)
+    
+    def draw_gear(cx, cy, outer_radius, num_teeth, tooth_depth, shaft_radius):
+        """Draw a gear with given parameters"""
+        # Calculate inner radius (base of teeth)
+        inner_radius = outer_radius - tooth_depth
+        
+        # Draw outer circle (reference)
+        draw.ellipse([cx-outer_radius, cy-outer_radius, 
+                     cx+outer_radius, cy+outer_radius], 
+                     outline='black', width=2)
+        
+        # Draw inner circle (root of teeth)
+        draw.ellipse([cx-inner_radius, cy-inner_radius, 
+                     cx+inner_radius, cy+inner_radius], 
+                     outline='black', width=2)
+        
+        # Draw teeth
+        for i in range(num_teeth):
+            angle1 = (i * 2 * math.pi / num_teeth) - (math.pi / (2 * num_teeth))
+            angle2 = (i * 2 * math.pi / num_teeth) + (math.pi / (2 * num_teeth))
+            angle_mid = i * 2 * math.pi / num_teeth
+            
+            # Outer points of tooth
+            x1_outer = cx + outer_radius * math.cos(angle1)
+            y1_outer = cy + outer_radius * math.sin(angle1)
+            x2_outer = cx + outer_radius * math.cos(angle2)
+            y2_outer = cy + outer_radius * math.sin(angle2)
+            
+            # Inner points (root of tooth)
+            x1_inner = cx + inner_radius * math.cos(angle1)
+            y1_inner = cy + inner_radius * math.sin(angle1)
+            x2_inner = cx + inner_radius * math.cos(angle2)
+            y2_inner = cy + inner_radius * math.sin(angle2)
+            
+            # Draw tooth sides
+            draw.line([x1_inner, y1_inner, x1_outer, y1_outer], fill='black', width=2)
+            draw.line([x2_inner, y2_inner, x2_outer, y2_outer], fill='black', width=2)
+            
+            # Draw tooth top (arc approximation with short line)
+            draw.line([x1_outer, y1_outer, x2_outer, y2_outer], fill='black', width=2)
+        
+        # Draw shaft/center hole
+        draw.ellipse([cx-shaft_radius, cy-shaft_radius, 
+                     cx+shaft_radius, cy+shaft_radius], 
+                     outline='black', width=3)
+        
+        # Draw center cross for alignment
+        cross_size = shaft_radius * 0.6
+        draw.line([cx-cross_size, cy, cx+cross_size, cy], fill='black', width=2)
+        draw.line([cx, cy-cross_size, cx, cy+cross_size], fill='black', width=2)
+        
+        return inner_radius  # Return for pitch circle reference
+    
+    # Title block
+    draw.rectangle([50, 50, 1350, 120], outline='black', width=3)
+    draw.line([50, 85, 1350, 85], fill='black', width=2)
+    try:
+        from PIL import ImageFont
+        font_title = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 24)
+        font_normal = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 14)
+        font_small = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
+    except:
+        font_title = font_normal = font_small = None
+    
+    draw.text((60, 55), "MECHANICAL DRAWING: GEAR TRAIN ASSEMBLY", fill='black', font=font_title)
+    draw.text((60, 95), "SCALE: 1:5  |  MATERIAL: STEEL  |  DWG NO: GT-2025-001", fill='black', font=font_small)
+    
+    # Define gear specifications
+    # Gear 1: Large gear (left side)
+    gear1_x, gear1_y = 350, 400
+    gear1_outer = 180
+    gear1_teeth = 48
+    gear1_tooth_depth = 20
+    gear1_shaft = 25
+    
+    # Gear 2: Medium gear (top right)
+    gear2_x, gear2_y = 700, 280
+    gear2_outer = 120
+    gear2_teeth = 32
+    gear2_tooth_depth = 15
+    gear2_shaft = 20
+    
+    # Gear 3: Medium gear (bottom right, meshes with gear 1)
+    gear3_x = gear1_x + (gear1_outer - gear1_tooth_depth) + (gear2_outer - gear2_tooth_depth)
+    gear3_y = gear1_y
+    gear3_outer = 120
+    gear3_teeth = 32
+    gear3_tooth_depth = 15
+    gear3_shaft = 20
+    
+    # Gear 4: Small gear (far right, meshes with gear 2 and gear 3)
+    gear4_outer = 80
+    gear4_teeth = 24
+    gear4_tooth_depth = 12
+    gear4_shaft = 15
+    
+    # Position gear 4 to mesh with gear 3
+    distance_3_4 = (gear3_outer - gear3_tooth_depth) + (gear4_outer - gear4_tooth_depth)
+    gear4_x = gear3_x + distance_3_4
+    gear4_y = gear3_y
+    
+    # Gear 5: Small gear (meshes with gear 2 from bottom)
+    distance_2_5 = (gear2_outer - gear2_tooth_depth) + (gear4_outer - gear4_tooth_depth)
+    gear5_x = gear2_x
+    gear5_y = gear2_y + distance_2_5
+    gear5_outer = gear4_outer
+    gear5_teeth = gear4_teeth
+    gear5_tooth_depth = gear4_tooth_depth
+    gear5_shaft = gear4_shaft
+    
+    # Draw all gears
+    draw_gear(gear1_x, gear1_y, gear1_outer, gear1_teeth, gear1_tooth_depth, gear1_shaft)
+    draw_gear(gear2_x, gear2_y, gear2_outer, gear2_teeth, gear2_tooth_depth, gear2_shaft)
+    draw_gear(gear3_x, gear3_y, gear3_outer, gear3_teeth, gear3_tooth_depth, gear3_shaft)
+    draw_gear(gear4_x, gear4_y, gear4_outer, gear4_teeth, gear4_tooth_depth, gear4_shaft)
+    draw_gear(gear5_x, gear5_y, gear5_outer, gear5_teeth, gear5_tooth_depth, gear5_shaft)
+    
+    # Dimension lines and annotations
+    # Gear 1 annotation
+    draw.text((gear1_x-50, gear1_y+200), "GEAR A", fill='black', font=font_normal)
+    draw.text((gear1_x-50, gear1_y+220), f"T={gear1_teeth}", fill='black', font=font_small)
+    draw.text((gear1_x-50, gear1_y+235), f"Ø{gear1_outer*2}mm", fill='black', font=font_small)
+    
+    # Dimension line for gear 1 diameter
+    dim_y = gear1_y + 250
+    draw.line([gear1_x-gear1_outer, dim_y, gear1_x+gear1_outer, dim_y], fill='black', width=1)
+    draw.line([gear1_x-gear1_outer, dim_y-10, gear1_x-gear1_outer, dim_y+10], fill='black', width=1)
+    draw.line([gear1_x+gear1_outer, dim_y-10, gear1_x+gear1_outer, dim_y+10], fill='black', width=1)
+    
+    # Gear 2 annotation
+    draw.text((gear2_x-30, gear2_y-140), "GEAR B", fill='black', font=font_normal)
+    draw.text((gear2_x-30, gear2_y-120), f"T={gear2_teeth}", fill='black', font=font_small)
+    
+    # Gear 3 annotation  
+    draw.text((gear3_x-30, gear3_y+160), "GEAR C", fill='black', font=font_normal)
+    draw.text((gear3_x-30, gear3_y+180), f"T={gear3_teeth}", fill='black', font=font_small)
+    
+    # Gear 4 annotation
+    draw.text((gear4_x-25, gear4_y+110), "GEAR D", fill='black', font=font_normal)
+    draw.text((gear4_x-25, gear4_y+130), f"T={gear4_teeth}", fill='black', font=font_small)
+    
+    # Gear 5 annotation
+    draw.text((gear5_x+90, gear5_y-10), "GEAR E", fill='black', font=font_normal)
+    draw.text((gear5_x+90, gear5_y+10), f"T={gear5_teeth}", fill='black', font=font_small)
+    
+    # Center distance annotations (with leader lines)
+    # Distance between gear 1 and gear 3
+    mid_x = (gear1_x + gear3_x) / 2
+    draw.line([gear1_x, gear1_y-30, gear3_x, gear3_y-30], fill='black', width=1)
+    draw.line([gear1_x, gear1_y-35, gear1_x, gear1_y-25], fill='black', width=1)
+    draw.line([gear3_x, gear3_y-35, gear3_x, gear3_y-25], fill='black', width=1)
+    draw.text((mid_x-30, gear1_y-50), f"C={int(gear3_x-gear1_x)}mm", fill='black', font=font_small)
+    
+    # Legend/specifications box
+    legend_x = 950
+    legend_y = 650
+    draw.rectangle([legend_x-20, legend_y-20, legend_x+400, legend_y+280], outline='black', width=2)
+    draw.text((legend_x, legend_y), "GEAR SPECIFICATIONS:", fill='black', font=font_normal)
+    
+    y_offset = legend_y + 30
+    specs = [
+        f"GEAR A: {gear1_teeth} teeth, PCD {(gear1_outer-gear1_tooth_depth)*2}mm",
+        f"GEAR B: {gear2_teeth} teeth, PCD {(gear2_outer-gear2_tooth_depth)*2}mm",
+        f"GEAR C: {gear3_teeth} teeth, PCD {(gear3_outer-gear3_tooth_depth)*2}mm",
+        f"GEAR D: {gear4_teeth} teeth, PCD {(gear4_outer-gear4_tooth_depth)*2}mm",
+        f"GEAR E: {gear5_teeth} teeth, PCD {(gear5_outer-gear5_tooth_depth)*2}mm",
+        "",
+        f"MODULE: 2.5mm",
+        f"PRESSURE ANGLE: 20°",
+        f"MATERIAL: EN24 STEEL",
+        f"HARDNESS: 58-62 HRC",
+        f"SURFACE FINISH: Ra 1.6",
+    ]
+    
+    for i, spec in enumerate(specs):
+        draw.text((legend_x, y_offset + i*22), spec, fill='black', font=font_small)
+    
+    # Notes section
+    notes_y = 180
+    draw.line([50, notes_y, 900, notes_y], fill='black', width=2)
+    draw.text((60, notes_y+10), "NOTES:", fill='black', font=font_normal)
+    draw.text((60, notes_y+35), "1. ALL GEARS TO BE CUT WITH GEAR HOBBING MACHINE", fill='black', font=font_small)
+    draw.text((60, notes_y+55), "2. HEAT TREAT AFTER CUTTING: CARBURIZE AND HARDEN", fill='black', font=font_small)
+    draw.text((60, notes_y+75), "3. SHAFT TOLERANCES: H7/k6 FIT", fill='black', font=font_small)
+    
+    img.save('test_images/test8_interlocking_gears.png')
+    print("Created test8_interlocking_gears.png")
+
+
 def main():
     import os
     os.makedirs('test_images', exist_ok=True)
@@ -495,6 +688,7 @@ def main():
     create_test_image_5_circuit()
     create_test_image_6_text_labels()
     create_test_image_7_geodesic_dome()
+    create_test_image_8_interlocking_gears()
     print("\nAll test images created in 'test_images/' directory")
 
 
