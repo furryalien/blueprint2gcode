@@ -26,10 +26,22 @@ class Blueprint2GCode:
         self.join_tolerance = args.join_tolerance
         self.min_line_length = args.min_line_length
         self.simplify_epsilon = args.simplify_epsilon
+        self.paper_size = args.paper_size
         
-        # A4 dimensions in mm
-        self.a4_width = 210
-        self.a4_height = 297
+        # Paper dimensions in mm (width x height)
+        self.paper_sizes = {
+            'A3': (297, 420),
+            'A4': (210, 297),
+            'A5': (148, 210),
+            'A6': (105, 148)
+        }
+        
+        # Set paper dimensions based on selected size
+        self.paper_width, self.paper_height = self.paper_sizes[self.paper_size]
+        
+        # Legacy compatibility
+        self.a4_width = self.paper_width
+        self.a4_height = self.paper_height
         
     def load_and_preprocess_image(self):
         """Load image and convert to binary black/white."""
@@ -94,29 +106,29 @@ class Blueprint2GCode:
         return lines
     
     def scale_to_a4(self, lines, img_shape):
-        """Scale lines to fit A4 with margins."""
+        """Scale lines to fit paper size with margins."""
         img_height, img_width = img_shape
         
         # Calculate usable area
-        usable_width = self.a4_width - 2 * self.margin
-        usable_height = self.a4_height - 2 * self.margin
+        usable_width = self.paper_width - 2 * self.margin
+        usable_height = self.paper_height - 2 * self.margin
         
         # Determine orientation based on aspect ratio
         img_aspect = img_width / img_height
-        a4_portrait_aspect = usable_width / usable_height
-        a4_landscape_aspect = usable_height / usable_width
+        portrait_aspect = usable_width / usable_height
+        landscape_aspect = usable_height / usable_width
         
         # Choose orientation that better matches image
-        if abs(img_aspect - a4_portrait_aspect) < abs(img_aspect - a4_landscape_aspect):
+        if abs(img_aspect - portrait_aspect) < abs(img_aspect - landscape_aspect):
             # Portrait
             target_width = usable_width
             target_height = usable_height
-            print(f"Using portrait orientation")
+            print(f"Using portrait orientation ({self.paper_size})")
         else:
             # Landscape
             target_width = usable_height
             target_height = usable_width
-            print(f"Using landscape orientation")
+            print(f"Using landscape orientation ({self.paper_size})")
         
         # Calculate scale to fit within target area
         scale_x = target_width / img_width
@@ -402,8 +414,11 @@ def main():
                         help='Travel feed rate when pen is up (mm/min)')
     
     # Output dimensions
+    parser.add_argument('--paper-size', type=str, default='A4',
+                        choices=['A3', 'A4', 'A5', 'A6'],
+                        help='Output paper size')
     parser.add_argument('--margin', type=float, default=1.0,
-                        help='Margin around A4 page (mm)')
+                        help='Margin around page (mm)')
     
     # Line processing
     parser.add_argument('--join-tolerance', type=float, default=0.05,

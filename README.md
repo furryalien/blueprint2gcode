@@ -8,7 +8,7 @@ Converts blueprint-style images (black lines on white background) to G-code for 
 - **Adaptive simplification**: Preserves detail in small features like text while simplifying larger shapes
 - **Path optimization**: Sophisticated nearest-neighbor algorithm minimizes pen travel
 - **Line joining**: Automatically connects nearby line endpoints to reduce pen lifts
-- **A4 output**: Scales images to fit A4 paper with configurable margins
+- **Multiple paper sizes**: Supports A3, A4, A5, and A6 output formats
 - **Auto-orientation**: Automatically chooses portrait or landscape based on image aspect ratio
 - **Text-friendly**: Special handling for small text and fine details
 - **Configurable**: Command-line options for all key parameters
@@ -46,10 +46,20 @@ python blueprint2gcode.py input.png output.gcode \
 | `--z-down` | 0.0 | Z position for pen down (mm) |
 | `--feed-rate` | 1000 | Drawing speed (mm/min) |
 | `--travel-rate` | 3000 | Travel speed when pen is up (mm/min) |
-| `--margin` | 1.0 | Margin around A4 page (mm) |
+| `--paper-size` | A4 | Output paper size (A3, A4, A5, A6) |
+| `--margin` | 1.0 | Margin around page (mm) |
 | `--join-tolerance` | 0.05 | Max distance to join line endpoints (mm) |
 | `--min-line-length` | 0.05 | Minimum line length to include (mm) |
 | `--simplify-epsilon` | 0.000005 | Line simplification factor (lower = more detail) |
+
+### Paper Sizes
+
+| Size | Dimensions (mm) | Use Case |
+|------|----------------|----------|
+| A3 | 297 × 420 | Large detailed blueprints, posters |
+| A4 | 210 × 297 | Standard documents (default) |
+| A5 | 148 × 210 | Compact drawings, notebooks |
+| A6 | 105 × 148 | Small sketches, postcards |
 
 ## G-code Output
 
@@ -145,7 +155,17 @@ python blueprint2gcode.py input.jpg output.gcode \
 
 ### Other Common Adjustments
 
-Convert a blueprint with tighter margins:
+Convert a blueprint to A3 size for larger output:
+```bash
+python blueprint2gcode.py floor_plan.jpg output.gcode --paper-size A3
+```
+
+Convert to A5 for compact notebook plotting:
+```bash
+python blueprint2gcode.py sketch.png output.gcode --paper-size A5
+```
+
+Convert with tighter margins:
 ```bash
 python blueprint2gcode.py floor_plan.jpg output.gcode --margin 10.0
 ```
@@ -158,6 +178,15 @@ python blueprint2gcode.py simple_sketch.png output.gcode --feed-rate 2000
 Custom Z-axis values for specific plotter:
 ```bash
 python blueprint2gcode.py diagram.jpg output.gcode --z-up 5.0 --z-down -0.5
+```
+
+Combine paper size with detail level:
+```bash
+# Large A3 output with high detail
+python blueprint2gcode.py blueprint.jpg output.gcode \
+    --paper-size A3 \
+    --simplify-epsilon 0.0001 \
+    --join-tolerance 0.15
 ```
 
 ## Troubleshooting
