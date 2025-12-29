@@ -39,8 +39,8 @@ class Blueprint2GCode:
         # Convert to grayscale
         img_gray = img.convert('L')
         
-        # Convert to numpy array
-        img_array = np.array(img_gray)
+        # Convert to numpy array (with explicit dtype for NumPy 2.0 compatibility)
+        img_array = np.asarray(img_gray, dtype=np.uint8)
         
         # Threshold to binary (black lines on white background)
         # Using Otsu's method for automatic thresholding
