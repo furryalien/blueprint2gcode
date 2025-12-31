@@ -1,0 +1,5805 @@
+; Blueprint to G-code
+; Input: test_images_solid/test5_mechanical_part.png
+; Generated with blueprint2gcode.py
+
+G21 ; Set units to millimeters
+G90 ; Absolute positioning
+G0 Z3.0 ; Pen up
+G0 X0 Y0 ; Move to origin
+
+G0 X30.225 Y26.750 F3000 ; Travel to line 1
+G0 Z0.0 ; Pen down
+G1 X22.500 Y26.750 F1000
+G1 X22.500 Y26.750 F1000
+G1 X22.500 Y34.475 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y40.913 F3000 ; Travel to line 2
+G0 Z0.0 ; Pen down
+G1 X38.465 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.722 Y26.750 F3000 ; Travel to line 3
+G0 Z0.0 ; Pen down
+G1 X22.500 Y41.041 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y41.556 F3000 ; Travel to line 4
+G0 Z0.0 ; Pen down
+G1 X39.237 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X39.366 Y26.750 F3000 ; Travel to line 5
+G0 Z0.0 ; Pen down
+G1 X22.500 Y41.685 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y41.943 F3000 ; Travel to line 6
+G0 Z0.0 ; Pen down
+G1 X39.752 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X39.881 Y26.750 F3000 ; Travel to line 7
+G0 Z0.0 ; Pen down
+G1 X22.500 Y42.071 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y42.200 F3000 ; Travel to line 8
+G0 Z0.0 ; Pen down
+G1 X40.010 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.267 Y26.750 F3000 ; Travel to line 9
+G0 Z0.0 ; Pen down
+G1 X22.500 Y42.458 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y42.586 F3000 ; Travel to line 10
+G0 Z0.0 ; Pen down
+G1 X40.396 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.654 Y26.750 F3000 ; Travel to line 11
+G0 Z0.0 ; Pen down
+G1 X22.500 Y42.844 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y42.973 F3000 ; Travel to line 12
+G0 Z0.0 ; Pen down
+G1 X40.782 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.911 Y26.750 F3000 ; Travel to line 13
+G0 Z0.0 ; Pen down
+G1 X22.500 Y43.101 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y43.359 F3000 ; Travel to line 14
+G0 Z0.0 ; Pen down
+G1 X41.169 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.297 Y26.750 F3000 ; Travel to line 15
+G0 Z0.0 ; Pen down
+G1 X22.500 Y43.488 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y43.745 F3000 ; Travel to line 16
+G0 Z0.0 ; Pen down
+G1 X41.555 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y26.750 F3000 ; Travel to line 17
+G0 Z0.0 ; Pen down
+G1 X22.500 Y43.874 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y44.131 F3000 ; Travel to line 18
+G0 Z0.0 ; Pen down
+G1 X42.070 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.199 Y26.750 F3000 ; Travel to line 19
+G0 Z0.0 ; Pen down
+G1 X22.500 Y44.260 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y44.389 F3000 ; Travel to line 20
+G0 Z0.0 ; Pen down
+G1 X42.328 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.585 Y26.750 F3000 ; Travel to line 21
+G0 Z0.0 ; Pen down
+G1 X22.500 Y44.646 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y44.775 F3000 ; Travel to line 22
+G0 Z0.0 ; Pen down
+G1 X42.714 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.971 Y26.750 F3000 ; Travel to line 23
+G0 Z0.0 ; Pen down
+G1 X22.500 Y45.032 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y45.161 F3000 ; Travel to line 24
+G0 Z0.0 ; Pen down
+G1 X43.100 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.229 Y26.750 F3000 ; Travel to line 25
+G0 Z0.0 ; Pen down
+G1 X22.500 Y45.290 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y45.547 F3000 ; Travel to line 26
+G0 Z0.0 ; Pen down
+G1 X43.486 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.615 Y26.750 F3000 ; Travel to line 27
+G0 Z0.0 ; Pen down
+G1 X22.500 Y45.676 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y45.934 F3000 ; Travel to line 28
+G0 Z0.0 ; Pen down
+G1 X43.873 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.001 Y26.750 F3000 ; Travel to line 29
+G0 Z0.0 ; Pen down
+G1 X22.500 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y46.320 F3000 ; Travel to line 30
+G0 Z0.0 ; Pen down
+G1 X44.388 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.516 Y26.750 F3000 ; Travel to line 31
+G0 Z0.0 ; Pen down
+G1 X22.500 Y46.449 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y46.578 F3000 ; Travel to line 32
+G0 Z0.0 ; Pen down
+G1 X44.645 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.903 Y26.750 F3000 ; Travel to line 33
+G0 Z0.0 ; Pen down
+G1 X22.500 Y46.706 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y46.835 F3000 ; Travel to line 34
+G0 Z0.0 ; Pen down
+G1 X45.031 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.289 Y26.750 F3000 ; Travel to line 35
+G0 Z0.0 ; Pen down
+G1 X22.500 Y47.093 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y47.221 F3000 ; Travel to line 36
+G0 Z0.0 ; Pen down
+G1 X45.418 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.546 Y26.750 F3000 ; Travel to line 37
+G0 Z0.0 ; Pen down
+G1 X22.500 Y47.350 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y47.608 F3000 ; Travel to line 38
+G0 Z0.0 ; Pen down
+G1 X45.804 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.932 Y26.750 F3000 ; Travel to line 39
+G0 Z0.0 ; Pen down
+G1 X22.500 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y47.994 F3000 ; Travel to line 40
+G0 Z0.0 ; Pen down
+G1 X46.190 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.319 Y26.750 F3000 ; Travel to line 41
+G0 Z0.0 ; Pen down
+G1 X22.500 Y48.123 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y48.251 F3000 ; Travel to line 42
+G0 Z0.0 ; Pen down
+G1 X46.447 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.705 Y26.750 F3000 ; Travel to line 43
+G0 Z0.0 ; Pen down
+G1 X22.500 Y48.509 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y48.638 F3000 ; Travel to line 44
+G0 Z0.0 ; Pen down
+G1 X46.962 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.220 Y26.750 F3000 ; Travel to line 45
+G0 Z0.0 ; Pen down
+G1 X22.500 Y48.895 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y49.024 F3000 ; Travel to line 46
+G0 Z0.0 ; Pen down
+G1 X47.349 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.606 Y26.750 F3000 ; Travel to line 47
+G0 Z0.0 ; Pen down
+G1 X22.500 Y49.281 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y49.410 F3000 ; Travel to line 48
+G0 Z0.0 ; Pen down
+G1 X47.735 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.864 Y26.750 F3000 ; Travel to line 49
+G0 Z0.0 ; Pen down
+G1 X22.500 Y49.539 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y49.796 F3000 ; Travel to line 50
+G0 Z0.0 ; Pen down
+G1 X48.121 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.250 Y26.750 F3000 ; Travel to line 51
+G0 Z0.0 ; Pen down
+G1 X22.500 Y49.925 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y50.183 F3000 ; Travel to line 52
+G0 Z0.0 ; Pen down
+G1 X48.508 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.636 Y26.750 F3000 ; Travel to line 53
+G0 Z0.0 ; Pen down
+G1 X22.500 Y50.311 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y50.440 F3000 ; Travel to line 54
+G0 Z0.0 ; Pen down
+G1 X48.765 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.023 Y26.750 F3000 ; Travel to line 55
+G0 Z0.0 ; Pen down
+G1 X22.500 Y50.697 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y50.826 F3000 ; Travel to line 56
+G0 Z0.0 ; Pen down
+G1 X49.151 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.409 Y26.750 F3000 ; Travel to line 57
+G0 Z0.0 ; Pen down
+G1 X22.500 Y51.084 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y51.212 F3000 ; Travel to line 58
+G0 Z0.0 ; Pen down
+G1 X49.538 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.924 Y26.750 F3000 ; Travel to line 59
+G0 Z0.0 ; Pen down
+G1 X22.500 Y51.470 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y51.599 F3000 ; Travel to line 60
+G0 Z0.0 ; Pen down
+G1 X50.053 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.181 Y26.750 F3000 ; Travel to line 61
+G0 Z0.0 ; Pen down
+G1 X22.500 Y51.727 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y51.985 F3000 ; Travel to line 62
+G0 Z0.0 ; Pen down
+G1 X50.439 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.568 Y26.750 F3000 ; Travel to line 63
+G0 Z0.0 ; Pen down
+G1 X22.500 Y52.114 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y52.371 F3000 ; Travel to line 64
+G0 Z0.0 ; Pen down
+G1 X50.825 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.954 Y26.750 F3000 ; Travel to line 65
+G0 Z0.0 ; Pen down
+G1 X22.500 Y52.500 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y52.629 F3000 ; Travel to line 66
+G0 Z0.0 ; Pen down
+G1 X51.083 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.340 Y26.750 F3000 ; Travel to line 67
+G0 Z0.0 ; Pen down
+G1 X22.500 Y52.886 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y53.015 F3000 ; Travel to line 68
+G0 Z0.0 ; Pen down
+G1 X51.469 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.726 Y26.750 F3000 ; Travel to line 69
+G0 Z0.0 ; Pen down
+G1 X22.500 Y53.273 F1000
+G1 X22.500 Y53.273 F1000
+G1 X51.855 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.984 Y26.750 F3000 ; Travel to line 70
+G0 Z0.0 ; Pen down
+G1 X22.500 Y53.401 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y53.659 F3000 ; Travel to line 71
+G0 Z0.0 ; Pen down
+G1 X52.241 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.370 Y26.750 F3000 ; Travel to line 72
+G0 Z0.0 ; Pen down
+G1 X22.500 Y53.788 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y54.045 F3000 ; Travel to line 73
+G0 Z0.0 ; Pen down
+G1 X52.627 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.756 Y26.750 F3000 ; Travel to line 74
+G0 Z0.0 ; Pen down
+G1 X22.500 Y54.174 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y54.431 F3000 ; Travel to line 75
+G0 Z0.0 ; Pen down
+G1 X53.142 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.271 Y26.750 F3000 ; Travel to line 76
+G0 Z0.0 ; Pen down
+G1 X22.500 Y54.560 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y54.689 F3000 ; Travel to line 77
+G0 Z0.0 ; Pen down
+G1 X53.400 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.657 Y26.750 F3000 ; Travel to line 78
+G0 Z0.0 ; Pen down
+G1 X22.500 Y54.946 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y55.075 F3000 ; Travel to line 79
+G0 Z0.0 ; Pen down
+G1 X53.786 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.044 Y26.750 F3000 ; Travel to line 80
+G0 Z0.0 ; Pen down
+G1 X22.500 Y55.333 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y55.461 F3000 ; Travel to line 81
+G0 Z0.0 ; Pen down
+G1 X54.172 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.301 Y26.750 F3000 ; Travel to line 82
+G0 Z0.0 ; Pen down
+G1 X22.500 Y55.590 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y55.848 F3000 ; Travel to line 83
+G0 Z0.0 ; Pen down
+G1 X54.559 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.688 Y26.750 F3000 ; Travel to line 84
+G0 Z0.0 ; Pen down
+G1 X22.500 Y55.976 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y56.234 F3000 ; Travel to line 85
+G0 Z0.0 ; Pen down
+G1 X54.945 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.074 Y26.750 F3000 ; Travel to line 86
+G0 Z0.0 ; Pen down
+G1 X22.500 Y56.363 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y56.620 F3000 ; Travel to line 87
+G0 Z0.0 ; Pen down
+G1 X55.331 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.460 Y26.750 F3000 ; Travel to line 88
+G0 Z0.0 ; Pen down
+G1 X22.500 Y56.749 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y56.878 F3000 ; Travel to line 89
+G0 Z0.0 ; Pen down
+G1 X55.589 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.846 Y26.750 F3000 ; Travel to line 90
+G0 Z0.0 ; Pen down
+G1 X22.500 Y57.135 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y57.264 F3000 ; Travel to line 91
+G0 Z0.0 ; Pen down
+G1 X55.975 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.233 Y26.750 F3000 ; Travel to line 92
+G0 Z0.0 ; Pen down
+G1 X22.500 Y57.521 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y57.650 F3000 ; Travel to line 93
+G0 Z0.0 ; Pen down
+G1 X56.490 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.619 Y26.750 F3000 ; Travel to line 94
+G0 Z0.0 ; Pen down
+G1 X22.500 Y57.779 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y58.036 F3000 ; Travel to line 95
+G0 Z0.0 ; Pen down
+G1 X56.876 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.005 Y26.750 F3000 ; Travel to line 96
+G0 Z0.0 ; Pen down
+G1 X22.500 Y58.165 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y58.422 F3000 ; Travel to line 97
+G0 Z0.0 ; Pen down
+G1 X57.263 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.391 Y26.750 F3000 ; Travel to line 98
+G0 Z0.0 ; Pen down
+G1 X22.500 Y58.551 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y58.809 F3000 ; Travel to line 99
+G0 Z0.0 ; Pen down
+G1 X57.649 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.778 Y26.750 F3000 ; Travel to line 100
+G0 Z0.0 ; Pen down
+G1 X22.500 Y58.938 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y59.066 F3000 ; Travel to line 101
+G0 Z0.0 ; Pen down
+G1 X57.906 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.164 Y26.750 F3000 ; Travel to line 102
+G0 Z0.0 ; Pen down
+G1 X22.500 Y59.324 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y59.453 F3000 ; Travel to line 103
+G0 Z0.0 ; Pen down
+G1 X58.293 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.550 Y26.750 F3000 ; Travel to line 104
+G0 Z0.0 ; Pen down
+G1 X22.500 Y59.710 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y59.839 F3000 ; Travel to line 105
+G0 Z0.0 ; Pen down
+G1 X58.679 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.808 Y26.750 F3000 ; Travel to line 106
+G0 Z0.0 ; Pen down
+G1 X22.500 Y59.968 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y60.225 F3000 ; Travel to line 107
+G0 Z0.0 ; Pen down
+G1 X59.065 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.194 Y26.750 F3000 ; Travel to line 108
+G0 Z0.0 ; Pen down
+G1 X22.500 Y60.354 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y60.611 F3000 ; Travel to line 109
+G0 Z0.0 ; Pen down
+G1 X59.451 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.580 Y26.750 F3000 ; Travel to line 110
+G0 Z0.0 ; Pen down
+G1 X22.500 Y60.740 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y60.869 F3000 ; Travel to line 111
+G0 Z0.0 ; Pen down
+G1 X59.709 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.966 Y26.750 F3000 ; Travel to line 112
+G0 Z0.0 ; Pen down
+G1 X22.500 Y61.126 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y61.255 F3000 ; Travel to line 113
+G0 Z0.0 ; Pen down
+G1 X60.224 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.481 Y26.750 F3000 ; Travel to line 114
+G0 Z0.0 ; Pen down
+G1 X22.500 Y61.384 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y61.513 F3000 ; Travel to line 115
+G0 Z0.0 ; Pen down
+G1 X60.610 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.867 Y26.750 F3000 ; Travel to line 116
+G0 Z0.0 ; Pen down
+G1 X22.500 Y61.770 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y61.899 F3000 ; Travel to line 117
+G0 Z0.0 ; Pen down
+G1 X60.996 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y26.750 F3000 ; Travel to line 118
+G0 Z0.0 ; Pen down
+G1 X22.500 Y62.028 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y62.285 F3000 ; Travel to line 119
+G0 Z0.0 ; Pen down
+G1 X61.383 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.511 Y26.750 F3000 ; Travel to line 120
+G0 Z0.0 ; Pen down
+G1 X22.500 Y62.414 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y62.671 F3000 ; Travel to line 121
+G0 Z0.0 ; Pen down
+G1 X61.769 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.898 Y26.750 F3000 ; Travel to line 122
+G0 Z0.0 ; Pen down
+G1 X22.500 Y62.800 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y62.929 F3000 ; Travel to line 123
+G0 Z0.0 ; Pen down
+G1 X62.026 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.284 Y26.750 F3000 ; Travel to line 124
+G0 Z0.0 ; Pen down
+G1 X22.500 Y63.186 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y63.315 F3000 ; Travel to line 125
+G0 Z0.0 ; Pen down
+G1 X62.413 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.670 Y26.750 F3000 ; Travel to line 126
+G0 Z0.0 ; Pen down
+G1 X22.500 Y63.573 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y63.701 F3000 ; Travel to line 127
+G0 Z0.0 ; Pen down
+G1 X62.799 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.056 Y26.750 F3000 ; Travel to line 128
+G0 Z0.0 ; Pen down
+G1 X22.500 Y63.959 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y64.088 F3000 ; Travel to line 129
+G0 Z0.0 ; Pen down
+G1 X63.185 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.314 Y26.750 F3000 ; Travel to line 130
+G0 Z0.0 ; Pen down
+G1 X22.500 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y64.474 F3000 ; Travel to line 131
+G0 Z0.0 ; Pen down
+G1 X63.571 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.700 Y26.750 F3000 ; Travel to line 132
+G0 Z0.0 ; Pen down
+G1 X22.500 Y64.602 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y64.860 F3000 ; Travel to line 133
+G0 Z0.0 ; Pen down
+G1 X63.958 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.086 Y26.750 F3000 ; Travel to line 134
+G0 Z0.0 ; Pen down
+G1 X22.500 Y64.989 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y65.118 F3000 ; Travel to line 135
+G0 Z0.0 ; Pen down
+G1 X64.215 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.601 Y26.750 F3000 ; Travel to line 136
+G0 Z0.0 ; Pen down
+G1 X22.500 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y65.504 F3000 ; Travel to line 137
+G0 Z0.0 ; Pen down
+G1 X64.730 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.988 Y26.750 F3000 ; Travel to line 138
+G0 Z0.0 ; Pen down
+G1 X22.500 Y65.761 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y65.890 F3000 ; Travel to line 139
+G0 Z0.0 ; Pen down
+G1 X65.116 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.245 Y26.750 F3000 ; Travel to line 140
+G0 Z0.0 ; Pen down
+G1 X22.500 Y66.019 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y66.276 F3000 ; Travel to line 141
+G0 Z0.0 ; Pen down
+G1 X65.502 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.631 Y26.750 F3000 ; Travel to line 142
+G0 Z0.0 ; Pen down
+G1 X22.500 Y66.405 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y66.663 F3000 ; Travel to line 143
+G0 Z0.0 ; Pen down
+G1 X65.889 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.017 Y26.750 F3000 ; Travel to line 144
+G0 Z0.0 ; Pen down
+G1 X22.500 Y66.791 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y67.049 F3000 ; Travel to line 145
+G0 Z0.0 ; Pen down
+G1 X66.275 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.404 Y26.750 F3000 ; Travel to line 146
+G0 Z0.0 ; Pen down
+G1 X22.500 Y67.177 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y67.306 F3000 ; Travel to line 147
+G0 Z0.0 ; Pen down
+G1 X66.532 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.790 Y26.750 F3000 ; Travel to line 148
+G0 Z0.0 ; Pen down
+G1 X22.500 Y67.564 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y67.692 F3000 ; Travel to line 149
+G0 Z0.0 ; Pen down
+G1 X66.919 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.176 Y26.750 F3000 ; Travel to line 150
+G0 Z0.0 ; Pen down
+G1 X65.502 Y28.295 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.889 Y28.038 F3000 ; Travel to line 151
+G0 Z0.0 ; Pen down
+G1 X67.305 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.434 Y26.750 F3000 ; Travel to line 152
+G0 Z0.0 ; Pen down
+G1 X66.146 Y27.909 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.919 Y27.523 F3000 ; Travel to line 153
+G0 Z0.0 ; Pen down
+G1 X67.691 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.820 Y26.750 F3000 ; Travel to line 154
+G0 Z0.0 ; Pen down
+G1 X67.176 Y27.394 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.562 Y27.265 F3000 ; Travel to line 155
+G0 Z0.0 ; Pen down
+G1 X68.078 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.206 Y26.750 F3000 ; Travel to line 156
+G0 Z0.0 ; Pen down
+G1 X67.820 Y27.136 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.206 Y27.008 F3000 ; Travel to line 157
+G0 Z0.0 ; Pen down
+G1 X68.464 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.593 Y26.750 F3000 ; Travel to line 158
+G0 Z0.0 ; Pen down
+G1 X68.335 Y27.008 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.464 Y27.008 F3000 ; Travel to line 159
+G0 Z0.0 ; Pen down
+G1 X68.721 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.850 Y26.879 F3000 ; Travel to line 160
+G0 Z0.0 ; Pen down
+G1 X68.979 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.979 Y26.879 F3000 ; Travel to line 161
+G0 Z0.0 ; Pen down
+G1 X69.236 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.365 Y26.750 F3000 ; Travel to line 162
+G0 Z0.0 ; Pen down
+G1 X69.494 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.455 Y26.879 F3000 ; Travel to line 163
+G0 Z0.0 ; Pen down
+G1 X72.584 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.713 Y26.750 F3000 ; Travel to line 164
+G0 Z0.0 ; Pen down
+G1 X72.584 Y26.879 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.713 Y26.879 F3000 ; Travel to line 165
+G0 Z0.0 ; Pen down
+G1 X72.841 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.970 Y26.879 F3000 ; Travel to line 166
+G0 Z0.0 ; Pen down
+G1 X73.099 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.227 Y26.750 F3000 ; Travel to line 167
+G0 Z0.0 ; Pen down
+G1 X73.099 Y26.879 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.227 Y27.008 F3000 ; Travel to line 168
+G0 Z0.0 ; Pen down
+G1 X73.485 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.614 Y26.750 F3000 ; Travel to line 169
+G0 Z0.0 ; Pen down
+G1 X73.356 Y27.008 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.614 Y27.008 F3000 ; Travel to line 170
+G0 Z0.0 ; Pen down
+G1 X73.871 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.000 Y26.750 F3000 ; Travel to line 171
+G0 Z0.0 ; Pen down
+G1 X73.614 Y27.136 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.743 Y27.136 F3000 ; Travel to line 172
+G0 Z0.0 ; Pen down
+G1 X74.129 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.515 Y26.750 F3000 ; Travel to line 173
+G0 Z0.0 ; Pen down
+G1 X74.000 Y27.136 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.000 Y27.265 F3000 ; Travel to line 174
+G0 Z0.0 ; Pen down
+G1 X74.644 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.901 Y26.750 F3000 ; Travel to line 175
+G0 Z0.0 ; Pen down
+G1 X74.258 Y27.265 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.258 Y27.394 F3000 ; Travel to line 176
+G0 Z0.0 ; Pen down
+G1 X75.030 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.159 Y26.750 F3000 ; Travel to line 177
+G0 Z0.0 ; Pen down
+G1 X74.386 Y27.394 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.644 Y27.394 F3000 ; Travel to line 178
+G0 Z0.0 ; Pen down
+G1 X75.416 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.545 Y26.750 F3000 ; Travel to line 179
+G0 Z0.0 ; Pen down
+G1 X74.644 Y27.523 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.901 Y27.523 F3000 ; Travel to line 180
+G0 Z0.0 ; Pen down
+G1 X75.802 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.931 Y26.750 F3000 ; Travel to line 181
+G0 Z0.0 ; Pen down
+G1 X74.901 Y27.651 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.159 Y27.651 F3000 ; Travel to line 182
+G0 Z0.0 ; Pen down
+G1 X76.189 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.317 Y26.750 F3000 ; Travel to line 183
+G0 Z0.0 ; Pen down
+G1 X75.159 Y27.780 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.288 Y27.780 F3000 ; Travel to line 184
+G0 Z0.0 ; Pen down
+G1 X76.446 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.704 Y26.750 F3000 ; Travel to line 185
+G0 Z0.0 ; Pen down
+G1 X75.416 Y27.909 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.545 Y27.909 F3000 ; Travel to line 186
+G0 Z0.0 ; Pen down
+G1 X76.832 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.090 Y26.750 F3000 ; Travel to line 187
+G0 Z0.0 ; Pen down
+G1 X75.674 Y28.038 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.802 Y28.038 F3000 ; Travel to line 188
+G0 Z0.0 ; Pen down
+G1 X77.219 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.347 Y26.750 F3000 ; Travel to line 189
+G0 Z0.0 ; Pen down
+G1 X75.931 Y28.038 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.060 Y28.166 F3000 ; Travel to line 190
+G0 Z0.0 ; Pen down
+G1 X77.605 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.734 Y26.750 F3000 ; Travel to line 191
+G0 Z0.0 ; Pen down
+G1 X76.060 Y28.295 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.317 Y28.295 F3000 ; Travel to line 192
+G0 Z0.0 ; Pen down
+G1 X77.991 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.120 Y26.750 F3000 ; Travel to line 193
+G0 Z0.0 ; Pen down
+G1 X76.317 Y28.424 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.446 Y28.424 F3000 ; Travel to line 194
+G0 Z0.0 ; Pen down
+G1 X78.249 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.506 Y26.750 F3000 ; Travel to line 195
+G0 Z0.0 ; Pen down
+G1 X76.575 Y28.553 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.704 Y28.553 F3000 ; Travel to line 196
+G0 Z0.0 ; Pen down
+G1 X78.635 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.892 Y26.750 F3000 ; Travel to line 197
+G0 Z0.0 ; Pen down
+G1 X76.832 Y28.681 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.832 Y28.810 F3000 ; Travel to line 198
+G0 Z0.0 ; Pen down
+G1 X79.021 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.279 Y26.750 F3000 ; Travel to line 199
+G0 Z0.0 ; Pen down
+G1 X76.961 Y28.939 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.090 Y28.939 F3000 ; Travel to line 200
+G0 Z0.0 ; Pen down
+G1 X79.407 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.536 Y26.750 F3000 ; Travel to line 201
+G0 Z0.0 ; Pen down
+G1 X77.090 Y29.067 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.219 Y29.196 F3000 ; Travel to line 202
+G0 Z0.0 ; Pen down
+G1 X79.794 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.922 Y26.750 F3000 ; Travel to line 203
+G0 Z0.0 ; Pen down
+G1 X77.347 Y29.196 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.476 Y29.325 F3000 ; Travel to line 204
+G0 Z0.0 ; Pen down
+G1 X80.180 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.309 Y26.750 F3000 ; Travel to line 205
+G0 Z0.0 ; Pen down
+G1 X77.605 Y29.325 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.605 Y29.454 F3000 ; Travel to line 206
+G0 Z0.0 ; Pen down
+G1 X80.566 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.824 Y26.750 F3000 ; Travel to line 207
+G0 Z0.0 ; Pen down
+G1 X77.734 Y29.582 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.862 Y29.582 F3000 ; Travel to line 208
+G0 Z0.0 ; Pen down
+G1 X80.953 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.210 Y26.750 F3000 ; Travel to line 209
+G0 Z0.0 ; Pen down
+G1 X77.862 Y29.840 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.991 Y29.840 F3000 ; Travel to line 210
+G0 Z0.0 ; Pen down
+G1 X81.339 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.596 Y26.750 F3000 ; Travel to line 211
+G0 Z0.0 ; Pen down
+G1 X78.120 Y29.969 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.120 Y30.098 F3000 ; Travel to line 212
+G0 Z0.0 ; Pen down
+G1 X81.725 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.854 Y26.750 F3000 ; Travel to line 213
+G0 Z0.0 ; Pen down
+G1 X78.249 Y30.098 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.377 Y30.226 F3000 ; Travel to line 214
+G0 Z0.0 ; Pen down
+G1 X82.111 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X82.240 Y26.750 F3000 ; Travel to line 215
+G0 Z0.0 ; Pen down
+G1 X78.377 Y30.355 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.506 Y30.484 F3000 ; Travel to line 216
+G0 Z0.0 ; Pen down
+G1 X82.498 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X82.626 Y26.750 F3000 ; Travel to line 217
+G0 Z0.0 ; Pen down
+G1 X78.635 Y30.484 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.635 Y30.613 F3000 ; Travel to line 218
+G0 Z0.0 ; Pen down
+G1 X82.755 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.013 Y26.750 F3000 ; Travel to line 219
+G0 Z0.0 ; Pen down
+G1 X78.764 Y30.741 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.764 Y30.870 F3000 ; Travel to line 220
+G0 Z0.0 ; Pen down
+G1 X83.141 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.399 Y26.750 F3000 ; Travel to line 221
+G0 Z0.0 ; Pen down
+G1 X78.892 Y30.999 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.892 Y31.128 F3000 ; Travel to line 222
+G0 Z0.0 ; Pen down
+G1 X83.528 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.656 Y26.750 F3000 ; Travel to line 223
+G0 Z0.0 ; Pen down
+G1 X79.021 Y31.128 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.021 Y31.256 F3000 ; Travel to line 224
+G0 Z0.0 ; Pen down
+G1 X83.914 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X84.043 Y26.750 F3000 ; Travel to line 225
+G0 Z0.0 ; Pen down
+G1 X79.150 Y31.256 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.150 Y31.514 F3000 ; Travel to line 226
+G0 Z0.0 ; Pen down
+G1 X84.300 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X84.429 Y26.750 F3000 ; Travel to line 227
+G0 Z0.0 ; Pen down
+G1 X79.279 Y31.514 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.279 Y31.771 F3000 ; Travel to line 228
+G0 Z0.0 ; Pen down
+G1 X84.686 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X84.815 Y26.750 F3000 ; Travel to line 229
+G0 Z0.0 ; Pen down
+G1 X79.407 Y31.771 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.407 Y31.900 F3000 ; Travel to line 230
+G0 Z0.0 ; Pen down
+G1 X84.944 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.201 Y26.750 F3000 ; Travel to line 231
+G0 Z0.0 ; Pen down
+G1 X79.536 Y32.029 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.536 Y32.157 F3000 ; Travel to line 232
+G0 Z0.0 ; Pen down
+G1 X85.330 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.588 Y26.750 F3000 ; Travel to line 233
+G0 Z0.0 ; Pen down
+G1 X79.665 Y32.286 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.665 Y32.415 F3000 ; Travel to line 234
+G0 Z0.0 ; Pen down
+G1 X85.716 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.845 Y26.750 F3000 ; Travel to line 235
+G0 Z0.0 ; Pen down
+G1 X79.665 Y32.544 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.794 Y32.672 F3000 ; Travel to line 236
+G0 Z0.0 ; Pen down
+G1 X86.103 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.231 Y26.750 F3000 ; Travel to line 237
+G0 Z0.0 ; Pen down
+G1 X79.794 Y32.801 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.922 Y32.930 F3000 ; Travel to line 238
+G0 Z0.0 ; Pen down
+G1 X86.489 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.618 Y26.750 F3000 ; Travel to line 239
+G0 Z0.0 ; Pen down
+G1 X79.922 Y33.059 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.051 Y33.188 F3000 ; Travel to line 240
+G0 Z0.0 ; Pen down
+G1 X86.875 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y26.750 F3000 ; Travel to line 241
+G0 Z0.0 ; Pen down
+G1 X80.051 Y33.316 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.051 Y33.445 F3000 ; Travel to line 242
+G0 Z0.0 ; Pen down
+G1 X87.133 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.519 Y26.750 F3000 ; Travel to line 243
+G0 Z0.0 ; Pen down
+G1 X80.180 Y33.574 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.180 Y33.703 F3000 ; Travel to line 244
+G0 Z0.0 ; Pen down
+G1 X87.648 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.905 Y26.750 F3000 ; Travel to line 245
+G0 Z0.0 ; Pen down
+G1 X80.180 Y33.960 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.180 Y34.089 F3000 ; Travel to line 246
+G0 Z0.0 ; Pen down
+G1 X88.034 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.163 Y26.750 F3000 ; Travel to line 247
+G0 Z0.0 ; Pen down
+G1 X80.309 Y34.089 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.309 Y34.346 F3000 ; Travel to line 248
+G0 Z0.0 ; Pen down
+G1 X88.420 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.549 Y26.750 F3000 ; Travel to line 249
+G0 Z0.0 ; Pen down
+G1 X80.309 Y34.475 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y34.861 F3000 ; Travel to line 250
+G0 Z0.0 ; Pen down
+G1 X89.192 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.321 Y26.750 F3000 ; Travel to line 251
+G0 Z0.0 ; Pen down
+G1 X80.438 Y34.990 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y35.119 F3000 ; Travel to line 252
+G0 Z0.0 ; Pen down
+G1 X89.450 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.707 Y26.750 F3000 ; Travel to line 253
+G0 Z0.0 ; Pen down
+G1 X80.438 Y35.376 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y35.505 F3000 ; Travel to line 254
+G0 Z0.0 ; Pen down
+G1 X89.836 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.094 Y26.750 F3000 ; Travel to line 255
+G0 Z0.0 ; Pen down
+G1 X80.438 Y35.763 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y35.891 F3000 ; Travel to line 256
+G0 Z0.0 ; Pen down
+G1 X90.222 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.351 Y26.750 F3000 ; Travel to line 257
+G0 Z0.0 ; Pen down
+G1 X80.438 Y36.020 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y36.278 F3000 ; Travel to line 258
+G0 Z0.0 ; Pen down
+G1 X90.609 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.737 Y26.750 F3000 ; Travel to line 259
+G0 Z0.0 ; Pen down
+G1 X80.566 Y36.278 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y36.664 F3000 ; Travel to line 260
+G0 Z0.0 ; Pen down
+G1 X90.995 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.124 Y26.750 F3000 ; Travel to line 261
+G0 Z0.0 ; Pen down
+G1 X80.438 Y36.793 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y36.921 F3000 ; Travel to line 262
+G0 Z0.0 ; Pen down
+G1 X91.252 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.510 Y26.750 F3000 ; Travel to line 263
+G0 Z0.0 ; Pen down
+G1 X80.438 Y37.179 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y37.307 F3000 ; Travel to line 264
+G0 Z0.0 ; Pen down
+G1 X91.639 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.896 Y26.750 F3000 ; Travel to line 265
+G0 Z0.0 ; Pen down
+G1 X80.438 Y37.565 F1000
+G1 X80.438 Y37.565 F1000
+G1 X92.025 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.154 Y26.750 F3000 ; Travel to line 266
+G0 Z0.0 ; Pen down
+G1 X80.438 Y37.694 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.438 Y37.822 F3000 ; Travel to line 267
+G0 Z0.0 ; Pen down
+G1 X92.282 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.411 Y26.750 F3000 ; Travel to line 268
+G0 Z0.0 ; Pen down
+G1 X80.309 Y38.080 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.309 Y38.466 F3000 ; Travel to line 269
+G0 Z0.0 ; Pen down
+G1 X92.926 Y26.750 F1000
+G1 X92.926 Y26.750 F1000
+G1 X80.309 Y38.466 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.180 Y38.724 F3000 ; Travel to line 270
+G0 Z0.0 ; Pen down
+G1 X93.055 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.669 Y26.750 F3000 ; Travel to line 271
+G0 Z0.0 ; Pen down
+G1 X80.309 Y38.209 F1000
+G1 X80.309 Y38.209 F1000
+G1 X92.540 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.570 Y26.750 F3000 ; Travel to line 272
+G0 Z0.0 ; Pen down
+G1 X80.051 Y39.239 F1000
+G1 X80.051 Y39.239 F1000
+G1 X93.699 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.828 Y26.750 F3000 ; Travel to line 273
+G0 Z0.0 ; Pen down
+G1 X80.051 Y39.367 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.180 Y38.852 F3000 ; Travel to line 274
+G0 Z0.0 ; Pen down
+G1 X93.312 Y26.750 F1000
+G1 X93.312 Y26.750 F1000
+G1 X80.180 Y38.852 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.794 Y39.883 F3000 ; Travel to line 275
+G0 Z0.0 ; Pen down
+G1 X94.214 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.343 Y26.750 F3000 ; Travel to line 276
+G0 Z0.0 ; Pen down
+G1 X79.794 Y40.011 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.665 Y40.269 F3000 ; Travel to line 277
+G0 Z0.0 ; Pen down
+G1 X94.471 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.600 Y26.750 F3000 ; Travel to line 278
+G0 Z0.0 ; Pen down
+G1 X79.536 Y40.526 F1000
+G1 X79.536 Y40.526 F1000
+G1 X94.729 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.858 Y26.750 F3000 ; Travel to line 279
+G0 Z0.0 ; Pen down
+G1 X79.407 Y40.784 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.279 Y41.041 F3000 ; Travel to line 280
+G0 Z0.0 ; Pen down
+G1 X94.986 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.373 Y26.750 F3000 ; Travel to line 281
+G0 Z0.0 ; Pen down
+G1 X78.892 Y41.685 F1000
+G1 X78.892 Y41.685 F1000
+G1 X95.630 Y26.750 F1000
+G1 X95.630 Y26.750 F1000
+G1 X78.635 Y42.071 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.150 Y41.299 F3000 ; Travel to line 282
+G0 Z0.0 ; Pen down
+G1 X95.244 Y26.750 F1000
+G1 X95.244 Y26.750 F1000
+G1 X79.150 Y41.299 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.446 Y44.260 F3000 ; Travel to line 283
+G0 Z0.0 ; Pen down
+G1 X60.996 Y58.036 F1000
+G1 X60.996 Y58.036 F1000
+G1 X76.060 Y44.517 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.644 Y45.290 F3000 ; Travel to line 284
+G0 Z0.0 ; Pen down
+G1 X61.125 Y57.521 F1000
+G1 X61.125 Y57.521 F1000
+G1 X74.901 Y45.161 F1000
+G1 X74.901 Y45.161 F1000
+G1 X61.125 Y57.650 F1000
+G1 X61.125 Y57.650 F1000
+G1 X75.416 Y44.904 F1000
+G1 X75.416 Y44.904 F1000
+G1 X61.125 Y57.779 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y57.135 F3000 ; Travel to line 285
+G0 Z0.0 ; Pen down
+G1 X74.000 Y45.547 F1000
+G1 X74.000 Y45.547 F1000
+G1 X61.254 Y57.006 F1000
+G1 X61.254 Y57.006 F1000
+G1 X73.743 Y45.676 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.614 Y45.676 F3000 ; Travel to line 286
+G0 Z0.0 ; Pen down
+G1 X61.254 Y56.878 F1000
+G1 X61.254 Y56.878 F1000
+G1 X73.356 Y45.805 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.227 Y45.805 F3000 ; Travel to line 287
+G0 Z0.0 ; Pen down
+G1 X61.254 Y56.749 F1000
+G1 X61.254 Y56.749 F1000
+G1 X73.099 Y45.805 F1000
+G1 X73.099 Y45.805 F1000
+G1 X61.254 Y56.620 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y56.234 F3000 ; Travel to line 288
+G0 Z0.0 ; Pen down
+G1 X72.198 Y46.062 F1000
+G1 X72.198 Y46.062 F1000
+G1 X61.254 Y56.105 F1000
+G1 X61.254 Y56.105 F1000
+G1 X72.069 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X71.940 Y46.062 F3000 ; Travel to line 289
+G0 Z0.0 ; Pen down
+G1 X61.254 Y55.976 F1000
+G1 X61.254 Y55.976 F1000
+G1 X71.811 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X71.554 Y46.062 F3000 ; Travel to line 290
+G0 Z0.0 ; Pen down
+G1 X61.383 Y55.590 F1000
+G1 X61.383 Y55.590 F1000
+G1 X71.683 Y46.062 F1000
+G1 X71.683 Y46.062 F1000
+G1 X61.254 Y55.848 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y55.333 F3000 ; Travel to line 291
+G0 Z0.0 ; Pen down
+G1 X71.039 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.910 Y46.062 F3000 ; Travel to line 292
+G0 Z0.0 ; Pen down
+G1 X61.254 Y55.204 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y54.946 F3000 ; Travel to line 293
+G0 Z0.0 ; Pen down
+G1 X70.653 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.524 Y46.062 F3000 ; Travel to line 294
+G0 Z0.0 ; Pen down
+G1 X61.254 Y54.818 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y54.689 F3000 ; Travel to line 295
+G0 Z0.0 ; Pen down
+G1 X70.395 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.138 Y46.062 F3000 ; Travel to line 296
+G0 Z0.0 ; Pen down
+G1 X61.254 Y54.431 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y54.303 F3000 ; Travel to line 297
+G0 Z0.0 ; Pen down
+G1 X70.009 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.751 Y46.062 F3000 ; Travel to line 298
+G0 Z0.0 ; Pen down
+G1 X61.254 Y54.045 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y54.045 F3000 ; Travel to line 299
+G0 Z0.0 ; Pen down
+G1 X69.623 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.494 Y46.062 F3000 ; Travel to line 300
+G0 Z0.0 ; Pen down
+G1 X61.125 Y53.916 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y53.659 F3000 ; Travel to line 301
+G0 Z0.0 ; Pen down
+G1 X69.236 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.108 Y46.062 F3000 ; Travel to line 302
+G0 Z0.0 ; Pen down
+G1 X61.125 Y53.530 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.996 Y53.401 F3000 ; Travel to line 303
+G0 Z0.0 ; Pen down
+G1 X68.979 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.850 Y45.934 F3000 ; Travel to line 304
+G0 Z0.0 ; Pen down
+G1 X60.996 Y53.273 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.996 Y53.144 F3000 ; Travel to line 305
+G0 Z0.0 ; Pen down
+G1 X68.721 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.464 Y45.934 F3000 ; Travel to line 306
+G0 Z0.0 ; Pen down
+G1 X60.996 Y52.886 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.867 Y52.886 F3000 ; Travel to line 307
+G0 Z0.0 ; Pen down
+G1 X68.464 Y45.805 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.206 Y45.805 F3000 ; Travel to line 308
+G0 Z0.0 ; Pen down
+G1 X60.867 Y52.629 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.867 Y52.500 F3000 ; Travel to line 309
+G0 Z0.0 ; Pen down
+G1 X68.078 Y45.805 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.949 Y45.676 F3000 ; Travel to line 310
+G0 Z0.0 ; Pen down
+G1 X60.739 Y52.371 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.739 Y52.242 F3000 ; Travel to line 311
+G0 Z0.0 ; Pen down
+G1 X67.820 Y45.676 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.691 Y45.676 F3000 ; Travel to line 312
+G0 Z0.0 ; Pen down
+G1 X60.610 Y52.242 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.610 Y51.985 F3000 ; Travel to line 313
+G0 Z0.0 ; Pen down
+G1 X67.562 Y45.547 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.434 Y45.547 F3000 ; Travel to line 314
+G0 Z0.0 ; Pen down
+G1 X60.610 Y51.856 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.481 Y51.727 F3000 ; Travel to line 315
+G0 Z0.0 ; Pen down
+G1 X67.305 Y45.419 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.176 Y45.419 F3000 ; Travel to line 316
+G0 Z0.0 ; Pen down
+G1 X60.481 Y51.599 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.352 Y51.599 F3000 ; Travel to line 317
+G0 Z0.0 ; Pen down
+G1 X67.047 Y45.419 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.919 Y45.290 F3000 ; Travel to line 318
+G0 Z0.0 ; Pen down
+G1 X60.352 Y51.341 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.224 Y51.341 F3000 ; Travel to line 319
+G0 Z0.0 ; Pen down
+G1 X66.790 Y45.290 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.661 Y45.161 F3000 ; Travel to line 320
+G0 Z0.0 ; Pen down
+G1 X60.224 Y51.084 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.095 Y51.084 F3000 ; Travel to line 321
+G0 Z0.0 ; Pen down
+G1 X66.404 Y45.161 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.275 Y45.032 F3000 ; Travel to line 322
+G0 Z0.0 ; Pen down
+G1 X60.095 Y50.826 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.966 Y50.826 F3000 ; Travel to line 323
+G0 Z0.0 ; Pen down
+G1 X66.146 Y45.032 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.146 Y44.904 F3000 ; Travel to line 324
+G0 Z0.0 ; Pen down
+G1 X59.966 Y50.697 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.837 Y50.569 F3000 ; Travel to line 325
+G0 Z0.0 ; Pen down
+G1 X65.889 Y44.904 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.889 Y44.775 F3000 ; Travel to line 326
+G0 Z0.0 ; Pen down
+G1 X59.837 Y50.440 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.709 Y50.311 F3000 ; Travel to line 327
+G0 Z0.0 ; Pen down
+G1 X65.631 Y44.775 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.631 Y44.646 F3000 ; Travel to line 328
+G0 Z0.0 ; Pen down
+G1 X59.709 Y50.183 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.580 Y50.183 F3000 ; Travel to line 329
+G0 Z0.0 ; Pen down
+G1 X65.502 Y44.646 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.374 Y44.517 F3000 ; Travel to line 330
+G0 Z0.0 ; Pen down
+G1 X59.451 Y50.054 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.451 Y49.925 F3000 ; Travel to line 331
+G0 Z0.0 ; Pen down
+G1 X65.245 Y44.517 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.116 Y44.389 F3000 ; Travel to line 332
+G0 Z0.0 ; Pen down
+G1 X59.322 Y49.796 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.322 Y49.668 F3000 ; Travel to line 333
+G0 Z0.0 ; Pen down
+G1 X65.116 Y44.260 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.859 Y44.260 F3000 ; Travel to line 334
+G0 Z0.0 ; Pen down
+G1 X59.194 Y49.539 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.065 Y49.539 F3000 ; Travel to line 335
+G0 Z0.0 ; Pen down
+G1 X64.859 Y44.131 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.730 Y44.131 F3000 ; Travel to line 336
+G0 Z0.0 ; Pen down
+G1 X59.065 Y49.410 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.936 Y49.281 F3000 ; Travel to line 337
+G0 Z0.0 ; Pen down
+G1 X64.601 Y44.002 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.601 Y43.874 F3000 ; Travel to line 338
+G0 Z0.0 ; Pen down
+G1 X58.808 Y49.281 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.679 Y49.153 F3000 ; Travel to line 339
+G0 Z0.0 ; Pen down
+G1 X64.472 Y43.745 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.344 Y43.745 F3000 ; Travel to line 340
+G0 Z0.0 ; Pen down
+G1 X58.679 Y49.024 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.679 Y48.895 F3000 ; Travel to line 341
+G0 Z0.0 ; Pen down
+G1 X64.344 Y43.616 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.215 Y43.488 F3000 ; Travel to line 342
+G0 Z0.0 ; Pen down
+G1 X58.550 Y48.766 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.421 Y48.766 F3000 ; Travel to line 343
+G0 Z0.0 ; Pen down
+G1 X64.086 Y43.488 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.958 Y43.359 F3000 ; Travel to line 344
+G0 Z0.0 ; Pen down
+G1 X58.293 Y48.638 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.293 Y48.509 F3000 ; Travel to line 345
+G0 Z0.0 ; Pen down
+G1 X63.829 Y43.359 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.829 Y43.230 F3000 ; Travel to line 346
+G0 Z0.0 ; Pen down
+G1 X58.164 Y48.509 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.035 Y48.380 F3000 ; Travel to line 347
+G0 Z0.0 ; Pen down
+G1 X63.700 Y43.101 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.700 Y42.973 F3000 ; Travel to line 348
+G0 Z0.0 ; Pen down
+G1 X57.906 Y48.380 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.778 Y48.251 F3000 ; Travel to line 349
+G0 Z0.0 ; Pen down
+G1 X63.571 Y42.844 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.443 Y42.844 F3000 ; Travel to line 350
+G0 Z0.0 ; Pen down
+G1 X57.778 Y48.123 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.649 Y47.994 F3000 ; Travel to line 351
+G0 Z0.0 ; Pen down
+G1 X63.314 Y42.715 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.314 Y42.586 F3000 ; Travel to line 352
+G0 Z0.0 ; Pen down
+G1 X57.520 Y47.994 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.520 Y47.865 F3000 ; Travel to line 353
+G0 Z0.0 ; Pen down
+G1 X63.185 Y42.586 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.056 Y42.458 F3000 ; Travel to line 354
+G0 Z0.0 ; Pen down
+G1 X57.391 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.263 Y47.736 F3000 ; Travel to line 355
+G0 Z0.0 ; Pen down
+G1 X63.056 Y42.329 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.928 Y42.200 F3000 ; Travel to line 356
+G0 Z0.0 ; Pen down
+G1 X57.134 Y47.608 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.005 Y47.608 F3000 ; Travel to line 357
+G0 Z0.0 ; Pen down
+G1 X62.928 Y42.071 F1000
+G1 X62.928 Y42.071 F1000
+G1 X57.005 Y47.479 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.748 Y47.479 F3000 ; Travel to line 358
+G0 Z0.0 ; Pen down
+G1 X62.799 Y41.943 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.670 Y41.814 F3000 ; Travel to line 359
+G0 Z0.0 ; Pen down
+G1 X56.748 Y47.350 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.619 Y47.221 F3000 ; Travel to line 360
+G0 Z0.0 ; Pen down
+G1 X62.670 Y41.685 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.541 Y41.685 F3000 ; Travel to line 361
+G0 Z0.0 ; Pen down
+G1 X56.490 Y47.221 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.361 Y47.093 F3000 ; Travel to line 362
+G0 Z0.0 ; Pen down
+G1 X62.413 Y41.556 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.413 Y41.428 F3000 ; Travel to line 363
+G0 Z0.0 ; Pen down
+G1 X56.233 Y47.093 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.104 Y47.093 F3000 ; Travel to line 364
+G0 Z0.0 ; Pen down
+G1 X62.413 Y41.299 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.284 Y41.170 F3000 ; Travel to line 365
+G0 Z0.0 ; Pen down
+G1 X55.975 Y46.964 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.846 Y46.964 F3000 ; Travel to line 366
+G0 Z0.0 ; Pen down
+G1 X62.284 Y41.041 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.155 Y40.913 F3000 ; Travel to line 367
+G0 Z0.0 ; Pen down
+G1 X55.718 Y46.835 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.589 Y46.835 F3000 ; Travel to line 368
+G0 Z0.0 ; Pen down
+G1 X62.155 Y40.784 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.026 Y40.784 F3000 ; Travel to line 369
+G0 Z0.0 ; Pen down
+G1 X55.589 Y46.706 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.331 Y46.706 F3000 ; Travel to line 370
+G0 Z0.0 ; Pen down
+G1 X62.026 Y40.526 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.898 Y40.526 F3000 ; Travel to line 371
+G0 Z0.0 ; Pen down
+G1 X55.331 Y46.578 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.074 Y46.578 F3000 ; Travel to line 372
+G0 Z0.0 ; Pen down
+G1 X61.898 Y40.269 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.769 Y40.269 F3000 ; Travel to line 373
+G0 Z0.0 ; Pen down
+G1 X54.945 Y46.578 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.945 Y46.449 F3000 ; Travel to line 374
+G0 Z0.0 ; Pen down
+G1 X61.769 Y40.140 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.769 Y39.883 F3000 ; Travel to line 375
+G0 Z0.0 ; Pen down
+G1 X54.688 Y46.449 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.688 Y46.320 F3000 ; Travel to line 376
+G0 Z0.0 ; Pen down
+G1 X61.640 Y39.883 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.640 Y39.625 F3000 ; Travel to line 377
+G0 Z0.0 ; Pen down
+G1 X54.430 Y46.320 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.301 Y46.320 F3000 ; Travel to line 378
+G0 Z0.0 ; Pen down
+G1 X61.511 Y39.625 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.511 Y39.367 F3000 ; Travel to line 379
+G0 Z0.0 ; Pen down
+G1 X54.172 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.044 Y46.191 F3000 ; Travel to line 380
+G0 Z0.0 ; Pen down
+G1 X61.511 Y39.239 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.383 Y39.239 F3000 ; Travel to line 381
+G0 Z0.0 ; Pen down
+G1 X53.915 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.786 Y46.062 F3000 ; Travel to line 382
+G0 Z0.0 ; Pen down
+G1 X61.383 Y38.981 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.383 Y38.852 F3000 ; Travel to line 383
+G0 Z0.0 ; Pen down
+G1 X53.657 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.400 Y46.062 F3000 ; Travel to line 384
+G0 Z0.0 ; Pen down
+G1 X61.254 Y38.724 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y38.595 F3000 ; Travel to line 385
+G0 Z0.0 ; Pen down
+G1 X53.271 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.142 Y46.062 F3000 ; Travel to line 386
+G0 Z0.0 ; Pen down
+G1 X61.254 Y38.466 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y38.209 F3000 ; Travel to line 387
+G0 Z0.0 ; Pen down
+G1 X53.014 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.885 Y45.934 F3000 ; Travel to line 388
+G0 Z0.0 ; Pen down
+G1 X61.254 Y38.080 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y37.951 F3000 ; Travel to line 389
+G0 Z0.0 ; Pen down
+G1 X52.499 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.370 Y45.934 F3000 ; Travel to line 390
+G0 Z0.0 ; Pen down
+G1 X61.125 Y37.822 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y37.436 F3000 ; Travel to line 391
+G0 Z0.0 ; Pen down
+G1 X51.855 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.984 Y45.934 F3000 ; Travel to line 392
+G0 Z0.0 ; Pen down
+G1 X61.125 Y37.565 F1000
+G1 X61.125 Y37.565 F1000
+G1 X52.113 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.598 Y45.934 F3000 ; Travel to line 393
+G0 Z0.0 ; Pen down
+G1 X61.125 Y37.179 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y37.050 F3000 ; Travel to line 394
+G0 Z0.0 ; Pen down
+G1 X51.598 Y45.805 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.211 Y45.934 F3000 ; Travel to line 395
+G0 Z0.0 ; Pen down
+G1 X61.125 Y36.793 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y36.664 F3000 ; Travel to line 396
+G0 Z0.0 ; Pen down
+G1 X51.083 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.954 Y45.934 F3000 ; Travel to line 397
+G0 Z0.0 ; Pen down
+G1 X61.125 Y36.535 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y36.278 F3000 ; Travel to line 398
+G0 Z0.0 ; Pen down
+G1 X50.696 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.568 Y45.934 F3000 ; Travel to line 399
+G0 Z0.0 ; Pen down
+G1 X61.125 Y36.149 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y35.891 F3000 ; Travel to line 400
+G0 Z0.0 ; Pen down
+G1 X50.310 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.181 Y45.934 F3000 ; Travel to line 401
+G0 Z0.0 ; Pen down
+G1 X61.125 Y35.763 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y35.634 F3000 ; Travel to line 402
+G0 Z0.0 ; Pen down
+G1 X50.053 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.538 Y46.062 F3000 ; Travel to line 403
+G0 Z0.0 ; Pen down
+G1 X61.125 Y35.376 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.125 Y35.248 F3000 ; Travel to line 404
+G0 Z0.0 ; Pen down
+G1 X49.409 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.023 Y46.191 F3000 ; Travel to line 405
+G0 Z0.0 ; Pen down
+G1 X61.125 Y34.990 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y34.733 F3000 ; Travel to line 406
+G0 Z0.0 ; Pen down
+G1 X48.894 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.508 Y46.320 F3000 ; Travel to line 407
+G0 Z0.0 ; Pen down
+G1 X61.254 Y34.604 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y34.475 F3000 ; Travel to line 408
+G0 Z0.0 ; Pen down
+G1 X48.250 Y46.449 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.992 Y46.578 F3000 ; Travel to line 409
+G0 Z0.0 ; Pen down
+G1 X61.254 Y34.346 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.383 Y33.960 F3000 ; Travel to line 410
+G0 Z0.0 ; Pen down
+G1 X47.349 Y46.835 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.091 Y46.964 F3000 ; Travel to line 411
+G0 Z0.0 ; Pen down
+G1 X61.383 Y33.831 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.511 Y33.445 F3000 ; Travel to line 412
+G0 Z0.0 ; Pen down
+G1 X46.576 Y47.221 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.190 Y47.479 F3000 ; Travel to line 413
+G0 Z0.0 ; Pen down
+G1 X61.640 Y33.188 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.769 Y32.930 F3000 ; Travel to line 414
+G0 Z0.0 ; Pen down
+G1 X45.804 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.903 Y48.509 F3000 ; Travel to line 415
+G0 Z0.0 ; Pen down
+G1 X47.220 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.486 Y50.054 F3000 ; Travel to line 416
+G0 Z0.0 ; Pen down
+G1 X22.500 Y69.495 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y69.366 F3000 ; Travel to line 417
+G0 Z0.0 ; Pen down
+G1 X44.259 Y49.153 F1000
+G1 X44.259 Y49.153 F1000
+G1 X22.500 Y69.237 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y68.980 F3000 ; Travel to line 418
+G0 Z0.0 ; Pen down
+G1 X61.898 Y32.544 F1000
+G1 X61.898 Y32.544 F1000
+G1 X22.500 Y68.851 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y68.594 F3000 ; Travel to line 419
+G0 Z0.0 ; Pen down
+G1 X62.155 Y32.029 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.284 Y31.771 F3000 ; Travel to line 420
+G0 Z0.0 ; Pen down
+G1 X22.500 Y68.465 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y68.207 F3000 ; Travel to line 421
+G0 Z0.0 ; Pen down
+G1 X62.670 Y31.128 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.928 Y30.741 F3000 ; Travel to line 422
+G0 Z0.0 ; Pen down
+G1 X22.500 Y68.079 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y67.950 F3000 ; Travel to line 423
+G0 Z0.0 ; Pen down
+G1 X63.700 Y29.840 F1000
+G0 Z3.0 ; Pen up
+
+G0 X71.296 Y46.062 F3000 ; Travel to line 424
+G0 Z0.0 ; Pen down
+G1 X61.254 Y55.590 F1000
+G1 X61.254 Y55.590 F1000
+G1 X71.425 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.455 Y45.934 F3000 ; Travel to line 425
+G0 Z0.0 ; Pen down
+G1 X61.254 Y56.363 F1000
+G1 X61.254 Y56.363 F1000
+G1 X72.584 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.713 Y45.934 F3000 ; Travel to line 426
+G0 Z0.0 ; Pen down
+G1 X61.254 Y56.491 F1000
+G1 X61.254 Y56.491 F1000
+G1 X72.841 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.258 Y45.419 F3000 ; Travel to line 427
+G0 Z0.0 ; Pen down
+G1 X61.125 Y57.392 F1000
+G1 X61.125 Y57.392 F1000
+G1 X74.386 Y45.419 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.519 Y51.856 F3000 ; Travel to line 428
+G0 Z0.0 ; Pen down
+G1 X55.718 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.589 Y78.250 F3000 ; Travel to line 429
+G0 Z0.0 ; Pen down
+G1 X87.648 Y51.599 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.390 Y52.114 F3000 ; Travel to line 430
+G0 Z0.0 ; Pen down
+G1 X55.975 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.104 Y78.250 F3000 ; Travel to line 431
+G0 Z0.0 ; Pen down
+G1 X87.390 Y52.242 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.261 Y52.500 F3000 ; Travel to line 432
+G0 Z0.0 ; Pen down
+G1 X56.361 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.619 Y78.250 F3000 ; Travel to line 433
+G0 Z0.0 ; Pen down
+G1 X87.133 Y52.886 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y53.144 F3000 ; Travel to line 434
+G0 Z0.0 ; Pen down
+G1 X56.748 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.005 Y78.250 F3000 ; Travel to line 435
+G0 Z0.0 ; Pen down
+G1 X87.004 Y53.273 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y53.401 F3000 ; Travel to line 436
+G0 Z0.0 ; Pen down
+G1 X57.134 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.263 Y78.250 F3000 ; Travel to line 437
+G0 Z0.0 ; Pen down
+G1 X86.875 Y53.659 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.875 Y53.916 F3000 ; Travel to line 438
+G0 Z0.0 ; Pen down
+G1 X57.520 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.649 Y78.250 F3000 ; Travel to line 439
+G0 Z0.0 ; Pen down
+G1 X86.875 Y54.045 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y54.689 F3000 ; Travel to line 440
+G0 Z0.0 ; Pen down
+G1 X58.293 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.421 Y78.250 F3000 ; Travel to line 441
+G0 Z0.0 ; Pen down
+G1 X86.746 Y54.818 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y54.946 F3000 ; Travel to line 442
+G0 Z0.0 ; Pen down
+G1 X58.550 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.936 Y78.250 F3000 ; Travel to line 443
+G0 Z0.0 ; Pen down
+G1 X86.746 Y55.204 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y55.333 F3000 ; Travel to line 444
+G0 Z0.0 ; Pen down
+G1 X59.065 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.322 Y78.250 F3000 ; Travel to line 445
+G0 Z0.0 ; Pen down
+G1 X86.746 Y55.590 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y55.848 F3000 ; Travel to line 446
+G0 Z0.0 ; Pen down
+G1 X59.580 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.451 Y78.250 F3000 ; Travel to line 447
+G0 Z0.0 ; Pen down
+G1 X86.618 Y55.848 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y55.976 F3000 ; Travel to line 448
+G0 Z0.0 ; Pen down
+G1 X59.837 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.966 Y78.250 F3000 ; Travel to line 449
+G0 Z0.0 ; Pen down
+G1 X86.746 Y56.105 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y56.363 F3000 ; Travel to line 450
+G0 Z0.0 ; Pen down
+G1 X60.224 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.352 Y78.250 F3000 ; Travel to line 451
+G0 Z0.0 ; Pen down
+G1 X86.746 Y56.491 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y56.749 F3000 ; Travel to line 452
+G0 Z0.0 ; Pen down
+G1 X60.610 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.739 Y78.250 F3000 ; Travel to line 453
+G0 Z0.0 ; Pen down
+G1 X86.746 Y56.878 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y57.006 F3000 ; Travel to line 454
+G0 Z0.0 ; Pen down
+G1 X60.867 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.254 Y78.250 F3000 ; Travel to line 455
+G0 Z0.0 ; Pen down
+G1 X86.746 Y57.264 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.746 Y57.392 F3000 ; Travel to line 456
+G0 Z0.0 ; Pen down
+G1 X61.383 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.640 Y78.250 F3000 ; Travel to line 457
+G0 Z0.0 ; Pen down
+G1 X86.875 Y57.521 F1000
+G1 X86.875 Y57.521 F1000
+G1 X61.769 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X61.898 Y78.250 F3000 ; Travel to line 458
+G0 Z0.0 ; Pen down
+G1 X86.875 Y57.650 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.875 Y57.907 F3000 ; Travel to line 459
+G0 Z0.0 ; Pen down
+G1 X62.155 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.284 Y78.250 F3000 ; Travel to line 460
+G0 Z0.0 ; Pen down
+G1 X86.875 Y58.036 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y58.165 F3000 ; Travel to line 461
+G0 Z0.0 ; Pen down
+G1 X62.541 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X62.670 Y78.250 F3000 ; Travel to line 462
+G0 Z0.0 ; Pen down
+G1 X87.004 Y58.294 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y58.422 F3000 ; Travel to line 463
+G0 Z0.0 ; Pen down
+G1 X62.799 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.056 Y78.250 F3000 ; Travel to line 464
+G0 Z0.0 ; Pen down
+G1 X87.133 Y58.551 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.133 Y58.680 F3000 ; Travel to line 465
+G0 Z0.0 ; Pen down
+G1 X63.314 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.571 Y78.250 F3000 ; Travel to line 466
+G0 Z0.0 ; Pen down
+G1 X87.133 Y58.938 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.261 Y58.938 F3000 ; Travel to line 467
+G0 Z0.0 ; Pen down
+G1 X63.700 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X63.958 Y78.250 F3000 ; Travel to line 468
+G0 Z0.0 ; Pen down
+G1 X87.261 Y59.195 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.390 Y59.195 F3000 ; Travel to line 469
+G0 Z0.0 ; Pen down
+G1 X64.086 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.215 Y78.250 F3000 ; Travel to line 470
+G0 Z0.0 ; Pen down
+G1 X87.390 Y59.324 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.390 Y59.453 F3000 ; Travel to line 471
+G0 Z0.0 ; Pen down
+G1 X64.472 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.601 Y78.250 F3000 ; Travel to line 472
+G0 Z0.0 ; Pen down
+G1 X87.519 Y59.581 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.519 Y59.710 F3000 ; Travel to line 473
+G0 Z0.0 ; Pen down
+G1 X64.859 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X64.988 Y78.250 F3000 ; Travel to line 474
+G0 Z0.0 ; Pen down
+G1 X87.519 Y59.839 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.648 Y59.839 F3000 ; Travel to line 475
+G0 Z0.0 ; Pen down
+G1 X65.116 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.502 Y78.250 F3000 ; Travel to line 476
+G0 Z0.0 ; Pen down
+G1 X87.648 Y60.096 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.776 Y60.096 F3000 ; Travel to line 477
+G0 Z0.0 ; Pen down
+G1 X65.631 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X65.889 Y78.250 F3000 ; Travel to line 478
+G0 Z0.0 ; Pen down
+G1 X87.776 Y60.354 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.905 Y60.354 F3000 ; Travel to line 479
+G0 Z0.0 ; Pen down
+G1 X66.017 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.275 Y78.250 F3000 ; Travel to line 480
+G0 Z0.0 ; Pen down
+G1 X87.905 Y60.611 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.034 Y60.611 F3000 ; Travel to line 481
+G0 Z0.0 ; Pen down
+G1 X66.404 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.532 Y78.250 F3000 ; Travel to line 482
+G0 Z0.0 ; Pen down
+G1 X88.034 Y60.740 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.163 Y60.869 F3000 ; Travel to line 483
+G0 Z0.0 ; Pen down
+G1 X66.790 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X66.919 Y78.250 F3000 ; Travel to line 484
+G0 Z0.0 ; Pen down
+G1 X88.163 Y60.998 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.291 Y61.126 F3000 ; Travel to line 485
+G0 Z0.0 ; Pen down
+G1 X67.176 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.434 Y78.250 F3000 ; Travel to line 486
+G0 Z0.0 ; Pen down
+G1 X88.291 Y61.255 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.420 Y61.255 F3000 ; Travel to line 487
+G0 Z0.0 ; Pen down
+G1 X67.562 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X67.820 Y78.250 F3000 ; Travel to line 488
+G0 Z0.0 ; Pen down
+G1 X88.549 Y61.384 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.549 Y61.513 F3000 ; Travel to line 489
+G0 Z0.0 ; Pen down
+G1 X67.949 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.206 Y78.250 F3000 ; Travel to line 490
+G0 Z0.0 ; Pen down
+G1 X88.678 Y61.641 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.678 Y61.770 F3000 ; Travel to line 491
+G0 Z0.0 ; Pen down
+G1 X68.335 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.464 Y78.250 F3000 ; Travel to line 492
+G0 Z0.0 ; Pen down
+G1 X88.806 Y61.770 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.935 Y61.899 F3000 ; Travel to line 493
+G0 Z0.0 ; Pen down
+G1 X68.721 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X68.850 Y78.250 F3000 ; Travel to line 494
+G0 Z0.0 ; Pen down
+G1 X88.935 Y62.028 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.064 Y62.156 F3000 ; Travel to line 495
+G0 Z0.0 ; Pen down
+G1 X69.108 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.365 Y78.250 F3000 ; Travel to line 496
+G0 Z0.0 ; Pen down
+G1 X89.192 Y62.156 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.321 Y62.285 F3000 ; Travel to line 497
+G0 Z0.0 ; Pen down
+G1 X69.623 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X69.751 Y78.250 F3000 ; Travel to line 498
+G0 Z0.0 ; Pen down
+G1 X89.321 Y62.414 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.321 Y62.543 F3000 ; Travel to line 499
+G0 Z0.0 ; Pen down
+G1 X69.880 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.138 Y78.250 F3000 ; Travel to line 500
+G0 Z0.0 ; Pen down
+G1 X89.450 Y62.671 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.579 Y62.671 F3000 ; Travel to line 501
+G0 Z0.0 ; Pen down
+G1 X70.266 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.524 Y78.250 F3000 ; Travel to line 502
+G0 Z0.0 ; Pen down
+G1 X89.707 Y62.800 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.707 Y62.929 F3000 ; Travel to line 503
+G0 Z0.0 ; Pen down
+G1 X70.653 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X70.781 Y78.250 F3000 ; Travel to line 504
+G0 Z0.0 ; Pen down
+G1 X89.836 Y62.929 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.965 Y63.058 F3000 ; Travel to line 505
+G0 Z0.0 ; Pen down
+G1 X71.168 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X71.296 Y78.250 F3000 ; Travel to line 506
+G0 Z0.0 ; Pen down
+G1 X90.094 Y63.058 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.222 Y63.186 F3000 ; Travel to line 507
+G0 Z0.0 ; Pen down
+G1 X71.554 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X71.683 Y78.250 F3000 ; Travel to line 508
+G0 Z0.0 ; Pen down
+G1 X90.222 Y63.315 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.351 Y63.444 F3000 ; Travel to line 509
+G0 Z0.0 ; Pen down
+G1 X71.940 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.069 Y78.250 F3000 ; Travel to line 510
+G0 Z0.0 ; Pen down
+G1 X90.480 Y63.444 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.480 Y63.573 F3000 ; Travel to line 511
+G0 Z0.0 ; Pen down
+G1 X72.198 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.455 Y78.250 F3000 ; Travel to line 512
+G0 Z0.0 ; Pen down
+G1 X90.609 Y63.701 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.737 Y63.701 F3000 ; Travel to line 513
+G0 Z0.0 ; Pen down
+G1 X72.584 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X72.970 Y78.250 F3000 ; Travel to line 514
+G0 Z0.0 ; Pen down
+G1 X90.866 Y63.830 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.995 Y63.830 F3000 ; Travel to line 515
+G0 Z0.0 ; Pen down
+G1 X73.099 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.227 Y78.250 F3000 ; Travel to line 516
+G0 Z0.0 ; Pen down
+G1 X90.995 Y63.959 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.252 Y63.959 F3000 ; Travel to line 517
+G0 Z0.0 ; Pen down
+G1 X73.485 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X73.614 Y78.250 F3000 ; Travel to line 518
+G0 Z0.0 ; Pen down
+G1 X91.252 Y64.088 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.381 Y64.216 F3000 ; Travel to line 519
+G0 Z0.0 ; Pen down
+G1 X73.871 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.000 Y78.250 F3000 ; Travel to line 520
+G0 Z0.0 ; Pen down
+G1 X91.510 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.639 Y64.345 F3000 ; Travel to line 521
+G0 Z0.0 ; Pen down
+G1 X74.258 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.386 Y78.250 F3000 ; Travel to line 522
+G0 Z0.0 ; Pen down
+G1 X91.767 Y64.345 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.896 Y64.345 F3000 ; Travel to line 523
+G0 Z0.0 ; Pen down
+G1 X74.644 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X74.901 Y78.250 F3000 ; Travel to line 524
+G0 Z0.0 ; Pen down
+G1 X92.154 Y64.474 F1000
+G1 X92.154 Y64.474 F1000
+G1 X75.030 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.288 Y78.250 F3000 ; Travel to line 525
+G0 Z0.0 ; Pen down
+G1 X92.411 Y64.602 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.411 Y64.731 F3000 ; Travel to line 526
+G0 Z0.0 ; Pen down
+G1 X75.416 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.545 Y78.250 F3000 ; Travel to line 527
+G0 Z0.0 ; Pen down
+G1 X92.540 Y64.731 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.669 Y64.860 F3000 ; Travel to line 528
+G0 Z0.0 ; Pen down
+G1 X75.802 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X75.931 Y78.250 F3000 ; Travel to line 529
+G0 Z0.0 ; Pen down
+G1 X92.797 Y64.860 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.055 Y64.860 F3000 ; Travel to line 530
+G0 Z0.0 ; Pen down
+G1 X76.317 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.446 Y78.250 F3000 ; Travel to line 531
+G0 Z0.0 ; Pen down
+G1 X93.055 Y64.989 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.184 Y64.989 F3000 ; Travel to line 532
+G0 Z0.0 ; Pen down
+G1 X76.575 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X76.832 Y78.250 F3000 ; Travel to line 533
+G0 Z0.0 ; Pen down
+G1 X93.312 Y65.118 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.441 Y65.118 F3000 ; Travel to line 534
+G0 Z0.0 ; Pen down
+G1 X76.961 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.219 Y78.250 F3000 ; Travel to line 535
+G0 Z0.0 ; Pen down
+G1 X93.699 Y65.118 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.699 Y65.246 F3000 ; Travel to line 536
+G0 Z0.0 ; Pen down
+G1 X77.347 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.605 Y78.250 F3000 ; Travel to line 537
+G0 Z0.0 ; Pen down
+G1 X94.085 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.214 Y65.246 F3000 ; Travel to line 538
+G0 Z0.0 ; Pen down
+G1 X77.862 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X77.991 Y78.250 F3000 ; Travel to line 539
+G0 Z0.0 ; Pen down
+G1 X94.214 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.471 Y65.375 F3000 ; Travel to line 540
+G0 Z0.0 ; Pen down
+G1 X78.249 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.377 Y78.250 F3000 ; Travel to line 541
+G0 Z0.0 ; Pen down
+G1 X94.600 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.858 Y65.375 F3000 ; Travel to line 542
+G0 Z0.0 ; Pen down
+G1 X78.635 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X78.764 Y78.250 F3000 ; Travel to line 543
+G0 Z0.0 ; Pen down
+G1 X94.858 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.986 Y65.504 F3000 ; Travel to line 544
+G0 Z0.0 ; Pen down
+G1 X78.892 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.150 Y78.250 F3000 ; Travel to line 545
+G0 Z0.0 ; Pen down
+G1 X95.373 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.501 Y65.504 F3000 ; Travel to line 546
+G0 Z0.0 ; Pen down
+G1 X79.407 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X79.665 Y78.250 F3000 ; Travel to line 547
+G0 Z0.0 ; Pen down
+G1 X95.759 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.888 Y65.504 F3000 ; Travel to line 548
+G0 Z0.0 ; Pen down
+G1 X79.794 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.051 Y78.250 F3000 ; Travel to line 549
+G0 Z0.0 ; Pen down
+G1 X96.274 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.403 Y65.504 F3000 ; Travel to line 550
+G0 Z0.0 ; Pen down
+G1 X80.180 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.309 Y78.250 F3000 ; Travel to line 551
+G0 Z0.0 ; Pen down
+G1 X96.403 Y65.633 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.789 Y65.504 F3000 ; Travel to line 552
+G0 Z0.0 ; Pen down
+G1 X80.566 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X80.695 Y78.250 F3000 ; Travel to line 553
+G0 Z0.0 ; Pen down
+G1 X96.918 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.304 Y65.504 F3000 ; Travel to line 554
+G0 Z0.0 ; Pen down
+G1 X81.081 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.210 Y78.250 F3000 ; Travel to line 555
+G0 Z0.0 ; Pen down
+G1 X97.433 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.561 Y65.504 F3000 ; Travel to line 556
+G0 Z0.0 ; Pen down
+G1 X81.339 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.596 Y78.250 F3000 ; Travel to line 557
+G0 Z0.0 ; Pen down
+G1 X97.819 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.205 Y65.375 F3000 ; Travel to line 558
+G0 Z0.0 ; Pen down
+G1 X81.725 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X81.983 Y78.250 F3000 ; Travel to line 559
+G0 Z0.0 ; Pen down
+G1 X98.463 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.591 Y65.375 F3000 ; Travel to line 560
+G0 Z0.0 ; Pen down
+G1 X82.111 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X82.369 Y78.250 F3000 ; Travel to line 561
+G0 Z0.0 ; Pen down
+G1 X98.849 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.364 Y65.118 F3000 ; Travel to line 562
+G0 Z0.0 ; Pen down
+G1 X82.626 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X82.755 Y78.250 F3000 ; Travel to line 563
+G0 Z0.0 ; Pen down
+G1 X99.493 Y65.118 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.136 Y64.860 F3000 ; Travel to line 564
+G0 Z0.0 ; Pen down
+G1 X83.013 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.141 Y78.250 F3000 ; Travel to line 565
+G0 Z0.0 ; Pen down
+G1 X100.651 Y64.602 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.780 Y65.246 F3000 ; Travel to line 566
+G0 Z0.0 ; Pen down
+G1 X112.625 Y55.590 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y55.719 F3000 ; Travel to line 567
+G0 Z0.0 ; Pen down
+G1 X83.785 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.656 Y78.250 F3000 ; Travel to line 568
+G0 Z0.0 ; Pen down
+G1 X102.196 Y63.701 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.810 Y64.345 F3000 ; Travel to line 569
+G0 Z0.0 ; Pen down
+G1 X112.625 Y55.461 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y55.204 F3000 ; Travel to line 570
+G0 Z0.0 ; Pen down
+G1 X103.741 Y62.285 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.514 Y61.384 F3000 ; Travel to line 571
+G0 Z0.0 ; Pen down
+G1 X112.625 Y55.075 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y54.818 F3000 ; Travel to line 572
+G0 Z0.0 ; Pen down
+G1 X104.771 Y60.998 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.029 Y60.611 F3000 ; Travel to line 573
+G0 Z0.0 ; Pen down
+G1 X112.625 Y54.689 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y54.431 F3000 ; Travel to line 574
+G0 Z0.0 ; Pen down
+G1 X105.157 Y60.354 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.286 Y60.096 F3000 ; Travel to line 575
+G0 Z0.0 ; Pen down
+G1 X112.625 Y54.303 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y54.174 F3000 ; Travel to line 576
+G0 Z0.0 ; Pen down
+G1 X105.415 Y59.839 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.544 Y59.581 F3000 ; Travel to line 577
+G0 Z0.0 ; Pen down
+G1 X112.625 Y54.045 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y53.916 F3000 ; Travel to line 578
+G0 Z0.0 ; Pen down
+G1 X105.672 Y59.324 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.930 Y58.680 F3000 ; Travel to line 579
+G0 Z0.0 ; Pen down
+G1 X112.625 Y53.401 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y53.530 F3000 ; Travel to line 580
+G0 Z0.0 ; Pen down
+G1 X105.801 Y58.938 F1000
+G1 X105.801 Y58.938 F1000
+G1 X112.625 Y53.659 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y53.144 F3000 ; Travel to line 581
+G0 Z0.0 ; Pen down
+G1 X106.059 Y58.294 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.059 Y58.165 F3000 ; Travel to line 582
+G0 Z0.0 ; Pen down
+G1 X112.625 Y53.015 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y52.758 F3000 ; Travel to line 583
+G0 Z0.0 ; Pen down
+G1 X106.059 Y58.036 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.188 Y57.779 F3000 ; Travel to line 584
+G0 Z0.0 ; Pen down
+G1 X112.625 Y52.629 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y52.500 F3000 ; Travel to line 585
+G0 Z0.0 ; Pen down
+G1 X106.188 Y57.650 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.188 Y57.392 F3000 ; Travel to line 586
+G0 Z0.0 ; Pen down
+G1 X112.625 Y52.242 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y52.114 F3000 ; Travel to line 587
+G0 Z0.0 ; Pen down
+G1 X106.316 Y57.135 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y56.878 F3000 ; Travel to line 588
+G0 Z0.0 ; Pen down
+G1 X112.625 Y51.985 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y51.856 F3000 ; Travel to line 589
+G0 Z0.0 ; Pen down
+G1 X106.316 Y56.749 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y56.620 F3000 ; Travel to line 590
+G0 Z0.0 ; Pen down
+G1 X112.625 Y51.599 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y51.470 F3000 ; Travel to line 591
+G0 Z0.0 ; Pen down
+G1 X106.316 Y56.491 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y56.363 F3000 ; Travel to line 592
+G0 Z0.0 ; Pen down
+G1 X112.625 Y51.341 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y51.084 F3000 ; Travel to line 593
+G0 Z0.0 ; Pen down
+G1 X106.316 Y56.105 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y55.976 F3000 ; Travel to line 594
+G0 Z0.0 ; Pen down
+G1 X112.625 Y50.955 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y50.697 F3000 ; Travel to line 595
+G0 Z0.0 ; Pen down
+G1 X106.445 Y55.590 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y55.590 F3000 ; Travel to line 596
+G0 Z0.0 ; Pen down
+G1 X112.625 Y50.569 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y50.440 F3000 ; Travel to line 597
+G0 Z0.0 ; Pen down
+G1 X106.316 Y55.461 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y55.204 F3000 ; Travel to line 598
+G0 Z0.0 ; Pen down
+G1 X112.625 Y50.183 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y50.054 F3000 ; Travel to line 599
+G0 Z0.0 ; Pen down
+G1 X106.316 Y55.075 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y54.946 F3000 ; Travel to line 600
+G0 Z0.0 ; Pen down
+G1 X112.625 Y49.796 F1000
+G1 X112.625 Y49.796 F1000
+G1 X106.316 Y54.818 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y54.560 F3000 ; Travel to line 601
+G0 Z0.0 ; Pen down
+G1 X112.625 Y49.539 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y49.410 F3000 ; Travel to line 602
+G0 Z0.0 ; Pen down
+G1 X106.316 Y54.431 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.316 Y54.303 F3000 ; Travel to line 603
+G0 Z0.0 ; Pen down
+G1 X112.625 Y49.281 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y49.024 F3000 ; Travel to line 604
+G0 Z0.0 ; Pen down
+G1 X106.316 Y54.045 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.188 Y54.045 F3000 ; Travel to line 605
+G0 Z0.0 ; Pen down
+G1 X112.625 Y48.895 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y48.638 F3000 ; Travel to line 606
+G0 Z0.0 ; Pen down
+G1 X106.188 Y53.788 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.188 Y53.659 F3000 ; Travel to line 607
+G0 Z0.0 ; Pen down
+G1 X112.625 Y48.509 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y48.380 F3000 ; Travel to line 608
+G0 Z0.0 ; Pen down
+G1 X106.188 Y53.530 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.059 Y53.401 F3000 ; Travel to line 609
+G0 Z0.0 ; Pen down
+G1 X112.625 Y48.123 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y47.994 F3000 ; Travel to line 610
+G0 Z0.0 ; Pen down
+G1 X106.059 Y53.273 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.059 Y53.015 F3000 ; Travel to line 611
+G0 Z0.0 ; Pen down
+G1 X112.625 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y47.350 F3000 ; Travel to line 612
+G0 Z0.0 ; Pen down
+G1 X105.930 Y52.629 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.930 Y52.500 F3000 ; Travel to line 613
+G0 Z0.0 ; Pen down
+G1 X112.625 Y47.221 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y46.964 F3000 ; Travel to line 614
+G0 Z0.0 ; Pen down
+G1 X105.801 Y52.371 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.801 Y52.242 F3000 ; Travel to line 615
+G0 Z0.0 ; Pen down
+G1 X112.625 Y46.835 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y46.578 F3000 ; Travel to line 616
+G0 Z0.0 ; Pen down
+G1 X105.672 Y52.114 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.672 Y51.985 F3000 ; Travel to line 617
+G0 Z0.0 ; Pen down
+G1 X112.625 Y46.449 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y46.320 F3000 ; Travel to line 618
+G0 Z0.0 ; Pen down
+G1 X105.672 Y51.856 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.544 Y51.727 F3000 ; Travel to line 619
+G0 Z0.0 ; Pen down
+G1 X112.625 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y45.934 F3000 ; Travel to line 620
+G0 Z0.0 ; Pen down
+G1 X105.544 Y51.599 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.415 Y51.470 F3000 ; Travel to line 621
+G0 Z0.0 ; Pen down
+G1 X112.625 Y45.676 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y45.547 F3000 ; Travel to line 622
+G0 Z0.0 ; Pen down
+G1 X105.415 Y51.341 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.286 Y51.341 F3000 ; Travel to line 623
+G0 Z0.0 ; Pen down
+G1 X112.625 Y45.419 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y45.290 F3000 ; Travel to line 624
+G0 Z0.0 ; Pen down
+G1 X105.286 Y51.084 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.157 Y51.084 F3000 ; Travel to line 625
+G0 Z0.0 ; Pen down
+G1 X112.625 Y45.161 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y44.904 F3000 ; Travel to line 626
+G0 Z0.0 ; Pen down
+G1 X105.157 Y50.826 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.029 Y50.826 F3000 ; Travel to line 627
+G0 Z0.0 ; Pen down
+G1 X112.625 Y44.775 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y44.517 F3000 ; Travel to line 628
+G0 Z0.0 ; Pen down
+G1 X105.029 Y50.569 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.900 Y50.569 F3000 ; Travel to line 629
+G0 Z0.0 ; Pen down
+G1 X112.625 Y44.389 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y44.260 F3000 ; Travel to line 630
+G0 Z0.0 ; Pen down
+G1 X104.900 Y50.440 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.771 Y50.311 F3000 ; Travel to line 631
+G0 Z0.0 ; Pen down
+G1 X112.625 Y44.002 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y43.874 F3000 ; Travel to line 632
+G0 Z0.0 ; Pen down
+G1 X104.771 Y50.183 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.642 Y50.054 F3000 ; Travel to line 633
+G0 Z0.0 ; Pen down
+G1 X112.625 Y43.616 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y43.488 F3000 ; Travel to line 634
+G0 Z0.0 ; Pen down
+G1 X104.514 Y50.054 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.514 Y49.925 F3000 ; Travel to line 635
+G0 Z0.0 ; Pen down
+G1 X112.625 Y43.359 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y43.101 F3000 ; Travel to line 636
+G0 Z0.0 ; Pen down
+G1 X104.385 Y49.796 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.385 Y49.668 F3000 ; Travel to line 637
+G0 Z0.0 ; Pen down
+G1 X112.625 Y42.973 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y42.458 F3000 ; Travel to line 638
+G0 Z0.0 ; Pen down
+G1 X103.999 Y49.410 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.999 Y49.281 F3000 ; Travel to line 639
+G0 Z0.0 ; Pen down
+G1 X112.625 Y42.329 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y42.200 F3000 ; Travel to line 640
+G0 Z0.0 ; Pen down
+G1 X103.870 Y49.281 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.741 Y49.153 F3000 ; Travel to line 641
+G0 Z0.0 ; Pen down
+G1 X112.625 Y41.943 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y41.814 F3000 ; Travel to line 642
+G0 Z0.0 ; Pen down
+G1 X103.741 Y49.024 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.612 Y48.895 F3000 ; Travel to line 643
+G0 Z0.0 ; Pen down
+G1 X112.625 Y41.556 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y41.428 F3000 ; Travel to line 644
+G0 Z0.0 ; Pen down
+G1 X103.612 Y48.766 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.484 Y48.766 F3000 ; Travel to line 645
+G0 Z0.0 ; Pen down
+G1 X112.625 Y41.299 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y41.041 F3000 ; Travel to line 646
+G0 Z0.0 ; Pen down
+G1 X103.355 Y48.638 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.355 Y48.509 F3000 ; Travel to line 647
+G0 Z0.0 ; Pen down
+G1 X112.625 Y40.913 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y40.655 F3000 ; Travel to line 648
+G0 Z0.0 ; Pen down
+G1 X103.097 Y48.509 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.840 Y48.251 F3000 ; Travel to line 649
+G0 Z0.0 ; Pen down
+G1 X112.625 Y40.140 F1000
+G1 X112.625 Y40.140 F1000
+G1 X102.711 Y48.123 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.582 Y47.994 F3000 ; Travel to line 650
+G0 Z0.0 ; Pen down
+G1 X112.625 Y39.883 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y39.754 F3000 ; Travel to line 651
+G0 Z0.0 ; Pen down
+G1 X102.582 Y47.865 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.454 Y47.736 F3000 ; Travel to line 652
+G0 Z0.0 ; Pen down
+G1 X112.625 Y39.496 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y39.367 F3000 ; Travel to line 653
+G0 Z0.0 ; Pen down
+G1 X102.325 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.196 Y47.736 F3000 ; Travel to line 654
+G0 Z0.0 ; Pen down
+G1 X112.625 Y39.239 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y38.981 F3000 ; Travel to line 655
+G0 Z0.0 ; Pen down
+G1 X102.067 Y47.608 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.067 Y47.479 F3000 ; Travel to line 656
+G0 Z0.0 ; Pen down
+G1 X112.625 Y38.852 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y38.595 F3000 ; Travel to line 657
+G0 Z0.0 ; Pen down
+G1 X101.810 Y47.479 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.810 Y47.350 F3000 ; Travel to line 658
+G0 Z0.0 ; Pen down
+G1 X112.625 Y38.466 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y38.337 F3000 ; Travel to line 659
+G0 Z0.0 ; Pen down
+G1 X101.681 Y47.350 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.553 Y47.221 F3000 ; Travel to line 660
+G0 Z0.0 ; Pen down
+G1 X112.625 Y38.080 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y37.951 F3000 ; Travel to line 661
+G0 Z0.0 ; Pen down
+G1 X101.424 Y47.221 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.166 Y47.093 F3000 ; Travel to line 662
+G0 Z0.0 ; Pen down
+G1 X112.625 Y37.694 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y37.565 F3000 ; Travel to line 663
+G0 Z0.0 ; Pen down
+G1 X101.166 Y46.964 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.909 Y46.964 F3000 ; Travel to line 664
+G0 Z0.0 ; Pen down
+G1 X112.625 Y37.307 F1000
+G1 X112.625 Y37.307 F1000
+G1 X100.909 Y46.835 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.780 Y46.835 F3000 ; Travel to line 665
+G0 Z0.0 ; Pen down
+G1 X112.625 Y37.179 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y36.921 F3000 ; Travel to line 666
+G0 Z0.0 ; Pen down
+G1 X100.651 Y46.706 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.523 Y46.706 F3000 ; Travel to line 667
+G0 Z0.0 ; Pen down
+G1 X112.625 Y36.793 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y36.535 F3000 ; Travel to line 668
+G0 Z0.0 ; Pen down
+G1 X100.394 Y46.578 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.265 Y46.578 F3000 ; Travel to line 669
+G0 Z0.0 ; Pen down
+G1 X112.625 Y36.406 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y36.278 F3000 ; Travel to line 670
+G0 Z0.0 ; Pen down
+G1 X100.136 Y46.578 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.879 Y46.449 F3000 ; Travel to line 671
+G0 Z0.0 ; Pen down
+G1 X112.625 Y36.020 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y35.891 F3000 ; Travel to line 672
+G0 Z0.0 ; Pen down
+G1 X99.750 Y46.449 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.621 Y46.320 F3000 ; Travel to line 673
+G0 Z0.0 ; Pen down
+G1 X112.625 Y35.634 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y35.505 F3000 ; Travel to line 674
+G0 Z0.0 ; Pen down
+G1 X99.493 Y46.320 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.364 Y46.320 F3000 ; Travel to line 675
+G0 Z0.0 ; Pen down
+G1 X112.625 Y35.376 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y35.119 F3000 ; Travel to line 676
+G0 Z0.0 ; Pen down
+G1 X99.235 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.106 Y46.191 F3000 ; Travel to line 677
+G0 Z0.0 ; Pen down
+G1 X112.625 Y34.990 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y34.733 F3000 ; Travel to line 678
+G0 Z0.0 ; Pen down
+G1 X98.849 Y46.191 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.849 Y46.062 F3000 ; Travel to line 679
+G0 Z0.0 ; Pen down
+G1 X112.625 Y34.604 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y34.475 F3000 ; Travel to line 680
+G0 Z0.0 ; Pen down
+G1 X112.625 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.496 Y26.750 F3000 ; Travel to line 681
+G0 Z0.0 ; Pen down
+G1 X50.954 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.083 Y78.250 F3000 ; Travel to line 682
+G0 Z0.0 ; Pen down
+G1 X112.625 Y26.750 F1000
+G1 X112.625 Y26.750 F1000
+G1 X104.900 Y26.750 F1000
+G1 X104.900 Y26.750 F1000
+G1 X41.297 Y78.250 F1000
+G1 X41.297 Y78.250 F1000
+G1 X104.771 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.642 Y26.750 F3000 ; Travel to line 683
+G0 Z0.0 ; Pen down
+G1 X41.297 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.426 Y78.250 F3000 ; Travel to line 684
+G0 Z0.0 ; Pen down
+G1 X105.029 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.157 Y26.750 F3000 ; Travel to line 685
+G0 Z0.0 ; Pen down
+G1 X41.426 Y78.250 F1000
+G1 X41.426 Y78.250 F1000
+G1 X105.286 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.415 Y26.750 F3000 ; Travel to line 686
+G0 Z0.0 ; Pen down
+G1 X41.555 Y78.250 F1000
+G1 X41.555 Y78.250 F1000
+G1 X105.544 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.930 Y26.750 F3000 ; Travel to line 687
+G0 Z0.0 ; Pen down
+G1 X41.684 Y78.250 F1000
+G1 X41.684 Y78.250 F1000
+G1 X105.801 Y26.750 F1000
+G1 X105.801 Y26.750 F1000
+G1 X41.684 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.812 Y78.250 F3000 ; Travel to line 688
+G0 Z0.0 ; Pen down
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G1 X41.812 Y78.250 F1000
+G1 X106.188 Y26.750 F1000
+G1 X106.188 Y26.750 F1000
+G1 X41.812 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.199 Y78.250 F3000 ; Travel to line 689
+G0 Z0.0 ; Pen down
+G1 X106.316 Y26.750 F1000
+G1 X106.316 Y26.750 F1000
+G1 X41.941 Y78.250 F1000
+G1 X41.941 Y78.250 F1000
+G1 X106.316 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.445 Y26.750 F3000 ; Travel to line 690
+G0 Z0.0 ; Pen down
+G1 X42.328 Y78.250 F1000
+G1 X42.328 Y78.250 F1000
+G1 X106.445 Y26.750 F1000
+G1 X106.445 Y26.750 F1000
+G1 X42.585 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.714 Y78.250 F3000 ; Travel to line 691
+G0 Z0.0 ; Pen down
+G1 X106.574 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X106.703 Y26.750 F3000 ; Travel to line 692
+G0 Z0.0 ; Pen down
+G1 X43.100 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.229 Y78.250 F3000 ; Travel to line 693
+G0 Z0.0 ; Pen down
+G1 X106.703 Y26.750 F1000
+G1 X106.703 Y26.750 F1000
+G1 X43.358 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.486 Y78.250 F3000 ; Travel to line 694
+G0 Z0.0 ; Pen down
+G1 X106.831 Y26.750 F1000
+G1 X106.831 Y26.750 F1000
+G1 X43.615 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.001 Y78.250 F3000 ; Travel to line 695
+G0 Z0.0 ; Pen down
+G1 X106.960 Y26.750 F1000
+G1 X106.960 Y26.750 F1000
+G1 X43.873 Y78.250 F1000
+G1 X43.873 Y78.250 F1000
+G1 X106.960 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X107.089 Y26.750 F3000 ; Travel to line 696
+G0 Z0.0 ; Pen down
+G1 X44.259 Y78.250 F1000
+G1 X44.259 Y78.250 F1000
+G1 X107.089 Y26.750 F1000
+G1 X107.089 Y26.750 F1000
+G1 X44.516 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.903 Y78.250 F3000 ; Travel to line 697
+G0 Z0.0 ; Pen down
+G1 X107.218 Y26.750 F1000
+G1 X107.218 Y26.750 F1000
+G1 X44.645 Y78.250 F1000
+G1 X44.645 Y78.250 F1000
+G1 X107.218 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X107.346 Y26.750 F3000 ; Travel to line 698
+G0 Z0.0 ; Pen down
+G1 X45.031 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.160 Y78.250 F3000 ; Travel to line 699
+G0 Z0.0 ; Pen down
+G1 X107.346 Y26.750 F1000
+G1 X107.346 Y26.750 F1000
+G1 X45.289 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.418 Y78.250 F3000 ; Travel to line 700
+G0 Z0.0 ; Pen down
+G1 X107.475 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X107.604 Y26.750 F3000 ; Travel to line 701
+G0 Z0.0 ; Pen down
+G1 X46.190 Y78.250 F1000
+G1 X46.190 Y78.250 F1000
+G1 X107.733 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X107.990 Y26.750 F3000 ; Travel to line 702
+G0 Z0.0 ; Pen down
+G1 X46.962 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.834 Y78.250 F3000 ; Travel to line 703
+G0 Z0.0 ; Pen down
+G1 X107.861 Y26.750 F1000
+G1 X107.861 Y26.750 F1000
+G1 X46.576 Y78.250 F1000
+G1 X46.576 Y78.250 F1000
+G1 X107.733 Y26.750 F1000
+G1 X107.733 Y26.750 F1000
+G1 X46.319 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.932 Y78.250 F3000 ; Travel to line 704
+G0 Z0.0 ; Pen down
+G1 X107.604 Y26.750 F1000
+G1 X107.604 Y26.750 F1000
+G1 X45.804 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.675 Y78.250 F3000 ; Travel to line 705
+G0 Z0.0 ; Pen down
+G1 X107.475 Y26.750 F1000
+G1 X107.475 Y26.750 F1000
+G1 X45.546 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.220 Y78.250 F3000 ; Travel to line 706
+G0 Z0.0 ; Pen down
+G1 X108.376 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X108.505 Y26.750 F3000 ; Travel to line 707
+G0 Z0.0 ; Pen down
+G1 X47.349 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.477 Y78.250 F3000 ; Travel to line 708
+G0 Z0.0 ; Pen down
+G1 X108.634 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X108.891 Y26.750 F3000 ; Travel to line 709
+G0 Z0.0 ; Pen down
+G1 X47.735 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.864 Y78.250 F3000 ; Travel to line 710
+G0 Z0.0 ; Pen down
+G1 X109.020 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X109.406 Y26.750 F3000 ; Travel to line 711
+G0 Z0.0 ; Pen down
+G1 X48.121 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.250 Y78.250 F3000 ; Travel to line 712
+G0 Z0.0 ; Pen down
+G1 X109.535 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X109.664 Y26.750 F3000 ; Travel to line 713
+G0 Z0.0 ; Pen down
+G1 X48.508 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.765 Y78.250 F3000 ; Travel to line 714
+G0 Z0.0 ; Pen down
+G1 X109.921 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X110.050 Y26.750 F3000 ; Travel to line 715
+G0 Z0.0 ; Pen down
+G1 X48.894 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.151 Y78.250 F3000 ; Travel to line 716
+G0 Z0.0 ; Pen down
+G1 X110.436 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X110.565 Y26.750 F3000 ; Travel to line 717
+G0 Z0.0 ; Pen down
+G1 X49.280 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.409 Y78.250 F3000 ; Travel to line 718
+G0 Z0.0 ; Pen down
+G1 X110.694 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X110.951 Y26.750 F3000 ; Travel to line 719
+G0 Z0.0 ; Pen down
+G1 X49.666 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.795 Y78.250 F3000 ; Travel to line 720
+G0 Z0.0 ; Pen down
+G1 X111.080 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X111.466 Y26.750 F3000 ; Travel to line 721
+G0 Z0.0 ; Pen down
+G1 X50.053 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.181 Y78.250 F3000 ; Travel to line 722
+G0 Z0.0 ; Pen down
+G1 X111.595 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X111.853 Y26.750 F3000 ; Travel to line 723
+G0 Z0.0 ; Pen down
+G1 X50.439 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.568 Y78.250 F3000 ; Travel to line 724
+G0 Z0.0 ; Pen down
+G1 X111.981 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.110 Y26.750 F3000 ; Travel to line 725
+G0 Z0.0 ; Pen down
+G1 X50.696 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.469 Y78.250 F3000 ; Travel to line 726
+G0 Z0.0 ; Pen down
+G1 X112.625 Y27.008 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y27.136 F3000 ; Travel to line 727
+G0 Z0.0 ; Pen down
+G1 X51.598 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.726 Y78.250 F3000 ; Travel to line 728
+G0 Z0.0 ; Pen down
+G1 X112.625 Y27.265 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y27.523 F3000 ; Travel to line 729
+G0 Z0.0 ; Pen down
+G1 X51.984 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.113 Y78.250 F3000 ; Travel to line 730
+G0 Z0.0 ; Pen down
+G1 X112.625 Y27.651 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y27.780 F3000 ; Travel to line 731
+G0 Z0.0 ; Pen down
+G1 X52.370 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.499 Y78.250 F3000 ; Travel to line 732
+G0 Z0.0 ; Pen down
+G1 X112.625 Y27.909 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y28.166 F3000 ; Travel to line 733
+G0 Z0.0 ; Pen down
+G1 X52.756 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.885 Y78.250 F3000 ; Travel to line 734
+G0 Z0.0 ; Pen down
+G1 X112.625 Y28.295 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y28.424 F3000 ; Travel to line 735
+G0 Z0.0 ; Pen down
+G1 X53.014 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.271 Y78.250 F3000 ; Travel to line 736
+G0 Z0.0 ; Pen down
+G1 X112.625 Y28.681 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y28.810 F3000 ; Travel to line 737
+G0 Z0.0 ; Pen down
+G1 X53.400 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.657 Y78.250 F3000 ; Travel to line 738
+G0 Z0.0 ; Pen down
+G1 X112.625 Y29.067 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y29.196 F3000 ; Travel to line 739
+G0 Z0.0 ; Pen down
+G1 X53.915 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.044 Y78.250 F3000 ; Travel to line 740
+G0 Z0.0 ; Pen down
+G1 X112.625 Y29.325 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y29.582 F3000 ; Travel to line 741
+G0 Z0.0 ; Pen down
+G1 X90.866 Y47.736 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.639 Y47.221 F3000 ; Travel to line 742
+G0 Z0.0 ; Pen down
+G1 X112.625 Y29.711 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y29.969 F3000 ; Travel to line 743
+G0 Z0.0 ; Pen down
+G1 X92.154 Y46.964 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.669 Y46.706 F3000 ; Travel to line 744
+G0 Z0.0 ; Pen down
+G1 X112.625 Y30.098 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y30.355 F3000 ; Travel to line 745
+G0 Z0.0 ; Pen down
+G1 X93.055 Y46.578 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.570 Y46.320 F3000 ; Travel to line 746
+G0 Z0.0 ; Pen down
+G1 X112.625 Y30.484 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y30.613 F3000 ; Travel to line 747
+G0 Z0.0 ; Pen down
+G1 X93.699 Y46.320 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.085 Y46.191 F3000 ; Travel to line 748
+G0 Z0.0 ; Pen down
+G1 X112.625 Y30.870 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y30.999 F3000 ; Travel to line 749
+G0 Z0.0 ; Pen down
+G1 X94.471 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.729 Y46.062 F3000 ; Travel to line 750
+G0 Z0.0 ; Pen down
+G1 X112.625 Y31.128 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y31.256 F3000 ; Travel to line 751
+G0 Z0.0 ; Pen down
+G1 X94.858 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.115 Y45.934 F3000 ; Travel to line 752
+G0 Z0.0 ; Pen down
+G1 X112.625 Y31.385 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y31.643 F3000 ; Travel to line 753
+G0 Z0.0 ; Pen down
+G1 X95.501 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.630 Y45.934 F3000 ; Travel to line 754
+G0 Z0.0 ; Pen down
+G1 X112.625 Y31.771 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y32.029 F3000 ; Travel to line 755
+G0 Z0.0 ; Pen down
+G1 X95.888 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.016 Y45.934 F3000 ; Travel to line 756
+G0 Z0.0 ; Pen down
+G1 X112.625 Y32.157 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y32.286 F3000 ; Travel to line 757
+G0 Z0.0 ; Pen down
+G1 X96.145 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.660 Y45.934 F3000 ; Travel to line 758
+G0 Z0.0 ; Pen down
+G1 X112.625 Y32.672 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y32.544 F3000 ; Travel to line 759
+G0 Z0.0 ; Pen down
+G1 X96.660 Y45.805 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.918 Y45.934 F3000 ; Travel to line 760
+G0 Z0.0 ; Pen down
+G1 X112.625 Y32.930 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y33.059 F3000 ; Travel to line 761
+G0 Z0.0 ; Pen down
+G1 X97.046 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.304 Y45.934 F3000 ; Travel to line 762
+G0 Z0.0 ; Pen down
+G1 X112.625 Y33.316 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y33.445 F3000 ; Travel to line 763
+G0 Z0.0 ; Pen down
+G1 X97.561 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.690 Y45.934 F3000 ; Travel to line 764
+G0 Z0.0 ; Pen down
+G1 X112.625 Y33.574 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y33.831 F3000 ; Travel to line 765
+G0 Z0.0 ; Pen down
+G1 X97.948 Y45.934 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.076 Y45.934 F3000 ; Travel to line 766
+G0 Z0.0 ; Pen down
+G1 X112.625 Y33.960 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y34.218 F3000 ; Travel to line 767
+G0 Z0.0 ; Pen down
+G1 X98.205 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.334 Y46.062 F3000 ; Travel to line 768
+G0 Z0.0 ; Pen down
+G1 X112.625 Y34.346 F1000
+G1 X112.625 Y34.346 F1000
+G1 X98.463 Y46.062 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.282 Y46.191 F3000 ; Travel to line 769
+G0 Z0.0 ; Pen down
+G1 X54.301 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.430 Y78.250 F3000 ; Travel to line 770
+G0 Z0.0 ; Pen down
+G1 X89.321 Y49.153 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.034 Y50.826 F3000 ; Travel to line 771
+G0 Z0.0 ; Pen down
+G1 X55.074 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.203 Y78.250 F3000 ; Travel to line 772
+G0 Z0.0 ; Pen down
+G1 X87.905 Y51.084 F1000
+G1 X87.905 Y51.084 F1000
+G1 X55.331 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.816 Y78.250 F3000 ; Travel to line 773
+G0 Z0.0 ; Pen down
+G1 X88.549 Y50.054 F1000
+G1 X88.549 Y50.054 F1000
+G1 X54.688 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X57.906 Y78.250 F3000 ; Travel to line 774
+G0 Z0.0 ; Pen down
+G1 X86.746 Y54.431 F1000
+G1 X86.746 Y54.431 F1000
+G1 X58.035 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.104 Y64.860 F3000 ; Travel to line 775
+G0 Z0.0 ; Pen down
+G1 X58.035 Y62.929 F1000
+G0 Z3.0 ; Pen up
+
+G0 X58.679 Y62.285 F3000 ; Travel to line 776
+G0 Z0.0 ; Pen down
+G1 X100.265 Y26.750 F1000
+G1 X100.265 Y26.750 F1000
+G1 X58.679 Y62.285 F1000
+G1 X58.679 Y62.285 F1000
+G1 X100.136 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.523 Y26.750 F3000 ; Travel to line 777
+G0 Z0.0 ; Pen down
+G1 X58.679 Y62.285 F1000
+G1 X58.679 Y62.285 F1000
+G1 X100.651 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.780 Y26.750 F3000 ; Travel to line 778
+G0 Z0.0 ; Pen down
+G1 X40.010 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X39.881 Y78.250 F3000 ; Travel to line 779
+G0 Z0.0 ; Pen down
+G1 X56.361 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+G0 X56.748 Y63.959 F3000 ; Travel to line 780
+G0 Z0.0 ; Pen down
+G1 X39.881 Y78.250 F1000
+G1 X39.881 Y78.250 F1000
+G1 X57.134 Y63.701 F1000
+G0 Z3.0 ; Pen up
+
+G0 X55.589 Y64.602 F3000 ; Travel to line 781
+G0 Z0.0 ; Pen down
+G1 X39.624 Y78.250 F1000
+G1 X39.624 Y78.250 F1000
+G1 X55.331 Y64.731 F1000
+G1 X55.331 Y64.731 F1000
+G1 X39.495 Y78.250 F1000
+G1 X39.495 Y78.250 F1000
+G1 X55.074 Y64.860 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.688 Y64.989 F3000 ; Travel to line 782
+G0 Z0.0 ; Pen down
+G1 X39.366 Y78.250 F1000
+G1 X39.366 Y78.250 F1000
+G1 X54.945 Y64.860 F1000
+G1 X54.945 Y64.860 F1000
+G1 X39.495 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X39.624 Y78.250 F3000 ; Travel to line 783
+G0 Z0.0 ; Pen down
+G1 X55.846 Y64.474 F1000
+G1 X55.846 Y64.474 F1000
+G1 X39.752 Y78.250 F1000
+G1 X39.752 Y78.250 F1000
+G1 X56.104 Y64.345 F1000
+G1 X56.104 Y64.345 F1000
+G1 X39.752 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.267 Y78.250 F3000 ; Travel to line 784
+G0 Z0.0 ; Pen down
+G1 X101.424 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.295 Y26.750 F3000 ; Travel to line 785
+G0 Z0.0 ; Pen down
+G1 X40.139 Y78.250 F1000
+G1 X40.139 Y78.250 F1000
+G1 X101.166 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.038 Y26.750 F3000 ; Travel to line 786
+G0 Z0.0 ; Pen down
+G1 X40.010 Y78.250 F1000
+G1 X40.010 Y78.250 F1000
+G1 X100.909 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.553 Y26.750 F3000 ; Travel to line 787
+G0 Z0.0 ; Pen down
+G1 X40.267 Y78.250 F1000
+G1 X40.267 Y78.250 F1000
+G1 X101.810 Y26.750 F1000
+G1 X101.810 Y26.750 F1000
+G1 X40.396 Y78.250 F1000
+G1 X40.396 Y78.250 F1000
+G1 X101.939 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.454 Y26.750 F3000 ; Travel to line 788
+G0 Z0.0 ; Pen down
+G1 X40.525 Y78.250 F1000
+G1 X40.525 Y78.250 F1000
+G1 X102.582 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.711 Y26.750 F3000 ; Travel to line 789
+G0 Z0.0 ; Pen down
+G1 X40.654 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.525 Y78.250 F3000 ; Travel to line 790
+G0 Z0.0 ; Pen down
+G1 X102.196 Y26.750 F1000
+G1 X102.196 Y26.750 F1000
+G1 X40.396 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X40.911 Y78.250 F3000 ; Travel to line 791
+G0 Z0.0 ; Pen down
+G1 X103.484 Y26.750 F1000
+G1 X103.484 Y26.750 F1000
+G1 X40.911 Y78.250 F1000
+G1 X40.911 Y78.250 F1000
+G1 X103.612 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X103.226 Y26.750 F3000 ; Travel to line 792
+G0 Z0.0 ; Pen down
+G1 X40.782 Y78.250 F1000
+G1 X40.782 Y78.250 F1000
+G1 X103.097 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.969 Y26.750 F3000 ; Travel to line 793
+G0 Z0.0 ; Pen down
+G1 X40.654 Y78.250 F1000
+G1 X40.654 Y78.250 F1000
+G1 X102.840 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.127 Y26.750 F3000 ; Travel to line 794
+G0 Z0.0 ; Pen down
+G1 X41.040 Y78.250 F1000
+G1 X41.040 Y78.250 F1000
+G1 X103.870 Y26.750 F1000
+G1 X103.870 Y26.750 F1000
+G1 X41.040 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.169 Y78.250 F3000 ; Travel to line 795
+G0 Z0.0 ; Pen down
+G1 X104.256 Y26.750 F1000
+G1 X104.256 Y26.750 F1000
+G1 X41.169 Y78.250 F1000
+G1 X41.169 Y78.250 F1000
+G1 X104.514 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.621 Y26.750 F3000 ; Travel to line 796
+G0 Z0.0 ; Pen down
+G1 X59.709 Y60.998 F1000
+G1 X59.709 Y60.998 F1000
+G1 X99.493 Y26.750 F1000
+G1 X99.493 Y26.750 F1000
+G1 X59.709 Y60.998 F1000
+G0 Z3.0 ; Pen up
+
+G0 X59.451 Y61.384 F3000 ; Travel to line 797
+G0 Z0.0 ; Pen down
+G1 X99.879 Y26.750 F1000
+G1 X99.879 Y26.750 F1000
+G1 X59.451 Y61.384 F1000
+G0 Z3.0 ; Pen up
+
+G0 X60.610 Y59.195 F3000 ; Travel to line 798
+G0 Z0.0 ; Pen down
+G1 X97.561 Y26.750 F1000
+G1 X97.561 Y26.750 F1000
+G1 X60.610 Y59.195 F1000
+G0 Z3.0 ; Pen up
+
+G0 X54.044 Y65.246 F3000 ; Travel to line 799
+G0 Z0.0 ; Pen down
+G1 X39.109 Y78.250 F1000
+G1 X39.109 Y78.250 F1000
+G1 X53.915 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.529 Y65.375 F3000 ; Travel to line 800
+G0 Z0.0 ; Pen down
+G1 X38.851 Y78.250 F1000
+G1 X38.851 Y78.250 F1000
+G1 X53.400 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X53.271 Y65.375 F3000 ; Travel to line 801
+G0 Z0.0 ; Pen down
+G1 X38.722 Y78.250 F1000
+G1 X38.722 Y78.250 F1000
+G1 X53.271 Y65.375 F1000
+G1 X53.271 Y65.375 F1000
+G1 X38.722 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.594 Y78.250 F3000 ; Travel to line 802
+G0 Z0.0 ; Pen down
+G1 X53.142 Y65.375 F1000
+G1 X53.142 Y65.375 F1000
+G1 X38.594 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.465 Y78.250 F3000 ; Travel to line 803
+G0 Z0.0 ; Pen down
+G1 X52.756 Y65.504 F1000
+G1 X52.756 Y65.504 F1000
+G1 X38.465 Y78.250 F1000
+G1 X38.465 Y78.250 F1000
+G1 X52.885 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.241 Y65.504 F3000 ; Travel to line 804
+G0 Z0.0 ; Pen down
+G1 X38.079 Y78.250 F1000
+G1 X38.079 Y78.250 F1000
+G1 X52.113 Y65.504 F1000
+G1 X52.113 Y65.504 F1000
+G1 X38.079 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.207 Y78.250 F3000 ; Travel to line 805
+G0 Z0.0 ; Pen down
+G1 X52.370 Y65.504 F1000
+G1 X52.370 Y65.504 F1000
+G1 X38.207 Y78.250 F1000
+G1 X38.207 Y78.250 F1000
+G1 X52.499 Y65.504 F1000
+G1 X52.499 Y65.504 F1000
+G1 X38.336 Y78.250 F1000
+G1 X38.336 Y78.250 F1000
+G1 X52.627 Y65.504 F1000
+G1 X52.627 Y65.504 F1000
+G1 X38.336 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X37.950 Y78.250 F3000 ; Travel to line 806
+G0 Z0.0 ; Pen down
+G1 X51.984 Y65.504 F1000
+G1 X51.984 Y65.504 F1000
+G1 X37.950 Y78.250 F1000
+G1 X37.950 Y78.250 F1000
+G1 X51.984 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X51.855 Y65.504 F3000 ; Travel to line 807
+G0 Z0.0 ; Pen down
+G1 X37.821 Y78.250 F1000
+G1 X37.821 Y78.250 F1000
+G1 X51.726 Y65.504 F1000
+G1 X51.726 Y65.504 F1000
+G1 X37.692 Y78.250 F1000
+G1 X37.692 Y78.250 F1000
+G1 X51.598 Y65.504 F1000
+G1 X51.598 Y65.504 F1000
+G1 X37.692 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X37.564 Y78.250 F3000 ; Travel to line 808
+G0 Z0.0 ; Pen down
+G1 X51.340 Y65.633 F1000
+G1 X51.340 Y65.633 F1000
+G1 X37.564 Y78.250 F1000
+G1 X37.564 Y78.250 F1000
+G1 X51.340 Y65.504 F1000
+G1 X51.340 Y65.504 F1000
+G1 X37.435 Y78.250 F1000
+G1 X37.435 Y78.250 F1000
+G1 X51.211 Y65.504 F1000
+G1 X51.211 Y65.504 F1000
+G1 X37.435 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X37.306 Y78.250 F3000 ; Travel to line 809
+G0 Z0.0 ; Pen down
+G1 X50.954 Y65.504 F1000
+G1 X50.954 Y65.504 F1000
+G1 X37.306 Y78.250 F1000
+G1 X37.306 Y78.250 F1000
+G1 X51.083 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.825 Y65.504 F3000 ; Travel to line 810
+G0 Z0.0 ; Pen down
+G1 X37.178 Y78.250 F1000
+G1 X37.178 Y78.250 F1000
+G1 X50.825 Y65.504 F1000
+G1 X50.825 Y65.504 F1000
+G1 X37.178 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X36.791 Y78.250 F3000 ; Travel to line 811
+G0 Z0.0 ; Pen down
+G1 X50.310 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.181 Y65.504 F3000 ; Travel to line 812
+G0 Z0.0 ; Pen down
+G1 X36.663 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X36.405 Y78.250 F3000 ; Travel to line 813
+G0 Z0.0 ; Pen down
+G1 X49.924 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.795 Y65.504 F3000 ; Travel to line 814
+G0 Z0.0 ; Pen down
+G1 X36.276 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X36.148 Y78.250 F3000 ; Travel to line 815
+G0 Z0.0 ; Pen down
+G1 X49.795 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.538 Y65.375 F3000 ; Travel to line 816
+G0 Z0.0 ; Pen down
+G1 X35.890 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X35.633 Y78.250 F3000 ; Travel to line 817
+G0 Z0.0 ; Pen down
+G1 X49.409 Y65.375 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.151 Y65.375 F3000 ; Travel to line 818
+G0 Z0.0 ; Pen down
+G1 X35.375 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X35.246 Y78.250 F3000 ; Travel to line 819
+G0 Z0.0 ; Pen down
+G1 X49.151 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X49.023 Y65.246 F3000 ; Travel to line 820
+G0 Z0.0 ; Pen down
+G1 X35.117 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X34.860 Y78.250 F3000 ; Travel to line 821
+G0 Z0.0 ; Pen down
+G1 X48.765 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.636 Y65.246 F3000 ; Travel to line 822
+G0 Z0.0 ; Pen down
+G1 X34.731 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X34.474 Y78.250 F3000 ; Travel to line 823
+G0 Z0.0 ; Pen down
+G1 X48.508 Y65.118 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.379 Y65.118 F3000 ; Travel to line 824
+G0 Z0.0 ; Pen down
+G1 X34.345 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X34.216 Y78.250 F3000 ; Travel to line 825
+G0 Z0.0 ; Pen down
+G1 X48.250 Y65.118 F1000
+G0 Z3.0 ; Pen up
+
+G0 X48.121 Y64.989 F3000 ; Travel to line 826
+G0 Z0.0 ; Pen down
+G1 X33.959 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X33.830 Y78.250 F3000 ; Travel to line 827
+G0 Z0.0 ; Pen down
+G1 X47.992 Y64.989 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.864 Y64.860 F3000 ; Travel to line 828
+G0 Z0.0 ; Pen down
+G1 X33.573 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X33.444 Y78.250 F3000 ; Travel to line 829
+G0 Z0.0 ; Pen down
+G1 X47.735 Y64.860 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.606 Y64.731 F3000 ; Travel to line 830
+G0 Z0.0 ; Pen down
+G1 X33.186 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X32.929 Y78.250 F3000 ; Travel to line 831
+G0 Z0.0 ; Pen down
+G1 X47.477 Y64.731 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.349 Y64.731 F3000 ; Travel to line 832
+G0 Z0.0 ; Pen down
+G1 X32.800 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X32.543 Y78.250 F3000 ; Travel to line 833
+G0 Z0.0 ; Pen down
+G1 X47.220 Y64.602 F1000
+G0 Z3.0 ; Pen up
+
+G0 X47.091 Y64.602 F3000 ; Travel to line 834
+G0 Z0.0 ; Pen down
+G1 X32.414 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X32.156 Y78.250 F3000 ; Travel to line 835
+G0 Z0.0 ; Pen down
+G1 X46.962 Y64.474 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.834 Y64.345 F3000 ; Travel to line 836
+G0 Z0.0 ; Pen down
+G1 X32.028 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X31.899 Y78.250 F3000 ; Travel to line 837
+G0 Z0.0 ; Pen down
+G1 X46.705 Y64.345 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.576 Y64.216 F3000 ; Travel to line 838
+G0 Z0.0 ; Pen down
+G1 X31.641 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X31.512 Y78.250 F3000 ; Travel to line 839
+G0 Z0.0 ; Pen down
+G1 X46.447 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.319 Y64.088 F3000 ; Travel to line 840
+G0 Z0.0 ; Pen down
+G1 X31.255 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X31.126 Y78.250 F3000 ; Travel to line 841
+G0 Z0.0 ; Pen down
+G1 X46.190 Y64.088 F1000
+G0 Z3.0 ; Pen up
+
+G0 X46.061 Y63.959 F3000 ; Travel to line 842
+G0 Z0.0 ; Pen down
+G1 X30.869 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X30.740 Y78.250 F3000 ; Travel to line 843
+G0 Z0.0 ; Pen down
+G1 X45.932 Y63.959 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.932 Y63.830 F3000 ; Travel to line 844
+G0 Z0.0 ; Pen down
+G1 X30.483 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X30.096 Y78.250 F3000 ; Travel to line 845
+G0 Z0.0 ; Pen down
+G1 X45.675 Y63.701 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.804 Y63.701 F3000 ; Travel to line 846
+G0 Z0.0 ; Pen down
+G1 X30.225 Y78.250 F1000
+G1 X30.225 Y78.250 F1000
+G1 X22.500 Y78.250 F1000
+G1 X22.500 Y78.250 F1000
+G1 X22.500 Y70.525 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y70.654 F3000 ; Travel to line 847
+G0 Z0.0 ; Pen down
+G1 X42.328 Y52.242 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.199 Y52.500 F3000 ; Travel to line 848
+G0 Z0.0 ; Pen down
+G1 X22.500 Y70.782 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y71.040 F3000 ; Travel to line 849
+G0 Z0.0 ; Pen down
+G1 X42.070 Y52.886 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.941 Y53.144 F3000 ; Travel to line 850
+G0 Z0.0 ; Pen down
+G1 X22.500 Y71.169 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y71.426 F3000 ; Travel to line 851
+G0 Z0.0 ; Pen down
+G1 X41.941 Y53.401 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.812 Y53.659 F3000 ; Travel to line 852
+G0 Z0.0 ; Pen down
+G1 X22.500 Y71.555 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y71.684 F3000 ; Travel to line 853
+G0 Z0.0 ; Pen down
+G1 X41.812 Y53.788 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.812 Y54.045 F3000 ; Travel to line 854
+G0 Z0.0 ; Pen down
+G1 X22.500 Y71.812 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y71.941 F3000 ; Travel to line 855
+G0 Z0.0 ; Pen down
+G1 X41.684 Y54.303 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y54.560 F3000 ; Travel to line 856
+G0 Z0.0 ; Pen down
+G1 X22.500 Y72.199 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y72.328 F3000 ; Travel to line 857
+G0 Z0.0 ; Pen down
+G1 X41.684 Y54.689 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y54.818 F3000 ; Travel to line 858
+G0 Z0.0 ; Pen down
+G1 X22.500 Y72.456 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y72.714 F3000 ; Travel to line 859
+G0 Z0.0 ; Pen down
+G1 X41.684 Y54.946 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y55.075 F3000 ; Travel to line 860
+G0 Z0.0 ; Pen down
+G1 X22.500 Y72.843 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y73.100 F3000 ; Travel to line 861
+G0 Z0.0 ; Pen down
+G1 X41.684 Y55.333 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y55.461 F3000 ; Travel to line 862
+G0 Z0.0 ; Pen down
+G1 X22.500 Y73.229 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y73.358 F3000 ; Travel to line 863
+G0 Z0.0 ; Pen down
+G1 X41.684 Y55.590 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y55.848 F3000 ; Travel to line 864
+G0 Z0.0 ; Pen down
+G1 X22.500 Y73.615 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y73.744 F3000 ; Travel to line 865
+G0 Z0.0 ; Pen down
+G1 X41.684 Y55.976 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y56.234 F3000 ; Travel to line 866
+G0 Z0.0 ; Pen down
+G1 X22.500 Y74.001 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y74.130 F3000 ; Travel to line 867
+G0 Z0.0 ; Pen down
+G1 X41.684 Y56.363 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y56.620 F3000 ; Travel to line 868
+G0 Z0.0 ; Pen down
+G1 X22.500 Y74.388 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y74.516 F3000 ; Travel to line 869
+G0 Z0.0 ; Pen down
+G1 X41.684 Y56.749 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y56.878 F3000 ; Travel to line 870
+G0 Z0.0 ; Pen down
+G1 X22.500 Y74.645 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y74.903 F3000 ; Travel to line 871
+G0 Z0.0 ; Pen down
+G1 X41.684 Y57.135 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.684 Y57.264 F3000 ; Travel to line 872
+G0 Z0.0 ; Pen down
+G1 X22.500 Y75.031 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y75.289 F3000 ; Travel to line 873
+G0 Z0.0 ; Pen down
+G1 X41.812 Y57.392 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.812 Y57.521 F3000 ; Travel to line 874
+G0 Z0.0 ; Pen down
+G1 X22.500 Y75.418 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y75.546 F3000 ; Travel to line 875
+G0 Z0.0 ; Pen down
+G1 X41.812 Y57.650 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.812 Y57.907 F3000 ; Travel to line 876
+G0 Z0.0 ; Pen down
+G1 X22.500 Y75.804 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y75.933 F3000 ; Travel to line 877
+G0 Z0.0 ; Pen down
+G1 X41.812 Y58.036 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.941 Y58.165 F3000 ; Travel to line 878
+G0 Z0.0 ; Pen down
+G1 X22.500 Y76.190 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y76.319 F3000 ; Travel to line 879
+G0 Z0.0 ; Pen down
+G1 X41.941 Y58.294 F1000
+G0 Z3.0 ; Pen up
+
+G0 X41.941 Y58.551 F3000 ; Travel to line 880
+G0 Z0.0 ; Pen down
+G1 X22.500 Y76.576 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y76.705 F3000 ; Travel to line 881
+G0 Z0.0 ; Pen down
+G1 X42.070 Y58.551 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.070 Y58.680 F3000 ; Travel to line 882
+G0 Z0.0 ; Pen down
+G1 X22.500 Y76.834 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y77.091 F3000 ; Travel to line 883
+G0 Z0.0 ; Pen down
+G1 X42.070 Y58.938 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.199 Y58.938 F3000 ; Travel to line 884
+G0 Z0.0 ; Pen down
+G1 X22.500 Y77.220 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y77.478 F3000 ; Travel to line 885
+G0 Z0.0 ; Pen down
+G1 X42.199 Y59.195 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.328 Y59.195 F3000 ; Travel to line 886
+G0 Z0.0 ; Pen down
+G1 X22.500 Y77.606 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y77.735 F3000 ; Travel to line 887
+G0 Z0.0 ; Pen down
+G1 X42.328 Y59.324 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.328 Y59.581 F3000 ; Travel to line 888
+G0 Z0.0 ; Pen down
+G1 X22.500 Y77.993 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y78.121 F3000 ; Travel to line 889
+G0 Z0.0 ; Pen down
+G1 X42.456 Y59.581 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.456 Y59.839 F3000 ; Travel to line 890
+G0 Z0.0 ; Pen down
+G1 X22.629 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.758 Y78.250 F3000 ; Travel to line 891
+G0 Z0.0 ; Pen down
+G1 X42.585 Y59.839 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.585 Y59.968 F3000 ; Travel to line 892
+G0 Z0.0 ; Pen down
+G1 X22.886 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X23.144 Y78.250 F3000 ; Travel to line 893
+G0 Z0.0 ; Pen down
+G1 X42.714 Y60.096 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.714 Y60.225 F3000 ; Travel to line 894
+G0 Z0.0 ; Pen down
+G1 X23.273 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X23.530 Y78.250 F3000 ; Travel to line 895
+G0 Z0.0 ; Pen down
+G1 X42.843 Y60.354 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.843 Y60.483 F3000 ; Travel to line 896
+G0 Z0.0 ; Pen down
+G1 X23.788 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X24.045 Y78.250 F3000 ; Travel to line 897
+G0 Z0.0 ; Pen down
+G1 X42.971 Y60.611 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.971 Y60.740 F3000 ; Travel to line 898
+G0 Z0.0 ; Pen down
+G1 X24.174 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X24.303 Y78.250 F3000 ; Travel to line 899
+G0 Z0.0 ; Pen down
+G1 X42.971 Y60.869 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.100 Y60.998 F3000 ; Travel to line 900
+G0 Z0.0 ; Pen down
+G1 X24.560 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X24.689 Y78.250 F3000 ; Travel to line 901
+G0 Z0.0 ; Pen down
+G1 X43.229 Y60.998 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.229 Y61.255 F3000 ; Travel to line 902
+G0 Z0.0 ; Pen down
+G1 X24.946 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X25.075 Y78.250 F3000 ; Travel to line 903
+G0 Z0.0 ; Pen down
+G1 X43.358 Y61.255 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.358 Y61.384 F3000 ; Travel to line 904
+G0 Z0.0 ; Pen down
+G1 X25.204 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X25.461 Y78.250 F3000 ; Travel to line 905
+G0 Z0.0 ; Pen down
+G1 X43.486 Y61.513 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.486 Y61.641 F3000 ; Travel to line 906
+G0 Z0.0 ; Pen down
+G1 X25.590 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X25.976 Y78.250 F3000 ; Travel to line 907
+G0 Z0.0 ; Pen down
+G1 X43.615 Y61.770 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.744 Y61.770 F3000 ; Travel to line 908
+G0 Z0.0 ; Pen down
+G1 X26.105 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X26.363 Y78.250 F3000 ; Travel to line 909
+G0 Z0.0 ; Pen down
+G1 X43.873 Y61.899 F1000
+G0 Z3.0 ; Pen up
+
+G0 X43.873 Y62.028 F3000 ; Travel to line 910
+G0 Z0.0 ; Pen down
+G1 X26.491 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X26.620 Y78.250 F3000 ; Travel to line 911
+G0 Z0.0 ; Pen down
+G1 X44.001 Y62.028 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.130 Y62.156 F3000 ; Travel to line 912
+G0 Z0.0 ; Pen down
+G1 X26.878 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X27.006 Y78.250 F3000 ; Travel to line 913
+G0 Z0.0 ; Pen down
+G1 X44.130 Y62.285 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.259 Y62.414 F3000 ; Travel to line 914
+G0 Z0.0 ; Pen down
+G1 X27.264 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X27.393 Y78.250 F3000 ; Travel to line 915
+G0 Z0.0 ; Pen down
+G1 X44.259 Y62.543 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.388 Y62.543 F3000 ; Travel to line 916
+G0 Z0.0 ; Pen down
+G1 X27.521 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X27.779 Y78.250 F3000 ; Travel to line 917
+G0 Z0.0 ; Pen down
+G1 X44.516 Y62.671 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.516 Y62.800 F3000 ; Travel to line 918
+G0 Z0.0 ; Pen down
+G1 X27.907 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X28.294 Y78.250 F3000 ; Travel to line 919
+G0 Z0.0 ; Pen down
+G1 X44.645 Y62.929 F1000
+G0 Z3.0 ; Pen up
+
+G0 X44.774 Y62.929 F3000 ; Travel to line 920
+G0 Z0.0 ; Pen down
+G1 X28.422 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X28.551 Y78.250 F3000 ; Travel to line 921
+G0 Z0.0 ; Pen down
+G1 X44.903 Y62.929 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.031 Y63.058 F3000 ; Travel to line 922
+G0 Z0.0 ; Pen down
+G1 X28.809 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X28.938 Y78.250 F3000 ; Travel to line 923
+G0 Z0.0 ; Pen down
+G1 X45.031 Y63.186 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.160 Y63.315 F3000 ; Travel to line 924
+G0 Z0.0 ; Pen down
+G1 X29.195 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X29.324 Y78.250 F3000 ; Travel to line 925
+G0 Z0.0 ; Pen down
+G1 X45.289 Y63.315 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.418 Y63.444 F3000 ; Travel to line 926
+G0 Z0.0 ; Pen down
+G1 X29.581 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X29.710 Y78.250 F3000 ; Travel to line 927
+G0 Z0.0 ; Pen down
+G1 X45.418 Y63.573 F1000
+G0 Z3.0 ; Pen up
+
+G0 X45.546 Y63.573 F3000 ; Travel to line 928
+G0 Z0.0 ; Pen down
+G1 X29.839 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.851 Y78.250 F3000 ; Travel to line 929
+G0 Z0.0 ; Pen down
+G1 X53.786 Y65.246 F1000
+G1 X53.786 Y65.246 F1000
+G1 X38.980 Y78.250 F1000
+G1 X38.980 Y78.250 F1000
+G1 X53.915 Y65.246 F1000
+G1 X53.915 Y65.246 F1000
+G1 X38.980 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X39.109 Y78.250 F3000 ; Travel to line 930
+G0 Z0.0 ; Pen down
+G1 X54.301 Y65.118 F1000
+G1 X54.301 Y65.118 F1000
+G1 X39.237 Y78.250 F1000
+G1 X39.237 Y78.250 F1000
+G1 X54.430 Y65.118 F1000
+G1 X54.430 Y65.118 F1000
+G1 X39.237 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.843 Y78.250 F3000 ; Travel to line 931
+G0 Z0.0 ; Pen down
+G1 X106.574 Y26.750 F1000
+G1 X106.574 Y26.750 F1000
+G1 X42.971 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X50.568 Y65.504 F3000 ; Travel to line 932
+G0 Z0.0 ; Pen down
+G1 X37.049 Y78.250 F1000
+G1 X37.049 Y78.250 F1000
+G1 X50.696 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.456 Y51.856 F3000 ; Travel to line 933
+G0 Z0.0 ; Pen down
+G1 X22.500 Y70.396 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y70.267 F3000 ; Travel to line 934
+G0 Z0.0 ; Pen down
+G1 X42.585 Y51.599 F1000
+G1 X42.585 Y51.599 F1000
+G1 X22.500 Y70.139 F1000
+G0 Z3.0 ; Pen up
+
+G0 X22.500 Y69.881 F3000 ; Travel to line 935
+G0 Z0.0 ; Pen down
+G1 X42.843 Y51.084 F1000
+G0 Z3.0 ; Pen up
+
+G0 X42.971 Y50.826 F3000 ; Travel to line 936
+G0 Z0.0 ; Pen down
+G1 X22.500 Y69.752 F1000
+G0 Z3.0 ; Pen up
+
+G0 X38.851 Y26.750 F3000 ; Travel to line 937
+G0 Z0.0 ; Pen down
+G1 X22.500 Y41.299 F1000
+G1 X22.500 Y41.299 F1000
+G1 X38.980 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.806 Y26.750 F3000 ; Travel to line 938
+G0 Z0.0 ; Pen down
+G1 X80.309 Y34.733 F1000
+G1 X80.309 Y34.733 F1000
+G1 X88.935 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.956 Y26.750 F3000 ; Travel to line 939
+G0 Z0.0 ; Pen down
+G1 X79.922 Y39.625 F1000
+G1 X79.922 Y39.625 F1000
+G1 X94.085 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.888 Y26.750 F3000 ; Travel to line 940
+G0 Z0.0 ; Pen down
+G1 X77.862 Y42.973 F1000
+G1 X77.862 Y42.973 F1000
+G1 X96.016 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.145 Y26.750 F3000 ; Travel to line 941
+G0 Z0.0 ; Pen down
+G1 X60.996 Y58.165 F1000
+G1 X60.996 Y58.165 F1000
+G1 X96.274 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.403 Y26.750 F3000 ; Travel to line 942
+G0 Z0.0 ; Pen down
+G1 X60.996 Y58.294 F1000
+G1 X60.996 Y58.294 F1000
+G1 X96.531 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.660 Y26.750 F3000 ; Travel to line 943
+G0 Z0.0 ; Pen down
+G1 X60.867 Y58.551 F1000
+G1 X60.867 Y58.551 F1000
+G1 X96.789 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.918 Y26.750 F3000 ; Travel to line 944
+G0 Z0.0 ; Pen down
+G1 X60.867 Y58.680 F1000
+G1 X60.867 Y58.680 F1000
+G1 X97.046 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.175 Y26.750 F3000 ; Travel to line 945
+G0 Z0.0 ; Pen down
+G1 X60.739 Y58.938 F1000
+G1 X60.739 Y58.938 F1000
+G1 X97.304 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.819 Y26.750 F3000 ; Travel to line 946
+G0 Z0.0 ; Pen down
+G1 X60.610 Y59.324 F1000
+G1 X60.610 Y59.324 F1000
+G1 X97.948 Y26.750 F1000
+G1 X97.948 Y26.750 F1000
+G1 X60.481 Y59.581 F1000
+G1 X60.481 Y59.581 F1000
+G1 X98.205 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.334 Y26.750 F3000 ; Travel to line 947
+G0 Z0.0 ; Pen down
+G1 X60.352 Y59.839 F1000
+G1 X60.352 Y59.839 F1000
+G1 X98.463 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.591 Y26.750 F3000 ; Travel to line 948
+G0 Z0.0 ; Pen down
+G1 X60.224 Y60.096 F1000
+G1 X60.224 Y60.096 F1000
+G1 X98.720 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.849 Y26.750 F3000 ; Travel to line 949
+G0 Z0.0 ; Pen down
+G1 X60.095 Y60.354 F1000
+G1 X60.095 Y60.354 F1000
+G1 X98.978 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.106 Y26.750 F3000 ; Travel to line 950
+G0 Z0.0 ; Pen down
+G1 X59.966 Y60.611 F1000
+G1 X59.966 Y60.611 F1000
+G1 X99.235 Y26.750 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y40.398 F3000 ; Travel to line 951
+G0 Z0.0 ; Pen down
+G1 X102.969 Y48.380 F1000
+G1 X102.969 Y48.380 F1000
+G1 X112.625 Y40.526 F1000
+G0 Z3.0 ; Pen up
+
+G0 X104.256 Y49.539 F3000 ; Travel to line 952
+G0 Z0.0 ; Pen down
+G1 X112.625 Y42.715 F1000
+G1 X112.625 Y42.715 F1000
+G1 X104.127 Y49.539 F1000
+G0 Z3.0 ; Pen up
+
+G0 X105.930 Y52.886 F3000 ; Travel to line 953
+G0 Z0.0 ; Pen down
+G1 X112.625 Y47.608 F1000
+G1 X112.625 Y47.608 F1000
+G1 X106.059 Y52.886 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y55.848 F3000 ; Travel to line 954
+G0 Z0.0 ; Pen down
+G1 X84.043 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X84.171 Y78.250 F3000 ; Travel to line 955
+G0 Z0.0 ; Pen down
+G1 X112.625 Y55.976 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y56.234 F3000 ; Travel to line 956
+G0 Z0.0 ; Pen down
+G1 X84.429 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X84.558 Y78.250 F3000 ; Travel to line 957
+G0 Z0.0 ; Pen down
+G1 X112.625 Y56.363 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y56.491 F3000 ; Travel to line 958
+G0 Z0.0 ; Pen down
+G1 X84.686 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.073 Y78.250 F3000 ; Travel to line 959
+G0 Z0.0 ; Pen down
+G1 X112.625 Y56.749 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y56.878 F3000 ; Travel to line 960
+G0 Z0.0 ; Pen down
+G1 X85.201 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.459 Y78.250 F3000 ; Travel to line 961
+G0 Z0.0 ; Pen down
+G1 X112.625 Y57.135 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y57.264 F3000 ; Travel to line 962
+G0 Z0.0 ; Pen down
+G1 X85.588 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X85.845 Y78.250 F3000 ; Travel to line 963
+G0 Z0.0 ; Pen down
+G1 X112.625 Y57.521 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y57.650 F3000 ; Travel to line 964
+G0 Z0.0 ; Pen down
+G1 X85.974 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.103 Y78.250 F3000 ; Travel to line 965
+G0 Z0.0 ; Pen down
+G1 X112.625 Y57.779 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y57.907 F3000 ; Travel to line 966
+G0 Z0.0 ; Pen down
+G1 X86.489 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X86.618 Y78.250 F3000 ; Travel to line 967
+G0 Z0.0 ; Pen down
+G1 X112.625 Y58.036 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y58.294 F3000 ; Travel to line 968
+G0 Z0.0 ; Pen down
+G1 X86.875 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.004 Y78.250 F3000 ; Travel to line 969
+G0 Z0.0 ; Pen down
+G1 X112.625 Y58.422 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y58.551 F3000 ; Travel to line 970
+G0 Z0.0 ; Pen down
+G1 X87.133 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.390 Y78.250 F3000 ; Travel to line 971
+G0 Z0.0 ; Pen down
+G1 X112.625 Y58.809 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y58.938 F3000 ; Travel to line 972
+G0 Z0.0 ; Pen down
+G1 X87.648 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X87.905 Y78.250 F3000 ; Travel to line 973
+G0 Z0.0 ; Pen down
+G1 X112.625 Y59.195 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y59.324 F3000 ; Travel to line 974
+G0 Z0.0 ; Pen down
+G1 X88.034 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.291 Y78.250 F3000 ; Travel to line 975
+G0 Z0.0 ; Pen down
+G1 X112.625 Y59.453 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y59.581 F3000 ; Travel to line 976
+G0 Z0.0 ; Pen down
+G1 X88.420 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X88.549 Y78.250 F3000 ; Travel to line 977
+G0 Z0.0 ; Pen down
+G1 X112.625 Y59.710 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y59.968 F3000 ; Travel to line 978
+G0 Z0.0 ; Pen down
+G1 X88.935 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.064 Y78.250 F3000 ; Travel to line 979
+G0 Z0.0 ; Pen down
+G1 X112.625 Y60.096 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y60.354 F3000 ; Travel to line 980
+G0 Z0.0 ; Pen down
+G1 X89.321 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.450 Y78.250 F3000 ; Travel to line 981
+G0 Z0.0 ; Pen down
+G1 X112.625 Y60.483 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y60.611 F3000 ; Travel to line 982
+G0 Z0.0 ; Pen down
+G1 X89.579 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X89.965 Y78.250 F3000 ; Travel to line 983
+G0 Z0.0 ; Pen down
+G1 X112.625 Y60.869 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y60.998 F3000 ; Travel to line 984
+G0 Z0.0 ; Pen down
+G1 X90.094 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.351 Y78.250 F3000 ; Travel to line 985
+G0 Z0.0 ; Pen down
+G1 X112.625 Y61.126 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y61.255 F3000 ; Travel to line 986
+G0 Z0.0 ; Pen down
+G1 X90.480 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X90.609 Y78.250 F3000 ; Travel to line 987
+G0 Z0.0 ; Pen down
+G1 X112.625 Y61.384 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y61.641 F3000 ; Travel to line 988
+G0 Z0.0 ; Pen down
+G1 X90.866 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.124 Y78.250 F3000 ; Travel to line 989
+G0 Z0.0 ; Pen down
+G1 X112.625 Y61.770 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y62.028 F3000 ; Travel to line 990
+G0 Z0.0 ; Pen down
+G1 X91.381 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.510 Y78.250 F3000 ; Travel to line 991
+G0 Z0.0 ; Pen down
+G1 X112.625 Y62.156 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y62.414 F3000 ; Travel to line 992
+G0 Z0.0 ; Pen down
+G1 X91.767 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X91.896 Y78.250 F3000 ; Travel to line 993
+G0 Z0.0 ; Pen down
+G1 X112.625 Y62.543 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y62.671 F3000 ; Travel to line 994
+G0 Z0.0 ; Pen down
+G1 X92.025 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.411 Y78.250 F3000 ; Travel to line 995
+G0 Z0.0 ; Pen down
+G1 X112.625 Y62.800 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y62.929 F3000 ; Travel to line 996
+G0 Z0.0 ; Pen down
+G1 X92.540 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X92.797 Y78.250 F3000 ; Travel to line 997
+G0 Z0.0 ; Pen down
+G1 X112.625 Y63.186 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y63.315 F3000 ; Travel to line 998
+G0 Z0.0 ; Pen down
+G1 X92.926 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.055 Y78.250 F3000 ; Travel to line 999
+G0 Z0.0 ; Pen down
+G1 X112.625 Y63.444 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y63.701 F3000 ; Travel to line 1000
+G0 Z0.0 ; Pen down
+G1 X93.441 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.570 Y78.250 F3000 ; Travel to line 1001
+G0 Z0.0 ; Pen down
+G1 X112.625 Y63.830 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y64.088 F3000 ; Travel to line 1002
+G0 Z0.0 ; Pen down
+G1 X93.828 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X93.956 Y78.250 F3000 ; Travel to line 1003
+G0 Z0.0 ; Pen down
+G1 X112.625 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y64.345 F3000 ; Travel to line 1004
+G0 Z0.0 ; Pen down
+G1 X94.214 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.471 Y78.250 F3000 ; Travel to line 1005
+G0 Z0.0 ; Pen down
+G1 X112.625 Y64.474 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y64.602 F3000 ; Travel to line 1006
+G0 Z0.0 ; Pen down
+G1 X94.600 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X94.858 Y78.250 F3000 ; Travel to line 1007
+G0 Z0.0 ; Pen down
+G1 X112.625 Y64.860 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y64.989 F3000 ; Travel to line 1008
+G0 Z0.0 ; Pen down
+G1 X94.986 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.244 Y78.250 F3000 ; Travel to line 1009
+G0 Z0.0 ; Pen down
+G1 X112.625 Y65.246 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y65.375 F3000 ; Travel to line 1010
+G0 Z0.0 ; Pen down
+G1 X95.501 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X95.630 Y78.250 F3000 ; Travel to line 1011
+G0 Z0.0 ; Pen down
+G1 X112.625 Y65.504 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y66.019 F3000 ; Travel to line 1012
+G0 Z0.0 ; Pen down
+G1 X96.403 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.531 Y78.250 F3000 ; Travel to line 1013
+G0 Z0.0 ; Pen down
+G1 X112.625 Y66.148 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y66.276 F3000 ; Travel to line 1014
+G0 Z0.0 ; Pen down
+G1 X96.660 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.918 Y78.250 F3000 ; Travel to line 1015
+G0 Z0.0 ; Pen down
+G1 X112.625 Y66.534 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y66.663 F3000 ; Travel to line 1016
+G0 Z0.0 ; Pen down
+G1 X97.046 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.433 Y78.250 F3000 ; Travel to line 1017
+G0 Z0.0 ; Pen down
+G1 X112.625 Y66.920 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y67.049 F3000 ; Travel to line 1018
+G0 Z0.0 ; Pen down
+G1 X97.561 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X97.819 Y78.250 F3000 ; Travel to line 1019
+G0 Z0.0 ; Pen down
+G1 X112.625 Y67.177 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y67.306 F3000 ; Travel to line 1020
+G0 Z0.0 ; Pen down
+G1 X97.948 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.076 Y78.250 F3000 ; Travel to line 1021
+G0 Z0.0 ; Pen down
+G1 X112.625 Y67.435 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y67.692 F3000 ; Travel to line 1022
+G0 Z0.0 ; Pen down
+G1 X98.463 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.591 Y78.250 F3000 ; Travel to line 1023
+G0 Z0.0 ; Pen down
+G1 X112.625 Y67.821 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y68.079 F3000 ; Travel to line 1024
+G0 Z0.0 ; Pen down
+G1 X98.849 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X98.978 Y78.250 F3000 ; Travel to line 1025
+G0 Z0.0 ; Pen down
+G1 X112.625 Y68.207 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y68.336 F3000 ; Travel to line 1026
+G0 Z0.0 ; Pen down
+G1 X99.106 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.493 Y78.250 F3000 ; Travel to line 1027
+G0 Z0.0 ; Pen down
+G1 X112.625 Y68.465 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y68.594 F3000 ; Travel to line 1028
+G0 Z0.0 ; Pen down
+G1 X99.621 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X99.879 Y78.250 F3000 ; Travel to line 1029
+G0 Z0.0 ; Pen down
+G1 X112.625 Y68.851 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y68.980 F3000 ; Travel to line 1030
+G0 Z0.0 ; Pen down
+G1 X100.008 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.394 Y78.250 F3000 ; Travel to line 1031
+G0 Z0.0 ; Pen down
+G1 X112.625 Y69.237 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y69.366 F3000 ; Travel to line 1032
+G0 Z0.0 ; Pen down
+G1 X100.523 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X100.651 Y78.250 F3000 ; Travel to line 1033
+G0 Z0.0 ; Pen down
+G1 X112.625 Y69.495 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y70.010 F3000 ; Travel to line 1034
+G0 Z0.0 ; Pen down
+G1 X101.424 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.553 Y78.250 F3000 ; Travel to line 1035
+G0 Z0.0 ; Pen down
+G1 X112.625 Y70.139 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y70.267 F3000 ; Travel to line 1036
+G0 Z0.0 ; Pen down
+G1 X101.681 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.067 Y78.250 F3000 ; Travel to line 1037
+G0 Z0.0 ; Pen down
+G1 X112.625 Y70.525 F1000
+G1 X112.625 Y70.525 F1000
+G1 X112.625 Y78.250 F1000
+G1 X112.625 Y78.250 F1000
+G1 X104.900 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.840 Y78.250 F3000 ; Travel to line 1038
+G0 Z0.0 ; Pen down
+G1 X112.625 Y71.169 F1000
+G0 Z3.0 ; Pen up
+
+G0 X112.625 Y70.654 F3000 ; Travel to line 1039
+G0 Z0.0 ; Pen down
+G1 X102.196 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X102.454 Y78.250 F3000 ; Travel to line 1040
+G0 Z0.0 ; Pen down
+G1 X112.625 Y70.911 F1000
+G1 X112.625 Y70.911 F1000
+G1 X102.582 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X101.166 Y78.250 F3000 ; Travel to line 1041
+G0 Z0.0 ; Pen down
+G1 X112.625 Y69.752 F1000
+G1 X112.625 Y69.752 F1000
+G1 X100.909 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X96.016 Y78.250 F3000 ; Travel to line 1042
+G0 Z0.0 ; Pen down
+G1 X112.625 Y65.761 F1000
+G1 X112.625 Y65.761 F1000
+G1 X95.888 Y78.250 F1000
+G0 Z3.0 ; Pen up
+
+G0 X83.399 Y78.250 F3000 ; Travel to line 1043
+G0 Z0.0 ; Pen down
+G1 X101.424 Y64.216 F1000
+G0 Z3.0 ; Pen up
+
+; Return to origin
+G0 X0 Y0
+G0 Z3.0
+
+; Total drawing distance: 43517.45 mm
+; Total travel distance: 556.19 mm
+; Total lines: 1043
+; Estimated time: 2622.2 seconds (43.7 minutes)
+M2 ; End program

@@ -22,10 +22,32 @@ Converts blueprint-style images (black lines on white background) to G-code for 
 - **Highly Configurable**: Command-line options for all key parameters
 - **Comprehensive Testing**: Includes test harness for validating all orientations and settings
 
+## Project Structure
+
+```
+blueprint2gcode/
+├── blueprint2gcode.py      # Main conversion script
+├── README.md               # This file
+├── docs/                   # Documentation and specifications
+│   ├── requirements.txt    # Python dependencies
+│   ├── spec.md            # Detailed specification
+│   └── *.md               # Implementation notes and fix reports
+├── tests/                  # All test scripts
+│   ├── test_harness*.py   # Test harness scripts
+│   ├── generate_*.py      # Test image generators
+│   └── *.py               # Utility and analysis scripts
+├── test_data/             # Test inputs and outputs
+│   ├── test_images*/      # Test input images
+│   ├── test_output*/      # Generated G-code files
+│   └── test_results*      # Test result data
+└── visualizations/        # Test visualizations
+    └── test_visualizations*/  # Generated visualization images
+```
+
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+pip install -r docs/requirements.txt
 ```
 
 ## Usage
@@ -309,14 +331,15 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 
 ## Testing
 
-The repository includes comprehensive test infrastructure:
+The repository includes comprehensive test infrastructure. All test scripts are located in the `tests/` directory and should be run from there.
 
 ### Integrated Test Harness (Recommended)
 
 Run all tests including regular conversions and solid area filling with visualization:
 
 ```bash
-python test_harness_integrated.py
+cd tests
+python3 test_harness_integrated.py
 ```
 
 This runs 11 tests including:
@@ -352,7 +375,7 @@ Generate solid area test images:
 python generate_solid_test_images.py
 ```
 
-This creates 8 test images in `test_images_solid/`:
+This creates 8 test images in `../test_data/test_images_solid/`:
 1. **test1_simple_shapes.png** - Basic solid circles, squares, triangles
 2. **test2_mixed_solid_outline.png** - Mix of solid and outline elements
 3. **test3_text_with_solids.png** - Text labels with solid highlighting
@@ -365,7 +388,8 @@ This creates 8 test images in `test_images_solid/`:
 Run standalone solid area tests:
 
 ```bash
-python test_harness_solid.py
+cd tests
+python3 test_harness_solid.py
 ```
 
 This runs 18+ test configurations including:
@@ -375,7 +399,7 @@ This runs 18+ test configurations including:
 - Different paper sizes (A3, A4, A6)
 - Comparison tests with/without filling
 
-All outputs saved to `test_output_solid/` directory.
+All outputs saved to `../test_data/test_output_solid/` directory.
 
 ## License
 

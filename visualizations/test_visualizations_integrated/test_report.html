@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blueprint2GCode Test Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .summary {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            background-color: white;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .status.passed { background-color: #4CAF50; color: white; }
+        .status.failed { background-color: #f44336; color: white; }
+        .status.timeout { background-color: #ff9800; color: white; }
+        .status.error { background-color: #9c27b0; color: white; }
+        .visualization {
+            margin-top: 10px;
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .stat-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #4CAF50;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blueprint2GCode Test Results</h1>
+    <p class="timestamp">Generated: 2025-12-29 18:14:17</p>
+
+    <div class="summary">
+        <h2>Summary</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Total Tests:</strong> 11
+            </div>
+            <div class="stat-item" style="border-left-color: #4CAF50;">
+                <strong>Passed:</strong> 11
+            </div>
+            <div class="stat-item" style="border-left-color: #f44336;">
+                <strong>Failed:</strong> 0
+            </div>
+            <div class="stat-item" style="border-left-color: #ff9800;">
+                <strong>Timeout:</strong> 0
+            </div>
+            <div class="stat-item" style="border-left-color: #9c27b0;">
+                <strong>Errors:</strong> 0
+            </div>
+            <div class="stat-item">
+                <strong>Total Time:</strong> 674.0s (11.2min)
+            </div>
+        </div>
+    </div>
+
+    <div class="test-result">
+        <h3>Test 1: Simple Box <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 0.8s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 3
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 1827.9mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test1_simple_box.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> test1_simple_box.gcode
+            </div>
+        </div>
+        <img src="test1_simple_box.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Test 2: Floor Plan <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 0.8s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 17
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 2861.7mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test2_floor_plan.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> test2_floor_plan.gcode
+            </div>
+        </div>
+        <img src="test2_floor_plan.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Test 5: Circuit <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 0.8s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 9
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 1012.4mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test5_circuit.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> test5_circuit.gcode
+            </div>
+        </div>
+        <img src="test5_circuit.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Test 8: Interlocking Gears <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 57.1s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 990
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 10425.4mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test8_interlocking_gears.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> test8_interlocking_gears.gcode
+            </div>
+        </div>
+        <img src="test8_interlocking_gears.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 1: Simple Shapes (No Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 1.2s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 5
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 969.4mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test1_simple_shapes.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_1_test1_simple_shapes.gcode
+            </div>
+        </div>
+        <img src="solid_1_test1_simple_shapes.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 1: Simple Shapes (With Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 117.6s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 1156
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 60356.1mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test1_simple_shapes.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_2_test1_simple_shapes.gcode
+            </div>
+        </div>
+        <img src="solid_2_test1_simple_shapes.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 2: Mixed (With Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 13.5s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 347
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 7905.2mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test2_mixed_solid_outline.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_3_test2_mixed_solid_outline.gcode
+            </div>
+        </div>
+        <img src="solid_3_test2_mixed_solid_outline.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 4: Floor Plan Walls (With Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 417.3s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 1345
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 145472.5mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test4_floor_plan_with_walls.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_4_test4_floor_plan_with_walls.gcode
+            </div>
+        </div>
+        <img src="solid_4_test4_floor_plan_with_walls.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 5: Mechanical Part (With Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 11.9s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 381
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 7907.8mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test5_mechanical_part.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_5_test5_mechanical_part.gcode
+            </div>
+        </div>
+        <img src="solid_5_test5_mechanical_part.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 7: Circuit Pads (With Fill) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 39.9s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 754
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 48285.9mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test7_circuit_with_pads.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_6_test7_circuit_with_pads.gcode
+            </div>
+        </div>
+        <img src="solid_6_test7_circuit_with_pads.png" alt="Visualization" class="visualization">
+    </div>
+
+    <div class="test-result">
+        <h3>Solid 8: Small Details (min 200px) <span class="status passed">PASSED</span></h3>
+        <p><strong>Time:</strong> 13.1s</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>Lines:</strong> 337
+            </div>
+            <div class="stat-item">
+                <strong>Distance:</strong> 8853.7mm
+            </div>
+            <div class="stat-item">
+                <strong>Input:</strong> test8_small_details.png
+            </div>
+            <div class="stat-item">
+                <strong>Output:</strong> solid_7_test8_small_details.gcode
+            </div>
+        </div>
+        <img src="solid_7_test8_small_details.png" alt="Visualization" class="visualization">
+    </div>
+
+</body>
+</html>
