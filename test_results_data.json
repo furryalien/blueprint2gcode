@@ -1,0 +1,526 @@
+[
+  {
+    "name": "Auto Orientation",
+    "tests": [
+      {
+        "name": "Test1 Simple Box",
+        "input_image": "test_images/test1_simple_box.png",
+        "viz_image": "test_visualizations_all_auto/test1_simple_box.png",
+        "gcode_file": "test_output_all_auto/test1_simple_box.gcode",
+        "stats": {
+          "lines": 823,
+          "drawing_distance": 905.17,
+          "travel_distance": 182.67,
+          "total_distance": 1087.84
+        }
+      },
+      {
+        "name": "Test2 Floor Plan",
+        "input_image": "test_images/test2_floor_plan.png",
+        "viz_image": "test_visualizations_all_auto/test2_floor_plan.png",
+        "gcode_file": "test_output_all_auto/test2_floor_plan.gcode",
+        "stats": {
+          "lines": 98,
+          "drawing_distance": 1417.07,
+          "travel_distance": 290.78,
+          "total_distance": 1707.85
+        }
+      },
+      {
+        "name": "Test3 Geometric",
+        "input_image": "test_images/test3_geometric.png",
+        "viz_image": "test_visualizations_all_auto/test3_geometric.png",
+        "gcode_file": "test_output_all_auto/test3_geometric.gcode",
+        "stats": {
+          "lines": 3521,
+          "drawing_distance": 1090.86,
+          "travel_distance": 318.56,
+          "total_distance": 1409.42
+        }
+      },
+      {
+        "name": "Test4 Mechanical",
+        "input_image": "test_images/test4_mechanical.png",
+        "viz_image": "test_visualizations_all_auto/test4_mechanical.png",
+        "gcode_file": "test_output_all_auto/test4_mechanical.gcode",
+        "stats": {
+          "lines": 1146,
+          "drawing_distance": 1196.59,
+          "travel_distance": 418.22,
+          "total_distance": 1614.81
+        }
+      },
+      {
+        "name": "Test5 Circuit",
+        "input_image": "test_images/test5_circuit.png",
+        "viz_image": "test_visualizations_all_auto/test5_circuit.png",
+        "gcode_file": "test_output_all_auto/test5_circuit.gcode",
+        "stats": {
+          "lines": 217,
+          "drawing_distance": 501.08,
+          "travel_distance": 261.27,
+          "total_distance": 762.35
+        }
+      },
+      {
+        "name": "Test6 Text Labels",
+        "input_image": "test_images/test6_text_labels.png",
+        "viz_image": "test_visualizations_all_auto/test6_text_labels.png",
+        "gcode_file": "test_output_all_auto/test6_text_labels.gcode",
+        "stats": {
+          "lines": 5502,
+          "drawing_distance": 3155.56,
+          "travel_distance": 921.65,
+          "total_distance": 4077.2
+        }
+      },
+      {
+        "name": "Test7 Geodesic Dome",
+        "input_image": "test_images/test7_geodesic_dome.png",
+        "viz_image": "test_visualizations_all_auto/test7_geodesic_dome.png",
+        "gcode_file": "test_output_all_auto/test7_geodesic_dome.gcode",
+        "stats": {
+          "lines": 43510,
+          "drawing_distance": 10404.68,
+          "travel_distance": 2084.42,
+          "total_distance": 12489.1
+        }
+      },
+      {
+        "name": "Test8 Interlocking Gears",
+        "input_image": "test_images/test8_interlocking_gears.png",
+        "viz_image": "test_visualizations_all_auto/test8_interlocking_gears.png",
+        "gcode_file": "test_output_all_auto/test8_interlocking_gears.gcode",
+        "stats": {
+          "lines": 17089,
+          "drawing_distance": 5162.58,
+          "travel_distance": 1287.63,
+          "total_distance": 6450.22
+        }
+      }
+    ]
+  },
+  {
+    "name": "Landscape Orientation",
+    "tests": [
+      {
+        "name": "Test1 Simple Box",
+        "input_image": "test_images/test1_simple_box.png",
+        "viz_image": "test_visualizations_all_landscape/test1_simple_box.png",
+        "gcode_file": "test_output_all_landscape/test1_simple_box.gcode",
+        "stats": {
+          "lines": 823,
+          "drawing_distance": 905.17,
+          "travel_distance": 182.67,
+          "total_distance": 1087.84
+        }
+      },
+      {
+        "name": "Test2 Floor Plan",
+        "input_image": "test_images/test2_floor_plan.png",
+        "viz_image": "test_visualizations_all_landscape/test2_floor_plan.png",
+        "gcode_file": "test_output_all_landscape/test2_floor_plan.gcode",
+        "stats": {
+          "lines": 98,
+          "drawing_distance": 1417.07,
+          "travel_distance": 290.78,
+          "total_distance": 1707.85
+        }
+      },
+      {
+        "name": "Test3 Geometric",
+        "input_image": "test_images/test3_geometric.png",
+        "viz_image": "test_visualizations_all_landscape/test3_geometric.png",
+        "gcode_file": "test_output_all_landscape/test3_geometric.gcode",
+        "stats": {
+          "lines": 3521,
+          "drawing_distance": 1090.84,
+          "travel_distance": 324.65,
+          "total_distance": 1415.49
+        }
+      },
+      {
+        "name": "Test4 Mechanical",
+        "input_image": "test_images/test4_mechanical.png",
+        "viz_image": "test_visualizations_all_landscape/test4_mechanical.png",
+        "gcode_file": "test_output_all_landscape/test4_mechanical.gcode",
+        "stats": {
+          "lines": 1146,
+          "drawing_distance": 1196.59,
+          "travel_distance": 418.22,
+          "total_distance": 1614.81
+        }
+      },
+      {
+        "name": "Test5 Circuit",
+        "input_image": "test_images/test5_circuit.png",
+        "viz_image": "test_visualizations_all_landscape/test5_circuit.png",
+        "gcode_file": "test_output_all_landscape/test5_circuit.gcode",
+        "stats": {
+          "lines": 217,
+          "drawing_distance": 501.08,
+          "travel_distance": 261.27,
+          "total_distance": 762.35
+        }
+      },
+      {
+        "name": "Test6 Text Labels",
+        "input_image": "test_images/test6_text_labels.png",
+        "viz_image": "test_visualizations_all_landscape/test6_text_labels.png",
+        "gcode_file": "test_output_all_landscape/test6_text_labels.gcode",
+        "stats": {
+          "lines": 5502,
+          "drawing_distance": 3155.56,
+          "travel_distance": 921.65,
+          "total_distance": 4077.2
+        }
+      },
+      {
+        "name": "Test7 Geodesic Dome",
+        "input_image": "test_images/test7_geodesic_dome.png",
+        "viz_image": "test_visualizations_all_landscape/test7_geodesic_dome.png",
+        "gcode_file": "test_output_all_landscape/test7_geodesic_dome.gcode",
+        "stats": {
+          "lines": 43510,
+          "drawing_distance": 10404.68,
+          "travel_distance": 2084.42,
+          "total_distance": 12489.1
+        }
+      },
+      {
+        "name": "Test8 Interlocking Gears",
+        "input_image": "test_images/test8_interlocking_gears.png",
+        "viz_image": "test_visualizations_all_landscape/test8_interlocking_gears.png",
+        "gcode_file": "test_output_all_landscape/test8_interlocking_gears.gcode",
+        "stats": {
+          "lines": 17089,
+          "drawing_distance": 5162.58,
+          "travel_distance": 1287.63,
+          "total_distance": 6450.22
+        }
+      }
+    ]
+  },
+  {
+    "name": "Portrait Orientation",
+    "tests": [
+      {
+        "name": "Test1 Simple Box",
+        "input_image": "test_images/test1_simple_box.png",
+        "viz_image": "test_visualizations_all_portrait/test1_simple_box.png",
+        "gcode_file": "test_output_all_portrait/test1_simple_box.gcode",
+        "stats": {
+          "lines": 823,
+          "drawing_distance": 905.17,
+          "travel_distance": 224.03,
+          "total_distance": 1129.2
+        }
+      },
+      {
+        "name": "Test2 Floor Plan",
+        "input_image": "test_images/test2_floor_plan.png",
+        "viz_image": "test_visualizations_all_portrait/test2_floor_plan.png",
+        "gcode_file": "test_output_all_portrait/test2_floor_plan.gcode",
+        "stats": {
+          "lines": 98,
+          "drawing_distance": 1417.07,
+          "travel_distance": 364.52,
+          "total_distance": 1781.59
+        }
+      },
+      {
+        "name": "Test3 Geometric",
+        "input_image": "test_images/test3_geometric.png",
+        "viz_image": "test_visualizations_all_portrait/test3_geometric.png",
+        "gcode_file": "test_output_all_portrait/test3_geometric.gcode",
+        "stats": {
+          "lines": 3521,
+          "drawing_distance": 1090.86,
+          "travel_distance": 318.56,
+          "total_distance": 1409.42
+        }
+      },
+      {
+        "name": "Test4 Mechanical",
+        "input_image": "test_images/test4_mechanical.png",
+        "viz_image": "test_visualizations_all_portrait/test4_mechanical.png",
+        "gcode_file": "test_output_all_portrait/test4_mechanical.gcode",
+        "stats": {
+          "lines": 1146,
+          "drawing_distance": 1196.59,
+          "travel_distance": 376.87,
+          "total_distance": 1573.46
+        }
+      },
+      {
+        "name": "Test5 Circuit",
+        "input_image": "test_images/test5_circuit.png",
+        "viz_image": "test_visualizations_all_portrait/test5_circuit.png",
+        "gcode_file": "test_output_all_portrait/test5_circuit.gcode",
+        "stats": {
+          "lines": 217,
+          "drawing_distance": 501.08,
+          "travel_distance": 270.06,
+          "total_distance": 771.15
+        }
+      },
+      {
+        "name": "Test6 Text Labels",
+        "input_image": "test_images/test6_text_labels.png",
+        "viz_image": "test_visualizations_all_portrait/test6_text_labels.png",
+        "gcode_file": "test_output_all_portrait/test6_text_labels.gcode",
+        "stats": {
+          "lines": 5502,
+          "drawing_distance": 3155.52,
+          "travel_distance": 821.4,
+          "total_distance": 3976.92
+        }
+      },
+      {
+        "name": "Test7 Geodesic Dome",
+        "input_image": "test_images/test7_geodesic_dome.png",
+        "viz_image": "test_visualizations_all_portrait/test7_geodesic_dome.png",
+        "gcode_file": "test_output_all_portrait/test7_geodesic_dome.gcode",
+        "stats": {
+          "lines": 43510,
+          "drawing_distance": 10404.68,
+          "travel_distance": 2026.37,
+          "total_distance": 12431.05
+        }
+      },
+      {
+        "name": "Test8 Interlocking Gears",
+        "input_image": "test_images/test8_interlocking_gears.png",
+        "viz_image": "test_visualizations_all_portrait/test8_interlocking_gears.png",
+        "gcode_file": "test_output_all_portrait/test8_interlocking_gears.gcode",
+        "stats": {
+          "lines": 17089,
+          "drawing_distance": 5162.58,
+          "travel_distance": 1328.82,
+          "total_distance": 6491.41
+        }
+      }
+    ]
+  },
+  {
+    "name": "Solid Area Fill Tests",
+    "tests": [
+      {
+        "name": "Test1 A6",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_a6.png",
+        "gcode_file": "test_output_solid/test1_a6.gcode",
+        "stats": {
+          "lines": 3035,
+          "drawing_distance": 44731.31,
+          "travel_distance": 989.01,
+          "total_distance": 45720.32
+        }
+      },
+      {
+        "name": "Test1 Default",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_default.png",
+        "gcode_file": "test_output_solid/test1_default.gcode",
+        "stats": {
+          "lines": 3035,
+          "drawing_distance": 90331.01,
+          "travel_distance": 2112.23,
+          "total_distance": 92443.24
+        }
+      },
+      {
+        "name": "Test1 Hatch 0Deg",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_hatch_0deg.png",
+        "gcode_file": "test_output_solid/test1_hatch_0deg.gcode",
+        "stats": {
+          "lines": 2089,
+          "drawing_distance": 55129.27,
+          "travel_distance": 1119.01,
+          "total_distance": 56248.29
+        }
+      },
+      {
+        "name": "Test1 Hatch 135Deg",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_hatch_135deg.png",
+        "gcode_file": "test_output_solid/test1_hatch_135deg.gcode",
+        "stats": {
+          "lines": 3111,
+          "drawing_distance": 88405.37,
+          "travel_distance": 2004.02,
+          "total_distance": 90409.38
+        }
+      },
+      {
+        "name": "Test1 Hatch 90Deg",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_hatch_90deg.png",
+        "gcode_file": "test_output_solid/test1_hatch_90deg.gcode",
+        "stats": {
+          "lines": 1816,
+          "drawing_distance": 55130.87,
+          "travel_distance": 1347.57,
+          "total_distance": 56478.44
+        }
+      },
+      {
+        "name": "Test1 Hatch Dense",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_hatch_dense.png",
+        "gcode_file": "test_output_solid/test1_hatch_dense.gcode",
+        "stats": {
+          "lines": 6573,
+          "drawing_distance": 179551.23,
+          "travel_distance": 1965.77,
+          "total_distance": 181517.0
+        }
+      },
+      {
+        "name": "Test1 Hatch Sparse",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_hatch_sparse.png",
+        "gcode_file": "test_output_solid/test1_hatch_sparse.gcode",
+        "stats": {
+          "lines": 1219,
+          "drawing_distance": 31014.81,
+          "travel_distance": 1398.71,
+          "total_distance": 32413.52
+        }
+      },
+      {
+        "name": "Test1 No Fill",
+        "input_image": "test_images_solid/test1_simple_shapes.png",
+        "viz_image": "test_visualizations_solid/test1_no_fill.png",
+        "gcode_file": "test_output_solid/test1_no_fill.gcode",
+        "stats": {
+          "lines": 686,
+          "drawing_distance": 969.42,
+          "travel_distance": 710.63,
+          "total_distance": 1680.05
+        }
+      },
+      {
+        "name": "Test2 Default",
+        "input_image": "test_images_solid/test2_mixed_solid_outline.png",
+        "viz_image": "test_visualizations_solid/test2_default.png",
+        "gcode_file": "test_output_solid/test2_default.gcode",
+        "stats": {
+          "lines": 4758,
+          "drawing_distance": 49776.27,
+          "travel_distance": 1980.38,
+          "total_distance": 51756.65
+        }
+      },
+      {
+        "name": "Test3 Text Solids",
+        "input_image": "test_images_solid/test3_text_with_solids.png",
+        "viz_image": "test_visualizations_solid/test3_text_solids.png",
+        "gcode_file": "test_output_solid/test3_text_solids.gcode",
+        "stats": {
+          "lines": 4180,
+          "drawing_distance": 70333.13,
+          "travel_distance": 2302.61,
+          "total_distance": 72635.74
+        }
+      },
+      {
+        "name": "Test4 Floor Plan",
+        "input_image": "test_images_solid/test4_floor_plan_with_walls.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test4_floor_plan.gcode",
+        "stats": {
+          "lines": 555,
+          "drawing_distance": 2150.13,
+          "travel_distance": 653.39,
+          "total_distance": 2803.51
+        }
+      },
+      {
+        "name": "Test4 Floor Plan A3",
+        "input_image": "test_images_solid/test4_floor_plan_with_walls.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test4_floor_plan_a3.gcode",
+        "stats": {
+          "lines": 557,
+          "drawing_distance": 3051.09,
+          "travel_distance": 927.01,
+          "total_distance": 3978.1
+        }
+      },
+      {
+        "name": "Test5 Mechanical",
+        "input_image": "test_images_solid/test5_mechanical_part.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test5_mechanical.gcode",
+        "stats": {
+          "lines": 3858,
+          "drawing_distance": 175134.3,
+          "travel_distance": 1704.49,
+          "total_distance": 176838.79
+        }
+      },
+      {
+        "name": "Test6 Logo",
+        "input_image": "test_images_solid/test6_logo_style.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test6_logo.gcode",
+        "stats": {
+          "lines": 6460,
+          "drawing_distance": 359452.29,
+          "travel_distance": 1767.49,
+          "total_distance": 361219.78
+        }
+      },
+      {
+        "name": "Test7 Circuit",
+        "input_image": "test_images_solid/test7_circuit_with_pads.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test7_circuit.gcode",
+        "stats": {
+          "lines": 891,
+          "drawing_distance": 48309.32,
+          "travel_distance": 1049.02,
+          "total_distance": 49358.34
+        }
+      },
+      {
+        "name": "Test8 Min Area 200",
+        "input_image": "test_images_solid/test8_small_details.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test8_min_area_200.gcode",
+        "stats": {
+          "lines": 882,
+          "drawing_distance": 8886.31,
+          "travel_distance": 1139.3,
+          "total_distance": 10025.62
+        }
+      },
+      {
+        "name": "Test8 Min Area 50",
+        "input_image": "test_images_solid/test8_small_details.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test8_min_area_50.gcode",
+        "stats": {
+          "lines": 908,
+          "drawing_distance": 8977.01,
+          "travel_distance": 1165.6,
+          "total_distance": 10142.61
+        }
+      },
+      {
+        "name": "Test8 Min Area 500",
+        "input_image": "test_images_solid/test8_small_details.png",
+        "viz_image": null,
+        "gcode_file": "test_output_solid/test8_min_area_500.gcode",
+        "stats": {
+          "lines": 861,
+          "drawing_distance": 8774.54,
+          "travel_distance": 1118.25,
+          "total_distance": 9892.79
+        }
+      }
+    ]
+  }
+]
