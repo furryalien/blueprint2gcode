@@ -31,6 +31,7 @@ class Blueprint2GCode:
         self.fill_solid_areas = args.fill_solid_areas
         self.hatch_spacing = args.hatch_spacing
         self.hatch_angle = args.hatch_angle
+        self.crosshatch = args.crosshatch
         self.min_solid_area = args.min_solid_area
         
         # Paper dimensions in mm (width x height)
@@ -220,23 +221,63 @@ class Blueprint2GCode:
         dy_line = np.sin(angle_rad)
         
         # Calculate how far we need to extend to cover the bounding box
+        # Use the diagonal plus extra margin to ensure we reach all corners
         diagonal = int(np.sqrt(w**2 + h**2)) + 20
         
         # Center of bounding box
         cx, cy = x + w/2, y + h/2
         
-        # Starting point (move far to one side perpendicular to hatch direction)
-        start_offset = -diagonal
-        
         # Use hatch_spacing_pixels instead of hatch_spacing
         hatch_spacing_px = getattr(self, 'hatch_spacing_pixels', self.hatch_spacing)
         
-        # Generate parallel lines by stepping perpendicular to the hatch direction
-        num_lines = int(2 * diagonal / hatch_spacing_px) + 2
+        # Calculate the perpendicular extent needed to cover all corners
+        # Project all 4 corners onto the perpendicular axis to find the range
+        corners = [
+            (x, y), (x + w, y), (x, y + h), (x + w, y + h)
+        ]
+        perp_offsets = []
+        for corner_x, corner_y in corners:
+            # Perpendicular offset from center to this corner
+            offset = (corner_x - cx) * dx_perp + (corner_y - cy) * dy_perp
+            perp_offsets.append(offset)
         
+        # Extend beyond the min/max corners to ensure complete coverage
+        min_offset = min(perp_offsets) - hatch_spacing_px * 2
+        max_offset = max(perp_offsets) + hatch_spacing_px * 2
+        
+        # Generate lines from min to max offset at regular spacing
+        num_lines = int((max_offset - min_offset) / hatch_spacing_px) + 3
+        
+        # Add explicit lines through each corner to ensure they're covered
+        # For corners that diagonal lines barely touch, add multiple nearby lines
+        corner_line_offsets = set()
+        for corner_x, corner_y in corners:
+            corner_offset = (corner_x - cx) * dx_perp + (corner_y - cy) * dy_perp
+            # Add the exact corner line
+            corner_line_offsets.add(corner_offset)
+            # Add a few lines on either side of the corner (sub-spacing intervals)
+            for delta in [-0.8, -0.4, 0.4, 0.8]:
+                corner_line_offsets.add(corner_offset + delta)
+        
+        # Merge regular offsets with corner offsets
+        all_offsets = []
         for i in range(num_lines):
-            # Calculate offset from center along perpendicular direction
-            offset = start_offset + i * hatch_spacing_px
+            regular_offset = min_offset + i * hatch_spacing_px
+            all_offsets.append(regular_offset)
+        
+        # Add corner offsets if they're not already close to a regular offset
+        for corner_offset in corner_line_offsets:
+            # Check if any regular offset is within  a tiny tolerance of this corner
+            # Use very small tolerance to ensure we actually generate lines AT corners
+            has_nearby = any(abs(corner_offset - reg_offset) < 0.1 
+                           for reg_offset in all_offsets)
+            if not has_nearby:
+                all_offsets.append(corner_offset)
+        
+        # Sort for orderly processing
+        all_offsets.sort()
+        
+        for offset in all_offsets:
             
             # Start point of this hatch line (far to one side along line direction)
             px = cx + offset * dx_perp - diagonal * dx_line
@@ -254,97 +295,210 @@ class Blueprint2GCode:
             p1 = (max(0, min(img_shape[1]-1, p1[0])), max(0, min(img_shape[0]-1, p1[1])))
             p2 = (max(0, min(img_shape[1]-1, p2[0])), max(0, min(img_shape[0]-1, p2[1])))
             
-            # Draw this line on a temporary mask
-            line_mask = np.zeros(img_shape, dtype=np.uint8)
-            cv2.line(line_mask, p1, p2, 255, 1)
+            # GEOMETRIC APPROACH: Scan along the line and find all intersection segments
+            # This avoids rasterization issues at corners where cv2.line only hits 1-2 pixels
             
-            # Find intersection with the filled contour
-            intersection = cv2.bitwise_and(line_mask, mask)
+            # Line parametric form: point = p1 + t * direction, where t goes from 0 to 1
+            line_start = np.array([float(p1[0]), float(p1[1])])
+            line_end = np.array([float(p2[0]), float(p2[1])])
+            line_vec = line_end - line_start
+            line_length = np.linalg.norm(line_vec)
             
-            # Find all separate segments where this line intersects the contour
-            points = np.argwhere(intersection > 0)
+            if line_length < 1:
+                continue
             
-            if len(points) > 0:
-                # Sort points along the line direction
-                # Project points onto the line direction
-                projections = points[:, 1] * dx_line + points[:, 0] * dy_line
-                sorted_indices = np.argsort(projections)
-                sorted_points = points[sorted_indices]
+            line_dir = line_vec / line_length
+            
+            # Sample along the line at very dense sub-pixel intervals to catch corner pixels
+            # Use 10 samples per pixel to ensure we don't miss single-pixel corner touches
+            num_samples = int(line_length * 10) + 20
+            
+            intersections = []
+            in_mask = False
+            segment_start = None
+            
+            for sample_idx in range(num_samples):
+                t = sample_idx / (num_samples - 1)
+                point = line_start + t * line_vec
                 
-                # Group into continuous segments
-                segments = []
-                current_segment = [sorted_points[0]]
+                x, y = int(round(point[0])), int(round(point[1]))
                 
-                for i in range(1, len(sorted_points)):
-                    # Check if this point is close to the previous one
-                    dist = np.linalg.norm(sorted_points[i] - sorted_points[i-1])
-                    if dist < 3:  # Threshold for continuity
-                        current_segment.append(sorted_points[i])
+                # Check bounds
+                if x < 0 or x >= img_shape[1] or y < 0 or y >= img_shape[0]:
+                    if in_mask and segment_start is not None:
+                        # Exited bounds while in mask - close segment at boundary
+                        intersections.append((segment_start, point))
+                        in_mask = False
+                        segment_start = None
+                    continue
+                
+                # Check if this point is in the mask
+                is_in_mask = mask[y, x] > 0
+                
+                if is_in_mask and not in_mask:
+                    # Entering mask - start new segment
+                    segment_start = point.copy()
+                    in_mask = True
+                elif not is_in_mask and in_mask:
+                    # Leaving mask - close current segment
+                    if segment_start is not None:
+                        intersections.append((segment_start, point))
+                    in_mask = False
+                    segment_start = None
+            
+            # Close any open segment at the end
+            if in_mask and segment_start is not None:
+                intersections.append((segment_start, line_end))
+            
+            # Now extend each intersection segment to the actual mask boundaries
+            # using precise ray marching in the hatch direction
+            hatch_dir = np.array([dx_line, dy_line])
+            
+            def extend_to_boundary_precise(start_pos, direction, mask, max_steps=1000):
+                """Extend from start position along direction until leaving mask.
+                Returns the furthest point still inside the mask."""
+                pos = start_pos.copy()
+                step_size = 0.2  # Sub-pixel steps
+                last_valid = pos.copy()
+                
+                for _ in range(max_steps):
+                    pos = pos + direction * step_size
+                    x, y = int(round(pos[0])), int(round(pos[1]))
+                    
+                    # Check bounds
+                    if x < 0 or x >= mask.shape[1] or y < 0 or y >= mask.shape[0]:
+                        return last_valid
+                    
+                    # Check mask
+                    if mask[y, x] > 0:
+                        last_valid = pos.copy()
                     else:
-                        # Start a new segment
-                        if len(current_segment) > 1:
-                            segments.append(current_segment)
-                        current_segment = [sorted_points[i]]
+                        # Left the mask
+                        return last_valid
                 
-                # Add last segment
-                if len(current_segment) > 1:
-                    segments.append(current_segment)
+                return last_valid
+            
+            # Process each intersection segment
+            for seg_start, seg_end in intersections:
+                # Extend both ends to mask boundaries using the hatch direction
+                extended_start = extend_to_boundary_precise(seg_start, -hatch_dir, mask)
+                extended_end = extend_to_boundary_precise(seg_end, hatch_dir, mask)
                 
-                # Create line segments from grouped points
-                for segment in segments:
-                    if len(segment) >= 2:
-                        # Use first and last point (flip x,y since points are row,col)
-                        start_pt = [int(segment[0][1]), int(segment[0][0])]
-                        end_pt = [int(segment[-1][1]), int(segment[-1][0])]
-                        
-                        # Performance: Skip expensive pixel-by-pixel extension
-                        # The intersection already gives us good coverage
-                        
-                        hatch_lines.append([start_pt, end_pt])
+                # Only add if the segment has reasonable length
+                seg_length = np.linalg.norm(extended_end - extended_start)
+                if seg_length > 0.5:  # At least half a pixel
+                    hatch_lines.append([
+                        [int(round(extended_start[0])), int(round(extended_start[1]))],
+                        [int(round(extended_end[0])), int(round(extended_end[1]))]
+                    ])
         
-        # Add corner fill lines to ensure sharp, filled corners
-        # For 45° hatching, corners need additional lines along edges
-        if len(hatch_lines) > 0:
-            # Find mask bounds (actual filled area)
+        # Add extra lines near corners to improve coverage for diagonal hatching
+        # For 45° hatching, some corners are geometrically hard to reach with regular spacing
+        if len(hatch_lines) > 0 and abs(self.hatch_angle % 90) > 5:
+            # Find mask extremes
             mask_points = np.argwhere(mask > 0)
             if len(mask_points) > 0:
-                mask_min_y, mask_min_x = mask_points.min(axis=0)
-                mask_max_y, mask_max_x = mask_points.max(axis=0)
+                min_y, min_x = mask_points.min(axis=0)
+                max_y, max_x = mask_points.max(axis=0)
                 
-                # Define corners and the edges that meet at each corner
-                # Each corner needs lines along both adjacent edges
-                hatch_spacing_px = getattr(self, 'hatch_spacing_pixels', self.hatch_spacing)
-                corner_fill_distance = int(hatch_spacing_px * 3)  # Fill 3 hatch-spacings from corner
+                # Define corner regions (10% of dimensions)
+                corner_margin = int(min(max_x - min_x, max_y - min_y) * 0.1)
                 
-                corners_to_fill = [
-                    # (corner_x, corner_y, [(edge_start, edge_end, axis), ...])
-                    (mask_min_x, mask_min_y, [  # top-left
-                        ([mask_min_x, mask_min_y], [mask_min_x + corner_fill_distance, mask_min_y], 'h'),  # horizontal
-                        ([mask_min_x, mask_min_y], [mask_min_x, mask_min_y + corner_fill_distance], 'v'),  # vertical
-                    ]),
-                    (mask_max_x, mask_min_y, [  # top-right
-                        ([mask_max_x - corner_fill_distance, mask_min_y], [mask_max_x, mask_min_y], 'h'),
-                        ([mask_max_x, mask_min_y], [mask_max_x, mask_min_y + corner_fill_distance], 'v'),
-                    ]),
-                    (mask_min_x, mask_max_y, [  # bottom-left
-                        ([mask_min_x, mask_max_y], [mask_min_x + corner_fill_distance, mask_max_y], 'h'),
-                        ([mask_min_x, mask_max_y - corner_fill_distance], [mask_min_x, mask_max_y], 'v'),
-                    ]),
-                    (mask_max_x, mask_max_y, [  # bottom-right
-                        ([mask_max_x - corner_fill_distance, mask_max_y], [mask_max_x, mask_max_y], 'h'),
-                        ([mask_max_x, mask_max_y - corner_fill_distance], [mask_max_x, mask_max_y], 'v'),
-                    ]),
+                # For each corner, generate additional lines with tighter spacing
+                corners = [
+                    (min_x, min_y),  # Top-left
+                    (max_x, min_y),  # Top-right
+                    (min_x, max_y),  # Bottom-left
+                    (max_x, max_y),  # Bottom-right
                 ]
                 
-                # Add edge lines at each corner
-                for corner_x, corner_y, edge_lines in corners_to_fill:
-                    for start, end, axis in edge_lines:
-                        # Verify both endpoints are in mask
-                        if (0 <= start[1] < mask.shape[0] and 0 <= start[0] < mask.shape[1] and
-                            0 <= end[1] < mask.shape[0] and 0 <= end[0] < mask.shape[1]):
-                            if mask[start[1], start[0]] > 0 and mask[end[1], end[0]] > 0:
-                                # Add line along this edge
-                                hatch_lines.append([list(start), list(end)])
+                # Use half the normal spacing for corner fill
+                corner_spacing = hatch_spacing_px / 2.0
+                
+                for corner_x, corner_y in corners:
+                    # Calculate perpendicular offset for this corner
+                    vx, vy = corner_x - cx, corner_y - cy
+                    corner_offset = vx * dx_perp + vy * dy_perp
+                    
+                    # Generate 3-5 extra lines around this corner's offset
+                    for extra in range(-2, 3):
+                        offset = corner_offset + extra * corner_spacing
+                        
+                        # Generate line at this offset
+                        px = cx + offset * dx_perp - diagonal * dx_line
+                        py = cy + offset * dy_perp - diagonal * dy_line
+                        qx = cx + offset * dx_perp + diagonal * dx_line
+                        qy = cy + offset * dy_perp + diagonal * dy_line
+                        
+                        p1_corner = (int(round(px)), int(round(py)))
+                        p2_corner = (int(round(qx)), int(round(qy)))
+                        
+                        # Clip to bounds
+                        p1_corner = (max(0, min(img_shape[1]-1, p1_corner[0])), 
+                                   max(0, min(img_shape[0]-1, p1_corner[1])))
+                        p2_corner = (max(0, min(img_shape[1]-1, p2_corner[0])), 
+                                   max(0, min(img_shape[0]-1, p2_corner[1])))
+                        
+                        # Sample and find intersections (same as above)
+                        line_start = np.array([float(p1_corner[0]), float(p1_corner[1])])
+                        line_end = np.array([float(p2_corner[0]), float(p2_corner[1])])
+                        line_vec = line_end - line_start
+                        line_length = np.linalg.norm(line_vec)
+                        
+                        if line_length < 1:
+                            continue
+                        
+                        line_dir = line_vec / line_length
+                        num_samples = int(line_length * 2) + 10
+                        
+                        intersections = []
+                        in_mask = False
+                        segment_start = None
+                        
+                        for sample_idx in range(num_samples):
+                            t = sample_idx / (num_samples - 1)
+                            point = line_start + t * line_vec
+                            
+                            x, y = int(round(point[0])), int(round(point[1]))
+                            
+                            if x < 0 or x >= img_shape[1] or y < 0 or y >= img_shape[0]:
+                                if in_mask and segment_start is not None:
+                                    intersections.append((segment_start, point))
+                                    in_mask = False
+                                    segment_start = None
+                                continue
+                            
+                            is_in_mask = mask[y, x] > 0
+                            
+                            if is_in_mask and not in_mask:
+                                segment_start = point.copy()
+                                in_mask = True
+                            elif not is_in_mask and in_mask:
+                                if segment_start is not None:
+                                    intersections.append((segment_start, point))
+                                in_mask = False
+                                segment_start = None
+                        
+                        if in_mask and segment_start is not None:
+                            intersections.append((segment_start, line_end))
+                        
+                        # Add segments (only if they're in the corner region)
+                        for seg_start, seg_end in intersections:
+                            # Check if this segment is actually near the corner
+                            seg_center = (seg_start + seg_end) / 2
+                            if (abs(seg_center[0] - corner_x) < corner_margin and 
+                                abs(seg_center[1] - corner_y) < corner_margin):
+                                
+                                hatch_dir = np.array([dx_line, dy_line])
+                                extended_start = extend_to_boundary_precise(seg_start, -hatch_dir, mask)
+                                extended_end = extend_to_boundary_precise(seg_end, hatch_dir, mask)
+                                
+                                seg_length = np.linalg.norm(extended_end - extended_start)
+                                if seg_length > 0.5:
+                                    hatch_lines.append([
+                                        [int(round(extended_start[0])), int(round(extended_start[1]))],
+                                        [int(round(extended_end[0])), int(round(extended_end[1]))]
+                                    ])
         
         return hatch_lines
     
@@ -365,14 +519,47 @@ class Blueprint2GCode:
                 cv2.drawContours(mask_for_lines, [contour], -1, 0, -1)
             
             # Generate hatch lines for solid areas
-            print(f"  Generating hatch lines for {len(solid_areas)} solid areas...")
-            for idx, contour_info in enumerate(solid_areas):
-                if (idx + 1) % 5 == 0 or idx == 0:
-                    print(f"    Processing area {idx + 1}/{len(solid_areas)}...")
-                hatch_lines = self.generate_hatch_lines(contour_info, binary_img.shape, hierarchy, all_contours)
-                solid_lines.extend(hatch_lines)
-            
-            print(f"Generated {len(solid_lines)} hatch lines for solid areas")
+            if getattr(self, 'crosshatch', False):
+                # Crosshatch mode: generate two perpendicular sets of lines
+                print(f"  Generating crosshatch lines for {len(solid_areas)} solid areas...")
+                print(f"    Pass 1: {self.hatch_angle}° hatching...")
+                for idx, contour_info in enumerate(solid_areas):
+                    if (idx + 1) % 5 == 0 or idx == 0:
+                        print(f"      Processing area {idx + 1}/{len(solid_areas)}...")
+                    hatch_lines = self.generate_hatch_lines(contour_info, binary_img.shape, hierarchy, all_contours)
+                    solid_lines.extend(hatch_lines)
+                
+                pass1_count = len(solid_lines)
+                print(f"    Pass 1 complete: {pass1_count} lines")
+                
+                # Second pass with perpendicular angle
+                perpendicular_angle = self.hatch_angle + 90
+                original_angle = self.hatch_angle
+                self.hatch_angle = perpendicular_angle
+                
+                print(f"    Pass 2: {self.hatch_angle}° hatching...")
+                for idx, contour_info in enumerate(solid_areas):
+                    if (idx + 1) % 5 == 0 or idx == 0:
+                        print(f"      Processing area {idx + 1}/{len(solid_areas)}...")
+                    hatch_lines = self.generate_hatch_lines(contour_info, binary_img.shape, hierarchy, all_contours)
+                    solid_lines.extend(hatch_lines)
+                
+                # Restore original angle
+                self.hatch_angle = original_angle
+                
+                pass2_count = len(solid_lines) - pass1_count
+                print(f"    Pass 2 complete: {pass2_count} lines")
+                print(f"Generated {len(solid_lines)} total crosshatch lines for solid areas")
+            else:
+                # Single-angle mode: faster but may miss some sharp corners
+                print(f"  Generating hatch lines for {len(solid_areas)} solid areas...")
+                for idx, contour_info in enumerate(solid_areas):
+                    if (idx + 1) % 5 == 0 or idx == 0:
+                        print(f"    Processing area {idx + 1}/{len(solid_areas)}...")
+                    hatch_lines = self.generate_hatch_lines(contour_info, binary_img.shape, hierarchy, all_contours)
+                    solid_lines.extend(hatch_lines)
+                
+                print(f"Generated {len(solid_lines)} hatch lines for solid areas")
             
             # Use masked image for line detection
             binary_for_lines = mask_for_lines
@@ -829,6 +1016,8 @@ def main():
                         help='Spacing between hatch lines in pixels (before scaling)')
     parser.add_argument('--hatch-angle', type=float, default=45.0,
                         help='Angle of hatch lines in degrees')
+    parser.add_argument('--crosshatch', action='store_true',
+                        help='Use crosshatch pattern (two perpendicular angles) for complete corner coverage')
     parser.add_argument('--min-solid-area', type=float, default=100.0,
                         help='Minimum area in pixels to consider as solid (before scaling)')
     
