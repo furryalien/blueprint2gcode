@@ -1,0 +1,70 @@
+; Blueprint to G-code
+; Input: test_data\test_images_inverted\white_on_black_simple_box.png
+; Generated with blueprint2gcode.py
+
+G21 ; Set units to millimeters
+G90 ; Absolute positioning
+G0 Z3.0 ; Pen up
+G0 X0 Y0 ; Move to origin
+
+G0 X14.133 Y35.890 F3000 ; Travel to line 1
+G0 Z0.0 ; Pen down
+G1 X14.390 Y35.633 F1000
+G1 X52.242 Y35.633 F1000
+G1 X52.500 Y35.890 F1000
+G1 X52.500 Y73.743 F1000
+G1 X52.242 Y74.000 F1000
+G1 X14.390 Y74.000 F1000
+G1 X14.133 Y73.743 F1000
+G0 Z3.0 ; Pen up
+
+G0 X14.133 Y74.257 F3000 ; Travel to line 2
+G0 Z0.0 ; Pen down
+G1 X14.390 Y74.000 F1000
+G1 X52.242 Y74.000 F1000
+G1 X52.500 Y74.257 F1000
+G1 X52.500 Y112.110 F1000
+G1 X52.242 Y112.368 F1000
+G1 X14.390 Y112.368 F1000
+G1 X14.133 Y112.110 F1000
+G0 Z3.0 ; Pen up
+
+G0 X14.133 Y112.368 F3000 ; Travel to line 3
+G0 Z0.0 ; Pen down
+G1 X14.133 Y35.633 F1000
+G1 X90.610 Y35.633 F1000
+G1 X90.868 Y35.890 F1000
+G1 X90.868 Y112.368 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.500 Y112.110 F3000 ; Travel to line 4
+G0 Z0.0 ; Pen down
+G1 X52.758 Y112.368 F1000
+G1 X90.610 Y112.368 F1000
+G1 X90.868 Y112.110 F1000
+G1 X90.868 Y74.257 F1000
+G1 X90.610 Y74.000 F1000
+G1 X52.758 Y74.000 F1000
+G1 X52.500 Y74.257 F1000
+G0 Z3.0 ; Pen up
+
+G0 X52.500 Y73.743 F3000 ; Travel to line 5
+G0 Z0.0 ; Pen down
+G1 X52.758 Y74.000 F1000
+G1 X90.610 Y74.000 F1000
+G1 X90.868 Y73.743 F1000
+G1 X90.868 Y36.148 F1000
+G1 X90.353 Y35.633 F1000
+G1 X52.758 Y35.633 F1000
+G1 X52.500 Y35.890 F1000
+G0 Z3.0 ; Pen up
+
+; Return to origin
+G0 X0 Y0
+G0 Z3.0
+
+; Total drawing distance: 765.51 mm
+; Total travel distance: 78.23 mm
+; Total lines: 5
+; Estimated time: 47.5 seconds (0.8 minutes)
+M2 ; End program

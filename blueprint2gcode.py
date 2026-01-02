@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Blueprint to G-code Converter
-Converts blueprint-style images (black lines on white) to G-code for pen plotters.
+Converts blueprint-style images to G-code for pen plotters.
+Supports both black-on-white and white-on-black images (use --invert-colors for the latter).
 """
 
 import argparse
@@ -33,6 +34,7 @@ class Blueprint2GCode:
         self.hatch_angle = args.hatch_angle
         self.crosshatch = args.crosshatch
         self.min_solid_area = args.min_solid_area
+        self.invert_colors = args.invert_colors
         
         # Paper dimensions in mm (width x height)
         self.paper_sizes = {
@@ -59,6 +61,11 @@ class Blueprint2GCode:
         
         # Convert to numpy array (with explicit dtype for NumPy 2.0 compatibility)
         img_array = np.asarray(img_gray, dtype=np.uint8)
+        
+        # Invert colors if requested (for white-on-black or white-on-blue images)
+        if self.invert_colors:
+            print("Inverting image colors...")
+            img_array = 255 - img_array
         
         # Threshold to binary (black lines on white background)
         # Using Otsu's method for automatic thresholding
@@ -1020,6 +1027,10 @@ def main():
                         help='Use crosshatch pattern (two perpendicular angles) for complete corner coverage')
     parser.add_argument('--min-solid-area', type=float, default=100.0,
                         help='Minimum area in pixels to consider as solid (before scaling)')
+    
+    # Image preprocessing
+    parser.add_argument('--invert-colors', action='store_true',
+                        help='Invert image colors before processing (useful for white-on-black or white-on-blue images)')
     
     args = parser.parse_args()
     
