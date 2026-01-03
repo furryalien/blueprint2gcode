@@ -1,6 +1,20 @@
 ; Blueprint to G-code
 ; Input: /home/david/code/blueprint2gcode/test_data/test_images/test1_simple_box.png
 ; Generated with blueprint2gcode.py
+;
+; Generation Parameters:
+;   Paper size: A4 (210x297mm)
+;   Orientation: auto
+;   Margin: 1.0mm
+;   Z up: 3.0mm
+;   Z down: 0.0mm
+;   Feed rate: 1000mm/min
+;   Travel rate: 3000mm/min
+;   Join tolerance: 0.02mm
+;   Min line length: 0.01mm
+;   Simplify epsilon: 0.000001
+;   Fill solid areas: False
+;   Invert colors: False
 
 G21 ; Set units to millimeters
 G90 ; Absolute positioning
