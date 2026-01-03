@@ -1,9 +1,10 @@
 # Blueprint to G-code Converter
 
-Converts blueprint-style images (black lines on white background) to G-code for pen plotters and CNC machines with pen attachments.
+Converts blueprint-style images to G-code for pen plotters and CNC machines with pen attachments. Supports both standard black-on-white images and inverted white-on-black/white-on-blue images.
 
 ## Features
 
+- **Color Inversion Support**: Process white-on-black or white-on-blue images with `--invert-colors` flag
 - **Extreme Detail Detection**: Captures punctuation, small arrows, fine circuit traces, and delicate line work
 - **Solid Area Filling**: Detects and fills solid black areas with configurable cross-hatching patterns
   - Automatically distinguishes between outlines and filled regions
@@ -64,6 +65,9 @@ python blueprint2gcode.py input.jpg output.gcode
 # Specify paper size and orientation
 python blueprint2gcode.py input.png output.gcode --paper-size A6 --orientation portrait
 
+# Process inverted images (white lines on black/blue background)
+python blueprint2gcode.py input.png output.gcode --invert-colors
+
 # Enable solid area filling with cross-hatching
 python blueprint2gcode.py input.png output.gcode --fill-solid-areas
 
@@ -102,6 +106,7 @@ python blueprint2gcode.py input.png output.gcode \
 | `--hatch-spacing` | 1.0 | Spacing between hatch lines in pixels (before scaling) |
 | `--hatch-angle` | 45.0 | Angle of hatch lines in degrees |
 | `--min-solid-area` | 100.0 | Minimum area in pixels to consider as solid |
+| `--invert-colors` | disabled | Invert image colors for white-on-black or white-on-blue images |
 
 ### Paper Sizes
 
@@ -131,8 +136,10 @@ The generated G-code uses:
 ## Input Requirements
 
 - **Format**: JPG or PNG
-- **Style**: Black lines on white background (blueprint style)
+- **Style**: Black lines on white background, OR white lines on dark background (use `--invert-colors`)
 - **Quality**: Higher resolution images provide more accurate line detection
+
+See [Color Inversion Feature Documentation](docs/COLOR_INVERSION_FEATURE.md) for details on processing inverted images.
 
 ## Technical Details
 
