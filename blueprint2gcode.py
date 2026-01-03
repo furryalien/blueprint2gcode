@@ -103,7 +103,12 @@ class Blueprint2GCode:
                 # Only consider areas above minimum threshold
                 # Use bbox_area for degenerate (0-area) contours
                 effective_area = area if area > 0 else bbox_area
-                if effective_area < self.min_solid_area:
+                
+                # Exception: Very thin but tall/long shapes (like "1", "i", "l", "-")
+                # should be considered even if their area is small
+                is_thin_tall = (w < 20 and h > 15) or (h < 20 and w > 15)
+                
+                if effective_area < self.min_solid_area and not is_thin_tall:
                     continue
                 
                 # Calculate solidity (ratio of contour area to convex hull area)
