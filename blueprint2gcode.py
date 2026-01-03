@@ -983,8 +983,8 @@ class Blueprint2GCode:
         gcode.append(f";   Feed rate: {self.feed_rate}mm/min")
         gcode.append(f";   Travel rate: {self.travel_rate}mm/min")
         gcode.append(f";   Join tolerance: {self.join_tolerance}mm")
-        gcode.append(f";   Min line length: {self.min_line_length}mm")
-        gcode.append(f";   Simplify epsilon: {self.simplify_epsilon}")
+        gcode.append(f";   Min line length: {self.min_line_length:.10f}".rstrip('0').rstrip('.') + "mm")
+        gcode.append(f";   Simplify epsilon: {self.simplify_epsilon:.10f}".rstrip('0').rstrip('.'))
         gcode.append(f";   Fill solid areas: {self.fill_solid_areas}")
         if self.fill_solid_areas:
             gcode.append(f";   Hatch spacing: {self.hatch_spacing}px")
