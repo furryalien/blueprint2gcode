@@ -133,6 +133,7 @@ python3 blueprint2gcode.py test_data/test_images_corners/test1_square_300x300.pn
 - Complex shapes with holes
 - Mechanical parts
 - Floor plans with walls
+- Crescent and curved shapes (low solidity shapes)
 
 **Parameters to Test**:
 - `--hatch-angle`: 0°, 45°, 90°, custom angles
@@ -146,11 +147,22 @@ python3 blueprint2gcode.py test_data/test_images_corners/test1_square_300x300.pn
 - Correct angle of hatching
 - Holes are not filled
 - No overflow or underfill
+- Crescent shapes with low solidity (<0.25) are detected and filled
+- Curved shapes with high compactness are properly hatched
+
+**Special Cases**:
+- **Crescent shapes**: Low solidity (0.10-0.25), high compactness, require special detection
+- **Thin crescents**: Thickness >1.5px, area >500px², compactness <500
+- **Spiral clusters**: Multiple connected crescents detected as single contour
 
 **Example**:
 ```bash
 python3 blueprint2gcode.py test_data/test_images_solid/test1_simple_shapes.png \
     output.gcode --fill-solid-areas --hatch-angle 45 --hatch-spacing 2.0
+
+# Crescent shapes test
+python3 blueprint2gcode.py test_data/test_images_solid/test6_crescent_spiral.png \
+    output.gcode --fill-solid-areas --hatch-angle 45 --hatch-spacing 1.0 --paper-size A6
 ```
 
 ### 4. Letter and Character Tests

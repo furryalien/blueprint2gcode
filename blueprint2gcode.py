@@ -175,6 +175,12 @@ class Blueprint2GCode:
                         
                         fill_ratio = (calc_area - children_area) / calc_area if calc_area > 0 else 0
                         
+                        # Special case: Crescent/curved shapes with children inside
+                        # These have low solidity (0.25-0.40) but are clearly filled shapes, not outline strokes
+                        # e.g., thick curved brush strokes with other shapes overlapping inside
+                        if calc_area > 500 and thickness > 1.5 and compactness < 1500:
+                            is_solid = True
+                            parent_indices.add(i)  # Mark as parent so children are excluded
                         # Only accept if:
                         # 1. Reasonable compactness (not huge outline)
                         # 2. Sufficient fill ratio to exclude outline strokes
@@ -182,7 +188,7 @@ class Blueprint2GCode:
                         #    - Floor plans: 0.15-0.45 (15-45% filled - walls + rooms)
                         #    - Solid with holes: > 0.85 (85% filled - mostly solid)
                         # 3. Sufficient thickness (not a thin outline stroke)
-                        if solidity > 0.4 and compactness < 200 and fill_ratio > 0.15 and thickness >= min_thickness:  # Reduced solidity from 0.5 to 0.4 for # $
+                        elif solidity > 0.4 and compactness < 200 and fill_ratio > 0.15 and thickness >= min_thickness:  # Reduced solidity from 0.5 to 0.4 for # $
                             is_solid = True
                             parent_indices.add(i)  # Mark this as a parent
                         else:
@@ -208,6 +214,15 @@ class Blueprint2GCode:
                         elif not has_children and compactness < 100:
                             # Single contour with moderate compactness
                             is_solid = True
+                    elif not is_child and thickness >= min_thickness:
+                        # Special case for crescent/curved shapes that have low solidity
+                        # but sufficient area and thickness (e.g., crescent moons, C-shapes, spiral clusters, thick curved strokes)
+                        # These have low solidity (~0.10-0.25) and can have high compactness (up to 1000+) but are clearly filled shapes
+                        # Can have children (shapes inside the crescent) or not
+                        if calc_area > 500 and thickness > 1.5 and compactness < 1500:
+                            is_solid = True
+                            if has_children:
+                                parent_indices.add(i)  # Mark as parent so children are excluded
                     
                     if is_solid:
                         # Store contour index so we can find its children later
@@ -226,6 +241,7 @@ class Blueprint2GCode:
         else:
             contour_idx = None
             contour = contour_info
+        
         # Get bounding box
         x, y, w, h = cv2.boundingRect(contour)
         
@@ -345,49 +361,43 @@ class Blueprint2GCode:
         # Use hatch_spacing_pixels instead of hatch_spacing
         hatch_spacing_px = getattr(self, 'hatch_spacing_pixels', self.hatch_spacing)
         
-        # Calculate the perpendicular extent needed to cover all corners
-        # Project all 4 corners onto the perpendicular axis to find the range
-        corners = [
-            (x, y), (x + w, y), (x, y + h), (x + w, y + h)
-        ]
+        # Calculate the perpendicular extent by projecting ACTUAL mask pixels
+        # onto the perpendicular axis (not just bounding box corners)
+        # This ensures we cover the entire shape, not just its bounding box
+        mask_points = np.argwhere(mask > 0)
+        
+        if len(mask_points) == 0:
+            return []
+        
+        # Sample mask points for efficiency (every Nth point)
+        sample_step = max(1, len(mask_points) // 500)  # Sample ~500 points
+        sampled_points = mask_points[::sample_step]
+        
         perp_offsets = []
-        for corner_x, corner_y in corners:
-            # Perpendicular offset from center to this corner
-            offset = (corner_x - cx) * dx_perp + (corner_y - cy) * dy_perp
+        for py, px in sampled_points:
+            # Perpendicular offset from center to this pixel
+            offset = (px - cx) * dx_perp + (py - cy) * dy_perp
             perp_offsets.append(offset)
         
-        # Extend beyond the min/max corners to ensure complete coverage
+        # Extend beyond the min/max to ensure complete coverage
         min_offset = min(perp_offsets) - hatch_spacing_px * 2
         max_offset = max(perp_offsets) + hatch_spacing_px * 2
+        
+        # Also check bounding box corners for robustness
+        corners = [(x, y), (x + w, y), (x, y + h), (x + w, y + h)]
+        for corner_x, corner_y in corners:
+            offset = (corner_x - cx) * dx_perp + (corner_y - cy) * dy_perp
+            min_offset = min(min_offset, offset - hatch_spacing_px)
+            max_offset = max(max_offset, offset + hatch_spacing_px)
         
         # Generate lines from min to max offset at regular spacing
         num_lines = int((max_offset - min_offset) / hatch_spacing_px) + 3
         
-        # Add explicit lines through each corner to ensure they're covered
-        # For corners that diagonal lines barely touch, add multiple nearby lines
-        corner_line_offsets = set()
-        for corner_x, corner_y in corners:
-            corner_offset = (corner_x - cx) * dx_perp + (corner_y - cy) * dy_perp
-            # Add the exact corner line
-            corner_line_offsets.add(corner_offset)
-            # Add a few lines on either side of the corner (sub-spacing intervals)
-            for delta in [-0.8, -0.4, 0.4, 0.8]:
-                corner_line_offsets.add(corner_offset + delta)
-        
-        # Merge regular offsets with corner offsets
+        # Generate all hatch line offsets
         all_offsets = []
         for i in range(num_lines):
             regular_offset = min_offset + i * hatch_spacing_px
             all_offsets.append(regular_offset)
-        
-        # Add corner offsets if they're not already close to a regular offset
-        for corner_offset in corner_line_offsets:
-            # Check if any regular offset is within  a tiny tolerance of this corner
-            # Use very small tolerance to ensure we actually generate lines AT corners
-            has_nearby = any(abs(corner_offset - reg_offset) < 0.1 
-                           for reg_offset in all_offsets)
-            if not has_nearby:
-                all_offsets.append(corner_offset)
         
         # Sort for orderly processing
         all_offsets.sort()
@@ -402,20 +412,16 @@ class Blueprint2GCode:
             qx = cx + offset * dx_perp + diagonal * dx_line
             qy = cy + offset * dy_perp + diagonal * dy_line
             
-            # Convert to integer coordinates
-            p1 = (int(round(px)), int(round(py)))
-            p2 = (int(round(qx)), int(round(qy)))
-            
-            # Clip to image bounds
-            p1 = (max(0, min(img_shape[1]-1, p1[0])), max(0, min(img_shape[0]-1, p1[1])))
-            p2 = (max(0, min(img_shape[1]-1, p2[0])), max(0, min(img_shape[0]-1, p2[1])))
+            # DON'T clip the endpoints! Use the full unclipped line for sampling
+            # Clipping would make all lines collapse to the same image diagonal
+            # We'll check bounds during sampling instead
             
             # GEOMETRIC APPROACH: Scan along the line and find all intersection segments
             # This avoids rasterization issues at corners where cv2.line only hits 1-2 pixels
             
             # Line parametric form: point = p1 + t * direction, where t goes from 0 to 1
-            line_start = np.array([float(p1[0]), float(p1[1])])
-            line_end = np.array([float(p2[0]), float(p2[1])])
+            line_start = np.array([px, py])
+            line_end = np.array([qx, qy])
             line_vec = line_end - line_start
             line_length = np.linalg.norm(line_vec)
             
@@ -676,6 +682,29 @@ class Blueprint2GCode:
                 
                 print(f"Generated {len(solid_lines)} hatch lines for solid areas")
             
+            # Add outlines for solid areas to define their boundaries
+            print(f"  Adding outlines for {len(solid_areas)} solid areas...")
+            outline_count = 0
+            for contour_info in solid_areas:
+                # Handle both tuple and contour formats
+                contour = contour_info[1] if isinstance(contour_info, tuple) else contour_info
+                
+                # Convert contour to line segments
+                # Simplify the contour to reduce points while preserving shape
+                perimeter = cv2.arcLength(contour, True)
+                epsilon = 0.5  # Small epsilon to preserve detail
+                simplified = cv2.approxPolyDP(contour, epsilon, True)
+                
+                # Convert to list of points (close the contour by connecting last to first)
+                points = simplified.reshape(-1, 2).tolist()
+                if len(points) >= 2:
+                    # Add the contour as a closed polyline
+                    points.append(points[0])  # Close the loop
+                    solid_lines.append(points)
+                    outline_count += 1
+            
+            print(f"  Added {outline_count} outlines for solid areas")
+            
             # Use masked image for line detection
             binary_for_lines = mask_for_lines
         else:
@@ -720,14 +749,27 @@ class Blueprint2GCode:
                 if len(points) >= 2:
                     lines.append(points)
         
-        # Add solid area hatch lines
-        lines.extend(solid_lines)
+        # Tag lines by type to prevent mixing during joining
+        # Regular lines get dict format: {'points': [...], 'type': 'regular'}
+        # Hatch/outline lines get: {'points': [...], 'type': 'solid'}
+        tagged_lines = [{'points': line, 'type': 'regular'} for line in lines]
+        tagged_solid_lines = [{'points': line, 'type': 'solid'} for line in solid_lines]
         
-        print(f"Extracted {len(lines)} line segments (including {len(solid_lines)} hatch lines)")
-        return lines
+        all_lines = tagged_lines + tagged_solid_lines
+        
+        print(f"Extracted {len(all_lines)} line segments (including {len(solid_lines)} hatch lines)")
+        return all_lines
     
     def scale_to_a4(self, lines, img_shape):
         """Scale lines to fit paper size with margins."""
+        # Unpack tagged lines if necessary
+        if lines and isinstance(lines[0], dict):
+            tagged_lines = lines
+            lines = [item['points'] for item in tagged_lines]
+            line_types = [item.get('type', 'regular') for item in tagged_lines]
+        else:
+            line_types = ['regular'] * len(lines)
+        
         img_height, img_width = img_shape
         
         # Calculate usable area
@@ -801,7 +843,7 @@ class Blueprint2GCode:
         
         # Scale and translate all lines
         scaled_lines = []
-        for line in lines:
+        for idx, line in enumerate(lines):
             scaled_line = []
             for x, y in line:
                 # Flip Y axis (image Y increases downward, plotter Y increases upward)
@@ -810,11 +852,21 @@ class Blueprint2GCode:
                 scaled_line.append([new_x, new_y])
             scaled_lines.append(scaled_line)
         
-        return scaled_lines
+        # Re-pack with types
+        tagged_scaled_lines = [{'points': scaled_lines[i], 'type': line_types[i]} for i in range(len(scaled_lines))]
+        
+        return tagged_scaled_lines
     
     def join_nearby_endpoints(self, lines):
-        """Join line segments that have endpoints close together."""
+        """Join line segments that have endpoints close together, respecting line types."""
         print(f"Joining nearby line endpoints... (starting with {len(lines)} segments)")
+        
+        # Unpack tagged lines
+        regular_lines = [item['points'] for item in lines if item.get('type') == 'regular']
+        solid_lines = [item['points'] for item in lines if item.get('type') == 'solid']
+        
+        # Only join regular lines (solid lines like hatches and outlines should not be joined)
+        print(f"  Regular lines to join: {len(regular_lines)}, Solid lines (unchanged): {len(solid_lines)}")
         
         # Build a graph of line segments
         joined = True
@@ -829,13 +881,13 @@ class Blueprint2GCode:
             new_lines = []
             used = set()
             
-            for i, line1 in enumerate(lines):
+            for i, line1 in enumerate(regular_lines):
                 if i in used:
                     continue
                 
                 # Try to extend this line
                 extended = False
-                for j, line2 in enumerate(lines):
+                for j, line2 in enumerate(regular_lines):
                     if i == j or j in used:
                         continue
                     
@@ -882,15 +934,18 @@ class Blueprint2GCode:
                     new_lines.append(line1)
                     used.add(i)
             
-            lines = new_lines
+            regular_lines = new_lines
             if joined:
-                print(f"  Iteration {iteration}: {len(lines)} line segments")
+                print(f"  Iteration {iteration}: {len(regular_lines)} line segments")
+        
+        # Combine regular and solid lines
+        all_lines = regular_lines + solid_lines
         
         # Filter out very short lines
-        lines = [line for line in lines if self._line_length(line) >= self.min_line_length]
+        all_lines = [line for line in all_lines if self._line_length(line) >= self.min_line_length]
         
-        print(f"After joining: {len(lines)} line segments")
-        return lines
+        print(f"After joining: {len(all_lines)} line segments ({len(regular_lines)} regular, {len(solid_lines)} solid)")
+        return all_lines
     
     def _line_length(self, line):
         """Calculate total length of a polyline."""

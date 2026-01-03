@@ -104,7 +104,8 @@ TEST_CATEGORIES = {
             ('test1_simple_shapes.png', {'--hatch-angle': '0', '--hatch-spacing': '2.0'}),
             ('test1_simple_shapes.png', {'--hatch-angle': '90', '--hatch-spacing': '2.0'}),
             ('test4_floor_plan_with_walls.png', {'--hatch-angle': '45', '--hatch-spacing': '1.5'}),
-            ('test5_mechanical_part.png', {'--hatch-angle': '45', '--hatch-spacing': '1.5'})
+            ('test5_mechanical_part.png', {'--hatch-angle': '45', '--hatch-spacing': '1.5'}),
+            ('test6_crescent_spiral.png', {'--hatch-angle': '45', '--hatch-spacing': '1.0'})
         ],
         'params': {'--fill-solid-areas': None, '--min-solid-area': '1'}
     },

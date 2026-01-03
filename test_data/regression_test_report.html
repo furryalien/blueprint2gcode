@@ -125,209 +125,34 @@
 <body>
     <div class="header">
         <h1>blueprint2gcode - Regression Test Report</h1>
-        <div class="timestamp">Generated: 2026-01-02 20:20:28</div>
+        <div class="timestamp">Generated: 2026-01-03 11:56:11</div>
     </div>
     
     <div class="summary">
         <div class="summary-card">
             <div class="label">Total Tests</div>
-            <div class="number total">16</div>
+            <div class="number total">6</div>
         </div>
         <div class="summary-card">
             <div class="label">Passed</div>
-            <div class="number passed">13</div>
+            <div class="number passed">5</div>
         </div>
         <div class="summary-card">
             <div class="label">Failed</div>
-            <div class="number failed">3</div>
+            <div class="number failed">1</div>
         </div>
         <div class="summary-card">
             <div class="label">Success Rate</div>
             <div class="number" style="color: #f59e0b">
-                81.2%
+                83.3%
             </div>
         </div>
-    </div>
-
-    <div class="category">
-        <h2>Basic Conversion Tests 
-            <span style="float: right; font-size: 18px; color: #666;">
-                5/6 passed
-            </span>
-        </h2>
-        <p style="color: #666; margin-bottom: 20px;">Standard geometric shapes and patterns</p>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Basic Conversion Tests: test1_simple_box.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 1.79s | 
-                📏 Paths: 3 | 
-                🖊️ Drawing distance: 1827.9mm | 
-                ✈️ Travel distance: 366.2mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Basic Conversion Tests: test2_floor_plan.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 1.68s | 
-                📏 Paths: 17 | 
-                🖊️ Drawing distance: 2861.7mm | 
-                ✈️ Travel distance: 584.8mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Basic Conversion Tests: test3_geometric.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 1.57s | 
-                📏 Paths: 8 | 
-                🖊️ Drawing distance: 2202.9mm | 
-                ✈️ Travel distance: 699.4mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Basic Conversion Tests: test4_mechanical.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 1.27s | 
-                📏 Paths: 44 | 
-                🖊️ Drawing distance: 2417.8mm | 
-                ✈️ Travel distance: 842.2mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Basic Conversion Tests: test5_circuit.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 1.17s | 
-                📏 Paths: 9 | 
-                🖊️ Drawing distance: 1012.4mm | 
-                ✈️ Travel distance: 525.1mm
-            </div>
-
-        </div>
-
-        <div class="test-result fail">
-            <div class="test-name">
-                <span class="badge fail">FAIL</span>
-                Basic Conversion Tests: test7_geodesic_dome.png
-            </div>
-
-            <div class="test-error">Error: Execution timeout (60s)</div>
-
-        </div>
-
-    </div>
-
-    <div class="category">
-        <h2>Corner Accuracy Tests 
-            <span style="float: right; font-size: 18px; color: #666;">
-                4/5 passed
-            </span>
-        </h2>
-        <p style="color: #666; margin-bottom: 20px;">Sharp corners, nested shapes, rotations</p>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Corner Accuracy Tests: test1_square_300x300.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 22.54s | 
-                📏 Paths: 155 | 
-                🖊️ Drawing distance: 16579.7mm | 
-                ✈️ Travel distance: 516.4mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Corner Accuracy Tests: test2_square_100x100.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 5.29s | 
-                📏 Paths: 57 | 
-                🖊️ Drawing distance: 1482.5mm | 
-                ✈️ Travel distance: 433.6mm
-            </div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Corner Accuracy Tests: test6_grid_6squares_100x100.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 31.86s | 
-                📏 Paths: 364 | 
-                🖊️ Drawing distance: 9141.5mm | 
-                ✈️ Travel distance: 1157.0mm
-            </div>
-
-        </div>
-
-        <div class="test-result fail">
-            <div class="test-name">
-                <span class="badge fail">FAIL</span>
-                Corner Accuracy Tests: test7_nested_squares.png
-            </div>
-
-            <div class="test-error">Error: Execution timeout (60s)</div>
-
-        </div>
-
-        <div class="test-result pass">
-            <div class="test-name">
-                <span class="badge pass">PASS</span>
-                Corner Accuracy Tests: test9_diamond.png
-            </div>
-
-            <div class="test-stats">
-                ⏱️ Execution time: 45.93s | 
-                📏 Paths: 79 | 
-                🖊️ Drawing distance: 32856.1mm | 
-                ✈️ Travel distance: 536.5mm
-            </div>
-
-        </div>
-
     </div>
 
     <div class="category">
         <h2>Solid Area Fill Tests 
             <span style="float: right; font-size: 18px; color: #666;">
-                4/5 passed
+                5/6 passed
             </span>
         </h2>
         <p style="color: #666; margin-bottom: 20px;">Hatching patterns with different angles and spacing</p>
@@ -339,10 +164,10 @@
             </div>
 
             <div class="test-stats">
-                ⏱️ Execution time: 21.39s | 
-                📏 Paths: 180 | 
-                🖊️ Drawing distance: 11093.9mm | 
-                ✈️ Travel distance: 973.6mm
+                ⏱️ Execution time: 16.22s | 
+                📏 Paths: 143 | 
+                🖊️ Drawing distance: 6902.6mm | 
+                ✈️ Travel distance: 970.1mm
             </div>
 
         </div>
@@ -354,10 +179,10 @@
             </div>
 
             <div class="test-stats">
-                ⏱️ Execution time: 14.09s | 
-                📏 Paths: 115 | 
-                🖊️ Drawing distance: 6466.3mm | 
-                ✈️ Travel distance: 900.9mm
+                ⏱️ Execution time: 12.17s | 
+                📏 Paths: 112 | 
+                🖊️ Drawing distance: 6802.7mm | 
+                ✈️ Travel distance: 939.2mm
             </div>
 
         </div>
@@ -369,10 +194,10 @@
             </div>
 
             <div class="test-stats">
-                ⏱️ Execution time: 12.29s | 
-                📏 Paths: 106 | 
-                🖊️ Drawing distance: 6433.0mm | 
-                ✈️ Travel distance: 1049.7mm
+                ⏱️ Execution time: 9.84s | 
+                📏 Paths: 103 | 
+                🖊️ Drawing distance: 6822.8mm | 
+                ✈️ Travel distance: 1034.3mm
             </div>
 
         </div>
@@ -394,10 +219,25 @@
             </div>
 
             <div class="test-stats">
-                ⏱️ Execution time: 38.88s | 
-                📏 Paths: 215 | 
-                🖊️ Drawing distance: 22272.1mm | 
-                ✈️ Travel distance: 723.1mm
+                ⏱️ Execution time: 32.52s | 
+                📏 Paths: 234 | 
+                🖊️ Drawing distance: 11155.7mm | 
+                ✈️ Travel distance: 891.1mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Solid Area Fill Tests: test6_crescent_spiral.png (--hatch-angle=45, --hatch-spacing=1.0)
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 27.62s | 
+                📏 Paths: 479 | 
+                🖊️ Drawing distance: 3447.0mm | 
+                ✈️ Travel distance: 1404.7mm
             </div>
 
         </div>
