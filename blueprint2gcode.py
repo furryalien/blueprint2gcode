@@ -88,16 +88,34 @@ class Blueprint2GCode:
                 # Calculate area
                 area = cv2.contourArea(contour)
                 
+                # Special case: 1px tall shapes (like underscores) have area=0
+                # Check bounding box instead
+                x, y, w, h = cv2.boundingRect(contour)
+                bbox_area = w * h
+                
                 # Only consider areas above minimum threshold
-                if area < self.min_solid_area:
+                # Use bbox_area for degenerate (0-area) contours
+                effective_area = area if area > 0 else bbox_area
+                if effective_area < self.min_solid_area:
                     continue
                 
                 # Calculate solidity (ratio of contour area to convex hull area)
                 hull = cv2.convexHull(contour)
                 hull_area = cv2.contourArea(hull)
                 
+                # For degenerate (1px tall) contours, use bbox_area for calculations
+                calc_area = area if area > 0 else bbox_area
+                
+                # Special case: if hull has no area (1px shape), assume perfect solidity
                 if hull_area > 0:
-                    solidity = area / hull_area
+                    solidity = calc_area / hull_area
+                elif calc_area > 0:
+                    # Degenerate shape (1px tall) - treat as perfectly solid
+                    solidity = 1.0
+                else:
+                    solidity = 0.0
+                
+                if solidity > 0:
                     
                     # Check if this contour has any children (holes inside it)
                     has_children = hierarchy[i][2] != -1
@@ -105,14 +123,19 @@ class Blueprint2GCode:
                     
                     # Calculate perimeter to area ratio to distinguish walls from rooms
                     perimeter = cv2.arcLength(contour, True)
-                    compactness = (perimeter * perimeter) / area if area > 0 else float('inf')
+                    compactness = (perimeter * perimeter) / calc_area if calc_area > 0 else float('inf')
                     
                     # Calculate average thickness to distinguish outlines from solid areas
                     # Thickness = area / perimeter gives approximate "width" of the shape
                     # Thin outlines (like circle strokes) will have low thickness
                     # Solid filled shapes will have higher thickness
-                    thickness = area / perimeter if perimeter > 0 else 0
-                    min_thickness = 10  # Minimum thickness in pixels to be considered solid
+                    # For degenerate contours (1px tall), use min dimension of bounding box
+                    if area > 0:
+                        thickness = area / perimeter if perimeter > 0 else 0
+                    else:
+                        # 1px tall shape: thickness is the smaller dimension (height)
+                        thickness = min(w, h)
+                    min_thickness = 0.15  # Minimum thickness in pixels to be considered solid (reduced for very thin chars like underscore/minus)
                     
                     # Filled solid shapes can be:
                     # 1. Outer contours with high solidity and no children (truly solid blobs)
@@ -138,7 +161,7 @@ class Blueprint2GCode:
                             children_area += cv2.contourArea(contours[child_idx])
                             child_idx = hierarchy[child_idx][0]  # Next sibling
                         
-                        fill_ratio = (area - children_area) / area if area > 0 else 0
+                        fill_ratio = (calc_area - children_area) / calc_area if calc_area > 0 else 0
                         
                         # Only accept if:
                         # 1. Reasonable compactness (not huge outline)
@@ -147,13 +170,13 @@ class Blueprint2GCode:
                         #    - Floor plans: 0.15-0.45 (15-45% filled - walls + rooms)
                         #    - Solid with holes: > 0.85 (85% filled - mostly solid)
                         # 3. Sufficient thickness (not a thin outline stroke)
-                        if solidity > 0.5 and compactness < 200 and fill_ratio > 0.15 and thickness >= min_thickness:
+                        if solidity > 0.4 and compactness < 200 and fill_ratio > 0.15 and thickness >= min_thickness:  # Reduced solidity from 0.5 to 0.4 for # $
                             is_solid = True
                             parent_indices.add(i)  # Mark this as a parent
                         else:
                             # Mark as rejected outline parent so we skip its children
                             rejected_outline_parents.add(i)
-                    elif solidity > 0.7 and thickness >= min_thickness:
+                    elif solidity > 0.25 and thickness >= min_thickness:  # Reduced from 0.7 to 0.25 for text/letters
                         if not has_children and not is_child:
                             # Truly solid shape with no holes
                             is_solid = True
@@ -193,6 +216,86 @@ class Blueprint2GCode:
             contour = contour_info
         # Get bounding box
         x, y, w, h = cv2.boundingRect(contour)
+        
+        # Get hatch spacing in pixels
+        hatch_spacing_px = getattr(self, 'hatch_spacing_pixels', self.hatch_spacing)
+        
+        # Special case: Very thin horizontal shapes (like underscores, minus signs)
+        # Regular diagonal hatch lines would miss most of these shapes
+        # Detect: height is small AND much smaller than width
+        is_thin_horizontal = (h < 8) and (w / h > 4)
+        
+        # Special case: Very thin vertical shapes
+        is_thin_vertical = (w < 8) and (h / w > 4)
+        
+        if is_thin_horizontal:
+            # Generate horizontal lines spaced vertically
+            # Use a spacing that ensures we cover the shape (max 1px spacing for very thin shapes)
+            vert_spacing = min(1.0, h / 2.0) if h > 2 else 1.0
+            
+            hatch_lines = []
+            y_start = y
+            y_end = y + h
+            
+            # Generate horizontal lines at regular vertical intervals
+            num_lines = max(int(h / vert_spacing) + 1, 2)  # At least 2 lines
+            
+            for i in range(num_lines):
+                y_line = y_start + (i * h / (num_lines - 1)) if num_lines > 1 else y_start + h/2
+                y_line = int(round(y_line))
+                
+                # Ensure y_line is within bounds
+                if y_line < 0 or y_line >= img_shape[0]:
+                    continue
+                
+                # Create a mask for this contour to find exact boundaries
+                mask = np.zeros(img_shape, dtype=np.uint8)
+                cv2.drawContours(mask, [contour], -1, 255, -1)
+                
+                # Find the leftmost and rightmost pixels at this y coordinate
+                row = mask[y_line, :]
+                x_coords = np.where(row > 0)[0]
+                
+                if len(x_coords) > 0:
+                    x_min = int(x_coords[0])
+                    x_max = int(x_coords[-1])
+                    hatch_lines.append([[x_min, y_line], [x_max, y_line]])
+            
+            return hatch_lines
+        
+        elif is_thin_vertical:
+            # Generate vertical lines spaced horizontally
+            horiz_spacing = min(1.0, w / 2.0) if w > 2 else 1.0
+            
+            hatch_lines = []
+            x_start = x
+            x_end = x + w
+            
+            # Generate vertical lines at regular horizontal intervals
+            num_lines = max(int(w / horiz_spacing) + 1, 2)  # At least 2 lines
+            
+            for i in range(num_lines):
+                x_line = x_start + (i * w / (num_lines - 1)) if num_lines > 1 else x_start + w/2
+                x_line = int(round(x_line))
+                
+                # Ensure x_line is within bounds
+                if x_line < 0 or x_line >= img_shape[1]:
+                    continue
+                
+                # Create a mask for this contour to find exact boundaries
+                mask = np.zeros(img_shape, dtype=np.uint8)
+                cv2.drawContours(mask, [contour], -1, 255, -1)
+                
+                # Find the topmost and bottommost pixels at this x coordinate
+                col = mask[:, x_line]
+                y_coords = np.where(col > 0)[0]
+                
+                if len(y_coords) > 0:
+                    y_min = int(y_coords[0])
+                    y_max = int(y_coords[-1])
+                    hatch_lines.append([[x_line, y_min], [x_line, y_max]])
+            
+            return hatch_lines
         
         # Create a mask for this contour
         mask = np.zeros(img_shape, dtype=np.uint8)
