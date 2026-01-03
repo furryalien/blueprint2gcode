@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>blueprint2gcode - Regression Test Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 36px;
+        }
+        .header .timestamp {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .summary-card .number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .summary-card .label {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .passed { color: #10b981; }
+        .failed { color: #ef4444; }
+        .total { color: #3b82f6; }
+        .category {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .category h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .test-result {
+            border-left: 4px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        .test-result.pass {
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+        .test-result.fail {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        .test-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .test-stats {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .test-error {
+            color: #dc2626;
+            font-family: monospace;
+            font-size: 13px;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .visualization {
+            margin-top: 15px;
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge.pass {
+            background: #10b981;
+            color: white;
+        }
+        .badge.fail {
+            background: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>blueprint2gcode - Regression Test Report</h1>
+        <div class="timestamp">Generated: 2026-01-02 20:20:28</div>
+    </div>
+    
+    <div class="summary">
+        <div class="summary-card">
+            <div class="label">Total Tests</div>
+            <div class="number total">16</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Passed</div>
+            <div class="number passed">13</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Failed</div>
+            <div class="number failed">3</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Success Rate</div>
+            <div class="number" style="color: #f59e0b">
+                81.2%
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Basic Conversion Tests 
+            <span style="float: right; font-size: 18px; color: #666;">
+                5/6 passed
+            </span>
+        </h2>
+        <p style="color: #666; margin-bottom: 20px;">Standard geometric shapes and patterns</p>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Basic Conversion Tests: test1_simple_box.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 1.79s | 
+                📏 Paths: 3 | 
+                🖊️ Drawing distance: 1827.9mm | 
+                ✈️ Travel distance: 366.2mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Basic Conversion Tests: test2_floor_plan.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 1.68s | 
+                📏 Paths: 17 | 
+                🖊️ Drawing distance: 2861.7mm | 
+                ✈️ Travel distance: 584.8mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Basic Conversion Tests: test3_geometric.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 1.57s | 
+                📏 Paths: 8 | 
+                🖊️ Drawing distance: 2202.9mm | 
+                ✈️ Travel distance: 699.4mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Basic Conversion Tests: test4_mechanical.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 1.27s | 
+                📏 Paths: 44 | 
+                🖊️ Drawing distance: 2417.8mm | 
+                ✈️ Travel distance: 842.2mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Basic Conversion Tests: test5_circuit.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 1.17s | 
+                📏 Paths: 9 | 
+                🖊️ Drawing distance: 1012.4mm | 
+                ✈️ Travel distance: 525.1mm
+            </div>
+
+        </div>
+
+        <div class="test-result fail">
+            <div class="test-name">
+                <span class="badge fail">FAIL</span>
+                Basic Conversion Tests: test7_geodesic_dome.png
+            </div>
+
+            <div class="test-error">Error: Execution timeout (60s)</div>
+
+        </div>
+
+    </div>
+
+    <div class="category">
+        <h2>Corner Accuracy Tests 
+            <span style="float: right; font-size: 18px; color: #666;">
+                4/5 passed
+            </span>
+        </h2>
+        <p style="color: #666; margin-bottom: 20px;">Sharp corners, nested shapes, rotations</p>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Corner Accuracy Tests: test1_square_300x300.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 22.54s | 
+                📏 Paths: 155 | 
+                🖊️ Drawing distance: 16579.7mm | 
+                ✈️ Travel distance: 516.4mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Corner Accuracy Tests: test2_square_100x100.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 5.29s | 
+                📏 Paths: 57 | 
+                🖊️ Drawing distance: 1482.5mm | 
+                ✈️ Travel distance: 433.6mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Corner Accuracy Tests: test6_grid_6squares_100x100.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 31.86s | 
+                📏 Paths: 364 | 
+                🖊️ Drawing distance: 9141.5mm | 
+                ✈️ Travel distance: 1157.0mm
+            </div>
+
+        </div>
+
+        <div class="test-result fail">
+            <div class="test-name">
+                <span class="badge fail">FAIL</span>
+                Corner Accuracy Tests: test7_nested_squares.png
+            </div>
+
+            <div class="test-error">Error: Execution timeout (60s)</div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Corner Accuracy Tests: test9_diamond.png
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 45.93s | 
+                📏 Paths: 79 | 
+                🖊️ Drawing distance: 32856.1mm | 
+                ✈️ Travel distance: 536.5mm
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="category">
+        <h2>Solid Area Fill Tests 
+            <span style="float: right; font-size: 18px; color: #666;">
+                4/5 passed
+            </span>
+        </h2>
+        <p style="color: #666; margin-bottom: 20px;">Hatching patterns with different angles and spacing</p>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Solid Area Fill Tests: test1_simple_shapes.png (--hatch-angle=45, --hatch-spacing=2.0)
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 21.39s | 
+                📏 Paths: 180 | 
+                🖊️ Drawing distance: 11093.9mm | 
+                ✈️ Travel distance: 973.6mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Solid Area Fill Tests: test1_simple_shapes.png (--hatch-angle=0, --hatch-spacing=2.0)
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 14.09s | 
+                📏 Paths: 115 | 
+                🖊️ Drawing distance: 6466.3mm | 
+                ✈️ Travel distance: 900.9mm
+            </div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Solid Area Fill Tests: test1_simple_shapes.png (--hatch-angle=90, --hatch-spacing=2.0)
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 12.29s | 
+                📏 Paths: 106 | 
+                🖊️ Drawing distance: 6433.0mm | 
+                ✈️ Travel distance: 1049.7mm
+            </div>
+
+        </div>
+
+        <div class="test-result fail">
+            <div class="test-name">
+                <span class="badge fail">FAIL</span>
+                Solid Area Fill Tests: test4_floor_plan_with_walls.png (--hatch-angle=45, --hatch-spacing=1.5)
+            </div>
+
+            <div class="test-error">Error: Execution timeout (60s)</div>
+
+        </div>
+
+        <div class="test-result pass">
+            <div class="test-name">
+                <span class="badge pass">PASS</span>
+                Solid Area Fill Tests: test5_mechanical_part.png (--hatch-angle=45, --hatch-spacing=1.5)
+            </div>
+
+            <div class="test-stats">
+                ⏱️ Execution time: 38.88s | 
+                📏 Paths: 215 | 
+                🖊️ Drawing distance: 22272.1mm | 
+                ✈️ Travel distance: 723.1mm
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
