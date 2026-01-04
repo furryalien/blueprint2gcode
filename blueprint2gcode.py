@@ -36,6 +36,27 @@ class Blueprint2GCode:
         self.min_solid_area = args.min_solid_area
         self.invert_colors = args.invert_colors
         
+        # Solid area detection parameters
+        self.solidity_threshold = args.solidity_threshold
+        self.thin_shape_width = args.thin_shape_width
+        self.thin_shape_height = args.thin_shape_height
+        
+        # Hatching quality parameters
+        self.hatch_quality = args.hatch_quality
+        self._set_hatch_quality_params()
+        
+        # Thresholding parameters
+        self.threshold_method = args.threshold_method
+        self.manual_threshold = args.manual_threshold
+        
+        # Initial position
+        self.initial_x = args.initial_x
+        self.initial_y = args.initial_y
+        
+        # Fine line detection parameters
+        self.min_contour_points = args.min_contour_points
+        self.contour_approx_method = args.contour_approx_method
+        
         # Paper dimensions in mm (width x height)
         self.paper_sizes = {
             'A3': (297, 420),
@@ -50,6 +71,35 @@ class Blueprint2GCode:
         # Legacy compatibility
         self.a4_width = self.paper_width
         self.a4_height = self.paper_height
+    
+    def _set_hatch_quality_params(self):
+        """Set hatching quality parameters based on quality preset."""
+        quality_presets = {
+            'low': {
+                'mask_sample_size': 200,
+                'dense_sampling_rate': 3,
+                'hatch_spacing_margin_multiplier': 1.5,
+                'extra_hatch_lines': 1
+            },
+            'medium': {
+                'mask_sample_size': 500,
+                'dense_sampling_rate': 10,
+                'hatch_spacing_margin_multiplier': 2,
+                'extra_hatch_lines': 3
+            },
+            'high': {
+                'mask_sample_size': 1000,
+                'dense_sampling_rate': 20,
+                'hatch_spacing_margin_multiplier': 2.5,
+                'extra_hatch_lines': 5
+            }
+        }
+        
+        preset = quality_presets.get(self.hatch_quality, quality_presets['medium'])
+        self.mask_sample_size = preset['mask_sample_size']
+        self.dense_sampling_rate = preset['dense_sampling_rate']
+        self.hatch_spacing_margin_multiplier = preset['hatch_spacing_margin_multiplier']
+        self.extra_hatch_lines = preset['extra_hatch_lines']
         
     def load_and_preprocess_image(self):
         """Load image and convert to binary black/white."""
@@ -68,8 +118,12 @@ class Blueprint2GCode:
             img_array = 255 - img_array
         
         # Threshold to binary (black lines on white background)
-        # Using Otsu's method for automatic thresholding
-        _, binary = cv2.threshold(img_array, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        if self.threshold_method == 'otsu':
+            print("Using Otsu's method for automatic thresholding...")
+            _, binary = cv2.threshold(img_array, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        else:  # manual
+            print(f"Using manual threshold value: {self.manual_threshold}")
+            _, binary = cv2.threshold(img_array, self.manual_threshold, 255, cv2.THRESH_BINARY_INV)
         
         print(f"Image size: {binary.shape[1]}x{binary.shape[0]} pixels")
         return binary, img_array.shape
@@ -106,7 +160,7 @@ class Blueprint2GCode:
                 
                 # Exception: Very thin but tall/long shapes (like "1", "i", "l", "-")
                 # should be considered even if their area is small
-                is_thin_tall = (w < 20 and h > 15) or (h < 20 and w > 15)
+                is_thin_tall = (w < self.thin_shape_width and h > self.thin_shape_height) or (h < self.thin_shape_width and w > self.thin_shape_height)
                 
                 if effective_area < self.min_solid_area and not is_thin_tall:
                     continue
@@ -251,10 +305,12 @@ class Blueprint2GCode:
         # Special case: Very thin horizontal shapes (like underscores, minus signs)
         # Regular diagonal hatch lines would miss most of these shapes
         # Detect: height is small AND much smaller than width
-        is_thin_horizontal = (h < 8) and (w / h > 4)
+        # Use half the thin_shape threshold for very thin detection
+        thin_threshold = self.thin_shape_width // 2
+        is_thin_horizontal = (h < thin_threshold) and (w / h > 4)
         
         # Special case: Very thin vertical shapes
-        is_thin_vertical = (w < 8) and (h / w > 4)
+        is_thin_vertical = (w < thin_threshold) and (h / w > 4)
         
         if is_thin_horizontal:
             # Generate horizontal lines spaced vertically
@@ -370,7 +426,7 @@ class Blueprint2GCode:
             return []
         
         # Sample mask points for efficiency (every Nth point)
-        sample_step = max(1, len(mask_points) // 500)  # Sample ~500 points
+        sample_step = max(1, len(mask_points) // self.mask_sample_size)
         sampled_points = mask_points[::sample_step]
         
         perp_offsets = []
@@ -380,8 +436,8 @@ class Blueprint2GCode:
             perp_offsets.append(offset)
         
         # Extend beyond the min/max to ensure complete coverage
-        min_offset = min(perp_offsets) - hatch_spacing_px * 2
-        max_offset = max(perp_offsets) + hatch_spacing_px * 2
+        min_offset = min(perp_offsets) - hatch_spacing_px * self.hatch_spacing_margin_multiplier
+        max_offset = max(perp_offsets) + hatch_spacing_px * self.hatch_spacing_margin_multiplier
         
         # Also check bounding box corners for robustness
         corners = [(x, y), (x + w, y), (x, y + h), (x + w, y + h)]
@@ -391,7 +447,7 @@ class Blueprint2GCode:
             max_offset = max(max_offset, offset + hatch_spacing_px)
         
         # Generate lines from min to max offset at regular spacing
-        num_lines = int((max_offset - min_offset) / hatch_spacing_px) + 3
+        num_lines = int((max_offset - min_offset) / hatch_spacing_px) + self.extra_hatch_lines
         
         # Generate all hatch line offsets
         all_offsets = []
@@ -431,8 +487,8 @@ class Blueprint2GCode:
             line_dir = line_vec / line_length
             
             # Sample along the line at very dense sub-pixel intervals to catch corner pixels
-            # Use 10 samples per pixel to ensure we don't miss single-pixel corner touches
-            num_samples = int(line_length * 10) + 20
+            # Use dense_sampling_rate samples per pixel to ensure we don't miss single-pixel corner touches
+            num_samples = int(line_length * self.dense_sampling_rate) + 20
             
             intersections = []
             in_mask = False
@@ -716,14 +772,16 @@ class Blueprint2GCode:
         
         # Find contours
         print("  Finding line contours...")
-        contours, _ = cv2.findContours(skeleton, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        # Use configurable contour approximation method
+        approx_mode = cv2.CHAIN_APPROX_NONE if self.contour_approx_method == 'none' else cv2.CHAIN_APPROX_SIMPLE
+        contours, _ = cv2.findContours(skeleton, cv2.RETR_LIST, approx_mode)
         
         print(f"Found {len(contours)} contours")
         
         # Convert contours to line segments
         lines = []
         for contour in contours:
-            if len(contour) >= 2:
+            if len(contour) >= self.min_contour_points:
                 perimeter = cv2.arcLength(contour, False)
                 
                 # Adaptive simplification: use less simplification for smaller contours
@@ -962,8 +1020,8 @@ class Blueprint2GCode:
         print(f"Optimizing path for {len(lines)} line segments...")
         
         # Use greedy nearest neighbor algorithm
-        # Start from origin (0, 0)
-        current_pos = [self.margin, self.margin]
+        # Start from initial position
+        current_pos = [self.initial_x, self.initial_y]
         ordered_lines = []
         remaining = list(range(len(lines)))
         
@@ -1010,7 +1068,7 @@ class Blueprint2GCode:
         
         # Calculate total travel distance
         travel_dist = 0
-        pos = [self.margin, self.margin]
+        pos = [self.initial_x, self.initial_y]
         for line in ordered_lines:
             travel_dist += np.linalg.norm(np.array(line[0]) - np.array(pos))
             pos = line[-1]
@@ -1051,13 +1109,13 @@ class Blueprint2GCode:
         gcode.append("G21 ; Set units to millimeters")
         gcode.append("G90 ; Absolute positioning")
         gcode.append(f"G0 Z{self.z_up} ; Pen up")
-        gcode.append("G0 X0 Y0 ; Move to origin")
+        gcode.append(f"G0 X{self.initial_x} Y{self.initial_y} ; Move to initial position")
         gcode.append("")
         
         # Draw lines
         total_draw_dist = 0
         total_travel_dist = 0
-        current_pos = [0, 0]
+        current_pos = [self.initial_x, self.initial_y]
         
         for i, line in enumerate(lines):
             # Move to start of line (pen up)
@@ -1080,8 +1138,8 @@ class Blueprint2GCode:
             gcode.append("")
         
         # Footer
-        gcode.append("; Return to origin")
-        gcode.append("G0 X0 Y0")
+        gcode.append("; Return to initial position")
+        gcode.append(f"G0 X{self.initial_x} Y{self.initial_y}")
         gcode.append(f"G0 Z{self.z_up}")
         gcode.append("")
         gcode.append(f"; Total drawing distance: {total_draw_dist:.2f} mm")
@@ -1210,9 +1268,40 @@ def main():
     parser.add_argument('--min-solid-area', type=float, default=100.0,
                         help='Minimum area in pixels to consider as solid (before scaling)')
     
+    # Solid area detection parameters
+    parser.add_argument('--solidity-threshold', type=float, default=0.7,
+                        help='Solidity ratio threshold (0-1) to distinguish solid vs outline shapes')
+    parser.add_argument('--thin-shape-width', type=int, default=20,
+                        help='Width threshold (pixels) for detecting thin vertical shapes like "1", "i", "l"')
+    parser.add_argument('--thin-shape-height', type=int, default=15,
+                        help='Height threshold (pixels) for detecting thin horizontal shapes')
+    
+    # Hatching quality parameters
+    parser.add_argument('--hatch-quality', type=str, default='medium',
+                        choices=['low', 'medium', 'high'],
+                        help='Hatching quality preset (affects sampling density and coverage)')
+    
     # Image preprocessing
     parser.add_argument('--invert-colors', action='store_true',
                         help='Invert image colors before processing (useful for white-on-black or white-on-blue images)')
+    parser.add_argument('--threshold-method', type=str, default='otsu',
+                        choices=['otsu', 'manual'],
+                        help='Thresholding method (otsu for automatic, manual for fixed value)')
+    parser.add_argument('--manual-threshold', type=int, default=127,
+                        help='Manual threshold value (0-255) when using manual threshold method')
+    
+    # Fine line detection parameters
+    parser.add_argument('--min-contour-points', type=int, default=2,
+                        help='Minimum number of points in a contour to be considered a line')
+    parser.add_argument('--contour-approx-method', type=str, default='simple',
+                        choices=['simple', 'none'],
+                        help='Contour approximation method (simple for efficiency, none for all points)')
+    
+    # Initial position
+    parser.add_argument('--initial-x', type=float, default=0.0,
+                        help='Initial X position (mm) for pen and path optimization')
+    parser.add_argument('--initial-y', type=float, default=0.0,
+                        help='Initial Y position (mm) for pen and path optimization')
     
     args = parser.parse_args()
     

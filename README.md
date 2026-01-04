@@ -107,6 +107,16 @@ python blueprint2gcode.py input.png output.gcode \
 | `--hatch-angle` | 45.0 | Angle of hatch lines in degrees |
 | `--min-solid-area` | 100.0 | Minimum area in pixels to consider as solid |
 | `--invert-colors` | disabled | Invert image colors for white-on-black or white-on-blue images |
+| `--solidity-threshold` | 0.7 | Solidity ratio (0-1) to distinguish solid vs outline shapes |
+| `--thin-shape-width` | 20 | Width threshold (pixels) for detecting thin vertical shapes |
+| `--thin-shape-height` | 15 | Height threshold (pixels) for detecting thin horizontal shapes |
+| `--hatch-quality` | medium | Hatching quality preset (low, medium, high) |
+| `--threshold-method` | otsu | Thresholding method (otsu=automatic, manual=fixed value) |
+| `--manual-threshold` | 127 | Manual threshold value (0-255) when using manual method |
+| `--min-contour-points` | 2 | Minimum points in contour to be considered a line |
+| `--contour-approx-method` | simple | Contour approximation (simple=efficient, none=all points) |
+| `--initial-x` | 0.0 | Initial X position (mm) for pen and path optimization |
+| `--initial-y` | 0.0 | Initial Y position (mm) for pen and path optimization |
 
 ### Paper Sizes
 
@@ -299,6 +309,60 @@ python blueprint2gcode.py logo.png output.gcode \
     --min-solid-area 500
 ```
 
+Fine-tune solid area detection:
+```bash
+# Adjust solidity threshold for ambiguous shapes
+python blueprint2gcode.py input.jpg output.gcode \
+    --fill-solid-areas \
+    --solidity-threshold 0.6  # Lower = more permissive
+
+# Detect smaller thin shapes (small font sizes)
+python blueprint2gcode.py input.jpg output.gcode \
+    --fill-solid-areas \
+    --thin-shape-width 15 \
+    --thin-shape-height 10
+
+# High quality hatching with maximum coverage
+python blueprint2gcode.py input.jpg output.gcode \
+    --fill-solid-areas \
+    --hatch-quality high
+```
+
+Manual thresholding for challenging images:
+```bash
+# Use manual threshold instead of automatic Otsu
+python blueprint2gcode.py faded_blueprint.jpg output.gcode \
+    --threshold-method manual \
+    --manual-threshold 180  # Higher = more selective (darker lines only)
+
+# Lower threshold for light/faint lines
+python blueprint2gcode.py light_sketch.jpg output.gcode \
+    --threshold-method manual \
+    --manual-threshold 80
+```
+
+Optimize for very fine lines:
+```bash
+# Use 'none' approximation to preserve all contour points
+python blueprint2gcode.py circuit.jpg output.gcode \
+    --contour-approx-method none \
+    --min-contour-points 2
+
+# Combination for maximum fine detail capture
+python blueprint2gcode.py fine_detail.jpg output.gcode \
+    --contour-approx-method none \
+    --simplify-epsilon 0.000001 \
+    --min-line-length 0.01
+```
+
+Set custom initial position:
+```bash
+# Start from custom position instead of origin
+python blueprint2gcode.py input.jpg output.gcode \
+    --initial-x 50.0 \
+    --initial-y 50.0
+```
+
 Combine paper size with detail level:
 ```bash
 # Large A3 output with high detail
@@ -312,11 +376,21 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 
 **Solid black areas appearing as outlines**: Enable the `--fill-solid-areas` flag to detect and fill solid regions with cross-hatching instead of just outlining them.
 
+**Ambiguous shapes not being detected as solid**: Lower the `--solidity-threshold` (default 0.7). Try values like 0.6 or 0.5 for more permissive detection. Note that very low values may incorrectly fill outline-only shapes.
+
+**Small text characters not being filled**: Reduce `--thin-shape-width` and `--thin-shape-height` thresholds (defaults 20 and 15) to match your font size. For small fonts, try values like 10-15.
+
 **Hatching too dense/sparse**: Adjust `--hatch-spacing` (default 1.0 pixels). Use lower values (0.5) for denser fill, higher values (2.0-3.0) for lighter fill.
+
+**Hatching quality issues (gaps at corners)**: Try `--hatch-quality high` for maximum sampling density and better coverage.
 
 **Small artifacts being filled**: Increase `--min-solid-area` threshold (default 100 pixels) to only fill larger solid regions.
 
 **Hatching not aligned properly**: Adjust `--hatch-angle` (0-360 degrees). Common values: 0° (horizontal), 45° (diagonal), 90° (vertical).
+
+**Faded or low-contrast lines not detected**: Switch from automatic to manual thresholding: `--threshold-method manual --manual-threshold 150` (adjust value 0-255). Lower values detect lighter lines, higher values only detect darker lines.
+
+**Very fine lines disappearing**: Use `--contour-approx-method none` to preserve all contour points instead of simplifying them. Combine with ultra detail settings (`--simplify-epsilon 0.000001`).
 
 **Missing small text or fine details**: The default ultra detail settings should capture most features including punctuation and small arrows. For extremely fine features, ensure high input resolution (300+ DPI recommended).
 
@@ -329,6 +403,8 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 **Lines not joining**: Increase `--join-tolerance` (e.g., `--join-tolerance 0.05`, `0.2` or `0.5`).
 
 **Lines joining that shouldn't**: Decrease `--join-tolerance` (already at 0.02mm for ultra detail).
+
+**Plotter starts from wrong position**: Set your desired starting position with `--initial-x` and `--initial-y` (in millimeters). The optimizer will start path planning from this position.
 
 **Better input image quality tips**:
 - Scan blueprints at 300 DPI or higher
