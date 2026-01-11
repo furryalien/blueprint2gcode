@@ -4,6 +4,11 @@ Converts blueprint-style images to G-code for pen plotters and CNC machines with
 
 ## Features
 
+- **Noise Reduction**: Advanced preprocessing to eliminate artifacts, speckles, and compression noise
+  - Gaussian blur for smoothing out random noise
+  - Morphological operations to remove small artifacts
+  - Dramatically reduces G-code file size and improves output quality
+  - Essential for scanned documents, JPEG images, and noisy photos
 - **Color Inversion Support**: Process white-on-black or white-on-blue images with `--invert-colors` flag
 - **Extreme Detail Detection**: Captures punctuation, small arrows, fine circuit traces, and delicate line work
 - **Solid Area Filling**: Detects and fills solid black areas with configurable cross-hatching patterns
@@ -71,6 +76,12 @@ python blueprint2gcode.py input.png output.gcode --invert-colors
 # Enable solid area filling with cross-hatching
 python blueprint2gcode.py input.png output.gcode --fill-solid-areas
 
+# Process noisy images with artifacts (recommended for photos, scans, JPEGs)
+python blueprint2gcode.py noisy_image.jpg output.gcode \
+    --enable-noise-reduction \
+    --gaussian-blur-kernel 5 \
+    --morph-kernel-size 3
+
 # Adjust hatching parameters
 python blueprint2gcode.py input.png output.gcode \
     --fill-solid-areas \
@@ -117,6 +128,47 @@ python blueprint2gcode.py input.png output.gcode \
 | `--contour-approx-method` | simple | Contour approximation (simple=efficient, none=all points) |
 | `--initial-x` | 0.0 | Initial X position (mm) for pen and path optimization |
 | `--initial-y` | 0.0 | Initial Y position (mm) for pen and path optimization |
+| `--enable-noise-reduction` | disabled | Enable noise reduction preprocessing for noisy/compressed images |
+| `--gaussian-blur-kernel` | 3 | Gaussian blur kernel size (odd number, 0=disable) |
+| `--morph-kernel-size` | 2 | Morphological kernel size for artifact removal |
+| `--morph-iterations` | 1 | Number of morphological iterations (higher=more aggressive) |
+
+### Noise Reduction (New Feature!)
+
+For images with compression artifacts, speckles, or noise (common in scanned documents, JPEG photos, and screenshots):
+
+```bash
+# Basic noise reduction (recommended for most images)
+python blueprint2gcode.py noisy_image.jpg output.gcode \
+    --enable-noise-reduction
+
+# Standard preset (moderate noise - photos, web images)
+python blueprint2gcode.py photo.jpg output.gcode \
+    --enable-noise-reduction \
+    --gaussian-blur-kernel 5 \
+    --morph-kernel-size 3 \
+    --min-line-length 0.5 \
+    --simplify-epsilon 0.1
+
+# Aggressive preset (heavy noise - dirty scans, low-quality JPEGs)
+python blueprint2gcode.py dirty_scan.jpg output.gcode \
+    --enable-noise-reduction \
+    --gaussian-blur-kernel 7 \
+    --morph-kernel-size 4 \
+    --morph-iterations 2 \
+    --min-line-length 0.5
+```
+
+**When to use noise reduction:**
+- ✅ Scanned documents with dust or artifacts
+- ✅ JPEG images with compression artifacts
+- ✅ Photos with sensor noise or grain
+- ✅ Images producing huge G-code files (100,000+ lines)
+- ✅ Output has many tiny "pinpricks" or very short lines
+
+**Results:** Can reduce G-code from 134,000+ lines to 5,000-15,000 lines while improving quality!
+
+See [docs/NOISE_REDUCTION.md](docs/NOISE_REDUCTION.md) for detailed documentation and tuning guide.
 
 ### Paper Sizes
 
@@ -374,6 +426,32 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 
 ## Troubleshooting
 
+### Noise and Artifacts
+
+**G-code file is HUGE (100,000+ lines) with tiny pinpricks**: Enable noise reduction! This is the #1 fix for oversized files.
+```bash
+python blueprint2gcode.py input.jpg output.gcode \
+    --enable-noise-reduction \
+    --gaussian-blur-kernel 5 \
+    --morph-kernel-size 3 \
+    --min-line-length 0.5 \
+    --simplify-epsilon 0.1
+```
+
+**Still seeing random dots after noise reduction**: Increase blur and morph kernels:
+```bash
+--gaussian-blur-kernel 7 --morph-kernel-size 4 --morph-iterations 2
+```
+
+**Fine details disappearing with noise reduction**: Reduce kernel sizes:
+```bash
+--gaussian-blur-kernel 3 --morph-kernel-size 2
+```
+
+**JPEG compression artifacts**: Use moderate to aggressive noise reduction (see [docs/NOISE_REDUCTION.md](docs/NOISE_REDUCTION.md)).
+
+### Solid Areas and Hatching
+
 **Solid black areas appearing as outlines**: Enable the `--fill-solid-areas` flag to detect and fill solid regions with cross-hatching instead of just outlining them.
 
 **Ambiguous shapes not being detected as solid**: Lower the `--solidity-threshold` (default 0.7). Try values like 0.6 or 0.5 for more permissive detection. Note that very low values may incorrectly fill outline-only shapes.
@@ -388,11 +466,15 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 
 **Hatching not aligned properly**: Adjust `--hatch-angle` (0-360 degrees). Common values: 0° (horizontal), 45° (diagonal), 90° (vertical).
 
+### Line Detection
+
 **Faded or low-contrast lines not detected**: Switch from automatic to manual thresholding: `--threshold-method manual --manual-threshold 150` (adjust value 0-255). Lower values detect lighter lines, higher values only detect darker lines.
 
 **Very fine lines disappearing**: Use `--contour-approx-method none` to preserve all contour points instead of simplifying them. Combine with ultra detail settings (`--simplify-epsilon 0.000001`).
 
 **Missing small text or fine details**: The default ultra detail settings should capture most features including punctuation and small arrows. For extremely fine features, ensure high input resolution (300+ DPI recommended).
+
+### Output Size and Performance
 
 **Output too large/slow to plot**: Switch to Extreme, High, Standard or Fast mode using the presets above, or increase `--simplify-epsilon` and `--min-line-length`.
 
@@ -404,12 +486,14 @@ python blueprint2gcode.py blueprint.jpg output.gcode \
 
 **Lines joining that shouldn't**: Decrease `--join-tolerance` (already at 0.02mm for ultra detail).
 
+### Other Issues
+
 **Plotter starts from wrong position**: Set your desired starting position with `--initial-x` and `--initial-y` (in millimeters). The optimizer will start path planning from this position.
 
 **Better input image quality tips**:
 - Scan blueprints at 300 DPI or higher
 - Ensure high contrast between lines and background
-- Clean up noise/artifacts in image editor before conversion
+- Use `--enable-noise-reduction` for scanned or compressed images
 - For photographs, use edge detection or convert to line art first
 
 ## Testing

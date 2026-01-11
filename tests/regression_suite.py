@@ -158,6 +158,22 @@ TEST_CATEGORIES = {
             ('test1_simple_box.png', {'--orientation': 'portrait'}),
         ],
         'params': {'--paper-size': 'A6'}
+    },
+    'noise': {
+        'name': 'Noise Reduction Tests',
+        'description': 'Images with noise, artifacts, and speckles processed with noise reduction',
+        'image_dir': 'test_images_noise',
+        'output_dir': 'test_output_noise',
+        'viz_dir': 'test_visualizations_noise',
+        'tests': [
+            ('clean_rectangle.png', {}),
+            ('noisy_salt_pepper.png', {'--enable-noise-reduction': None, '--gaussian-blur-kernel': '5', '--morph-kernel-size': '3'}),
+            ('noisy_jpeg_artifacts.png', {'--enable-noise-reduction': None, '--gaussian-blur-kernel': '5', '--morph-kernel-size': '3'}),
+            ('text_with_speckles.png', {'--enable-noise-reduction': None, '--gaussian-blur-kernel': '5', '--morph-kernel-size': '3'}),
+            ('circle_gaussian_noise.png', {'--enable-noise-reduction': None, '--gaussian-blur-kernel': '7', '--morph-kernel-size': '4'}),
+            ('star_with_pinpricks.png', {'--enable-noise-reduction': None, '--gaussian-blur-kernel': '7', '--morph-kernel-size': '4', '--morph-iterations': '2'})
+        ],
+        'params': {'--min-line-length': '0.5', '--simplify-epsilon': '0.1'}
     }
 }
 

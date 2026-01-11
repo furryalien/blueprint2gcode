@@ -57,6 +57,12 @@ class Blueprint2GCode:
         self.min_contour_points = args.min_contour_points
         self.contour_approx_method = args.contour_approx_method
         
+        # Noise reduction parameters
+        self.enable_noise_reduction = args.enable_noise_reduction
+        self.gaussian_blur_kernel = args.gaussian_blur_kernel
+        self.morph_kernel_size = args.morph_kernel_size
+        self.morph_iterations = args.morph_iterations
+        
         # Paper dimensions in mm (width x height)
         self.paper_sizes = {
             'A3': (297, 420),
@@ -117,6 +123,19 @@ class Blueprint2GCode:
             print("Inverting image colors...")
             img_array = 255 - img_array
         
+        # Apply noise reduction if enabled
+        if self.enable_noise_reduction:
+            print(f"Applying noise reduction (blur={self.gaussian_blur_kernel}, morph={self.morph_kernel_size})...")
+            
+            # Apply Gaussian blur to reduce noise
+            if self.gaussian_blur_kernel > 0:
+                # Ensure kernel size is odd
+                kernel_size = self.gaussian_blur_kernel if self.gaussian_blur_kernel % 2 == 1 else self.gaussian_blur_kernel + 1
+                img_array = cv2.GaussianBlur(img_array, (kernel_size, kernel_size), 0)
+                print(f"  Applied Gaussian blur with kernel size {kernel_size}")
+            
+            # Apply morphological operations after thresholding (moved below)
+        
         # Threshold to binary (black lines on white background)
         if self.threshold_method == 'otsu':
             print("Using Otsu's method for automatic thresholding...")
@@ -124,6 +143,20 @@ class Blueprint2GCode:
         else:  # manual
             print(f"Using manual threshold value: {self.manual_threshold}")
             _, binary = cv2.threshold(img_array, self.manual_threshold, 255, cv2.THRESH_BINARY_INV)
+        
+        # Apply morphological operations after thresholding to remove small artifacts
+        if self.enable_noise_reduction and self.morph_kernel_size > 0:
+            # Create morphological kernel
+            kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, 
+                                              (self.morph_kernel_size, self.morph_kernel_size))
+            
+            # Opening (erosion followed by dilation) removes small white noise
+            binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel, iterations=self.morph_iterations)
+            print(f"  Applied morphological opening with {self.morph_kernel_size}x{self.morph_kernel_size} kernel, {self.morph_iterations} iteration(s)")
+            
+            # Optional: Closing (dilation followed by erosion) fills small black holes
+            # Uncomment if needed for specific images
+            # binary = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel, iterations=1)
         
         print(f"Image size: {binary.shape[1]}x{binary.shape[0]} pixels")
         return binary, img_array.shape
@@ -1302,6 +1335,16 @@ def main():
                         help='Initial X position (mm) for pen and path optimization')
     parser.add_argument('--initial-y', type=float, default=0.0,
                         help='Initial Y position (mm) for pen and path optimization')
+    
+    # Noise reduction
+    parser.add_argument('--enable-noise-reduction', action='store_true',
+                        help='Enable noise reduction preprocessing to remove artifacts and smooth edges')
+    parser.add_argument('--gaussian-blur-kernel', type=int, default=3,
+                        help='Gaussian blur kernel size (odd number, 0 to disable) for noise reduction')
+    parser.add_argument('--morph-kernel-size', type=int, default=2,
+                        help='Morphological operation kernel size for removing small artifacts')
+    parser.add_argument('--morph-iterations', type=int, default=1,
+                        help='Number of morphological operation iterations (higher = more aggressive)')
     
     args = parser.parse_args()
     
